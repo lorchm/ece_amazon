@@ -15,7 +15,7 @@
 
 </head>
 
-<?php
+<!-- <script>
 function connexion()
 {
   echo"BONJOUR";
@@ -34,14 +34,14 @@ function deconnexion()
     echo"BONJOUR";
     if($_SESSION["login"]=="")
     {
-
+        echo"Vous avez été deconnecté";
     }
     else
     {
         $_SESSION["login"]="";
     }
 }
-?>
+</script> -->
 
 <body>
     <!-- Barre de navigation -->
@@ -76,7 +76,7 @@ function deconnexion()
              <div class="navbar-nav" >
 
                     <td><button class="btn btn-primary" style="width:150px;"  onclick="connexion()" >Se connecter</button></td>
-                    <input class="btn btn-primary" style="width:150px;" type="button" onclick='connexion()'value="Se connecter" />
+                    
 
                      <td><a class="btn btn-primary" style="width:150px; margin-left: 50px;" onclick="deconnexion()" >Se déconnecter</a></td>
             </div>

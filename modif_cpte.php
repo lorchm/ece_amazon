@@ -2,13 +2,14 @@
 
 session_start();
 
-	$N= isset($_POST["login"])?$_POST["login"]:"";
+	/*$N= isset($_POST["login"])?$_POST["login"]:"";
 	$P= isset($_POST["password"])?$_POST["password"]:"";
-	
+	*/
+    $N=$_SESSION["login"];
+
 	define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASS', '');
-
     
 
     //identifier le nom de base de données
@@ -18,13 +19,15 @@ session_start();
     $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
     $db_found = mysqli_select_db($db_handle, $database);
 
-    if($db_found) {
+    if($db_found){
         
-        $sql = 'SELECT * FROM acheteur WHERE pseudo="gege2020"';
+        $sql = 'SELECT * FROM acheteur WHERE pseudo="'.$N.'"';
+        
         $result = mysqli_query($db_handle, $sql);
         while($data = mysqli_fetch_assoc($result)) {
 
             $Ps=$data['pseudo'];
+    ;
             $M=$data['mdp'];
             $Mail=$data['email'];
             $Nom=$data['nom'];
@@ -41,13 +44,17 @@ session_start();
             $Date_exp=$data['exp_date'];
             $Code=$data['sec_code'];
 
-
-        }
+           
+        
        }
+   }
+        
 
-       else {
-        echo "Database not found";
-    }//end else
+       if(!$db_found)
+       { echo "Database not found";} 
+       
+    
+    //end else
 
     
     mysqli_close($db_handle);
