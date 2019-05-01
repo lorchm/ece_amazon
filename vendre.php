@@ -49,7 +49,13 @@
 <!-- *********************************** PAGE VENDRE ***************************************************************** -->
 
 <!-- profil du vendeur -->
+<div class = "profil">
 
+<img src="Patrick.jpg">
+
+<p> Patrick </p>
+
+</div>
 
 <!-- boutons add/suppr -->
 
