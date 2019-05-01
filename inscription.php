@@ -80,7 +80,7 @@
                     </tr>
 
                     <tr>
-                         <label>Mot de passe</label> <input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="mdp" size="25" /><br> <br>
+                         <label>Mot de passe</label> <input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="password" name="mdp" size="25" /><br> <br>
                     </tr>
 
                     <tr>
@@ -140,7 +140,7 @@
                     </tr>
 
                     <tr>
-                         <label>Date d'expiration</label><input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="exp_date" size ="25" /><br><br>
+                         <label>Date d'expiration</label><input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="date" name="exp_date" size ="25" /><br><br>
                     </tr>
 
                     <tr>
