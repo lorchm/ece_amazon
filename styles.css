@@ -5,7 +5,72 @@ body{
   background : #f2f6e9;
 }
 
-/*--- Navigation bar ---*/
+/****************************************************************VICO**************************************************/
+/*Format connexion */
+.center-con{
+  width: 150px;
+  margin-left: 210px;
+}
+/*Format formulaire/*/
+.center-block {
+ 
+  text-align: center;
+  height: 100px;
+  margin-right: 30px;
+
+}
+
+/*Alignement des labels*/
+input
+{
+
+  width: 300px;
+}
+
+/*µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ***Pour le fichier compte.htmlµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ*/
+/*Pour les boutons*/
+a.bouton-relief {
+  color: white;
+  background-color: #87CEFA;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+  border: 2px outset #c0c0c0;
+  cursor : default;
+}
+
+a.bouton-relief:hover {
+  background-color: #6495ED;
+  border: 2px inset #c0c0c0;
+
+}
+
+.Update{
+  text-align: 400px;
+  
+  float: top;
+  width: 100px;
+
+}
+.but{
+  position: center;
+
+}
+
+
+
+.center_div{
+    
+    /*float: right;*/
+    float :center;
+    text-align:center;
+    width:40%; /* value of your choice which suits your alignment */
+  
+    font-size: 15px;
+    
+}
+
+/****************************************************************FINVICO**************************************************/
 
 .navbar {
   background : #04263F;
