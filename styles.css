@@ -2,7 +2,7 @@
 body{
   padding : 0px;
   margin: 0px;
-  background : #f2f6e9;
+  background : #f7f7f7;
 }
 
 /****************************************************************VICO**************************************************/
@@ -198,17 +198,11 @@ h1 {
 }
 
 .next {
-/* position: relative;
- top: 250px; left: 920px; */
- background-color: #ffff00;
  margin-left: 295px;
 }
 
 .prev {
-/* position: relative;
- top: 250px; left: 500px;*/
  margin-left: 510px;
- background-color: #ffff00;
 }
 .btn-galerie{
   width: 100px;
@@ -232,14 +226,6 @@ h1 {
  color: #04263F;
  background-color: #f7f7f7; 
 } 
-/*********************Style pour les différentes pages***************************/
-.page-livres {background-color: #f7f7f7; }
-.page-musique {background-color: #f7f7f7; }
-.page-vetement {background-color: #f7f7f7; }
-.page-sport {background-color: #f7f7f7; }
-.page-venteflash {
-  background-color: #f7f7f7;
-  margin-left: 10px;}
 
 /*pour les div qui contiennent les 4 best sellers de sa propre catégorie*/
 .best-livres{
@@ -378,7 +364,7 @@ h6{
     padding:6px;
     border-radius:2px;
     box-shadow:3px 3px 12px #999;
-    background:#fff;
+    background:#ffa630;
     font:bold 13px Arial;
     color:#555; 
 }
@@ -397,4 +383,37 @@ h6{
 /********************************PAGE VENDRE*************************************/
 .profil {
   float : right;
+  text-align: center;
+  padding : 5px;
+
+}
+
+.pseud {
+  background-color: #C1E7ED ;
+  padding : 1px 30px 1px 30px;
+}
+
+.cadre-prod-2{
+  margin-top: 20px;
+  margin-left: 50px;
+  padding: 5px;
+  width : 500px;
+  height: 200px;
+  border: solid;
+  color: #D1DBE1;
+  /*effet d'ombre autour du cadre du produit*/
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  background-color: #C1E7ED;
+}
+
+.roundedImage{
+  overflow:hidden;
+  -webkit-border-radius:50px;
+  -moz-border-radius:50px;
+  border-radius:50px;
+  width:90px;
+  height:90px;
+  margin : 5px;
 }
