@@ -2,6 +2,12 @@
 <html>
 <head>
 	<title>ECE Amazon</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ECE Amazon</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,9 +17,8 @@
 
     <script type="text/javascript" src="program.js"></script>
     <link href="styles.css" rel="stylesheet" type="text/css" />
-
 </head>
-<body class="page-sport">
+<body class="page-livres">
 
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-md">
@@ -23,7 +28,10 @@
             <span class="navbar-toggler-icon"></span>        
         </button>        
 
+
         <div class="collapse navbar-collapse" id="main-navigation">   
+
+
             <ul class="navbar-nav">             
                 <li class="nav-cat"><a class="nav-link" href="#">Catégories</a>   
                     <ul class="submenu">
@@ -33,56 +41,23 @@
                         <li><a href="sport_loisirs.php">Sports et Loisirs</a></li>
                     </ul>
                 </li>
-                
+
                 <li class="nav-item"><a class="nav-link" href="venteflash.php">Ventes Flash</a></li>             
                 <li class="nav-item"><a class="nav-link" href="vendre.php">Vendre</a></li> 
                 <li class="nav-item"><a class="nav-link" href="info_compte.php">Votre Compte</a></li>
                 <li class="nav-item"><a class="nav-link" href="admin.php">Admin</a></li>     
-                <li class="nav-item"><a class="nav-link" href="panier.php">Panier</a></li> 
+                <li class="nav-item"><a class="nav-link" href="panier.php">Panier</a></li>  
             </ul> 
             
         </div> 
     </nav>
 
-<!--************************************ Liste des sports ******************************************************-->
+<!--************************************ Liste des Livres ******************************************************-->
     <div class="description page-header header container-fluid"> 
-        <h1>Sport et Loisirs</h1> 
-        <p>Besoin d'idées pour des activités ?</p> 
+        <h1>Ajout d'un article</h1>  
     </div>
 
-    <div class="cadre-prod">
-        <div class="row">
-            <!-- 1. IMAGE -->
-            <div class="col-md-3">
-                <a href="img/sport.jpg" target="_blank"><img src="img/sport.jpg" style="width: 100%; height: 185px;"></a>
-            </div>
-            <!-- 2. DETAIL ARTICLE -->
-            <div class="col-md-5" style="margin-top: 10px;">
-                <div class="en-tete-prod">Nom</div>
-                <div class="prix-prod">Mettre le prix &euro;</div>
-                <div class="reference-prod">La référence RS55ZQ</div>
-                <div class="description-prod">j'aime le foot.</div>
-            </div>
-            <!-- 3. REMPLIR INFOS -->
-            <div class="col-md-4">
-                <div class="remplir-infos-prod">
-                    <form>
-                        <!-- QUANTITE -->
-                        <tr>
-                            <td>
-                                <label style="color:grey; margin-left: 70px;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
-                            </td>
-                        </tr>
-                        <!-- AJOUTER PANIER -->
-                        <tr>
-                            <td><input type="button" id="ajout-panier" name="ajout-panier" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "></td>
-                        </tr>
-                    </form> 
-                </div>
-            </div>
-        </div>
-    </div>
-
+    
 <!--******************** PIED DE PAGE *********************************************************************************-->
     <footer class="page-footer">
        <div class="container">
