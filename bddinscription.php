@@ -24,10 +24,10 @@
     define('DB_USER', 'root');
     define('DB_PASS', '');
 
-    echo "$Ps";
+
 
     //identifier le nom de base de données
-    $database = "ECEamazon";
+    $database = "eceamazon";
 
     //connecter l'utilisateur dans BDD
     $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
