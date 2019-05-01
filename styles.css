@@ -8,13 +8,12 @@ body{
 /*--- Navigation bar ---*/
 
 .navbar {
-  background : #30285B;
+  background : #04263F;
 }
 
 .nav-link, .navbar-brand {
   color : #fff;
   cursor : pointer;
-  margin-left: 20px;
 }
 
 .nav-link {
@@ -27,7 +26,7 @@ body{
 
 .navbar-collapse {
   justify-content : center;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .header {        
@@ -41,7 +40,7 @@ footer {
   display: flex;
   justify-content: center;
   padding: 5px;
-  background-color: #87CEFA;
+  background-color: #04263F;
   color: #fff;
   position: 
 }
@@ -118,13 +117,13 @@ nav li:hover .submenu{
 .nav-cat .submenu li:hover{
   background-color : RGB(200, 165, 75);
 }
-/*Galerie d'objets de la page d'accueil*/
+
+/**************Galerie d'objets de la page d'accueil****************/
 #galerie {
   position: relative;
-  height: 200px;
-  width: 700px;
+  width: 500px;
+  height: 400px;
   margin: auto;
-  
 }
 
 #galerie ul li {
@@ -132,6 +131,9 @@ nav li:hover .submenu{
   top: 0;
   left: 0;
   list-style: none;
+}
+.galerie{
+  margin-top: 20px;
 }
 
 h1 {
@@ -141,75 +143,48 @@ h1 {
 }
 
 .next {
- position: relative;
- top: 250px; left: 920px; 
+/* position: relative;
+ top: 250px; left: 920px; */
  background-color: #ffff00;
+ margin-left: 295px;
 }
 
 .prev {
- position: relative;
- top: 250px; left: 500px;
+/* position: relative;
+ top: 250px; left: 500px;*/
+ margin-left: 510px;
  background-color: #ffff00;
+}
+.btn-galerie{
+  width: 100px;
+  border:none;
+  padding:6px;
+  border-radius:2px;
+  box-shadow:3px 3px 12px #999;
+  background:#ffa630;
+  font:bold 13px Arial;
+  color:#f7f7f7;
 }
 
 /****************Style pour titre en-tête des page***************************/
 .description { 
  text-align: center; 
- color: #87cefa;
- background-color: #ffff;
+ color: #04263F;
+ background-color: #f7f7f7;
  padding: 5px;
  }
 .description h1 { 
- color: #87cefa;
- background-color: #fff; 
+ color: #04263F;
+ background-color: #f7f7f7; 
 } 
 /*********************Style pour les différentes pages***************************/
-.page-livres {background-color: #fff; }
-.page-musique {background-color: #fff; }
-.page-vetement {background-color: #fff; }
-.page-sport {background-color: #fff; }
+.page-livres {background-color: #f7f7f7; }
+.page-musique {background-color: #f7f7f7; }
+.page-vetement {background-color: #f7f7f7; }
+.page-sport {background-color: #f7f7f7; }
 .page-venteflash {
-  background-color: #fff;
+  background-color: #f7f7f7;
   margin-left: 10px;}
-
-/**********************VENTES FLASH*****************************/
-/*style pour les produits (les cadres)*/
-.cadre-prod-venteflash{
-  padding: 5px;
-  width : 300px;
-  height: 400px;
-  border: solid;
-  color: #D1DBE1;
-  /*effet d'ombre autour du cadre du produit*/
-  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-}
-/*prix et reference commun pour tout le monde*/
-.prix{
-  text-align: center;
-  color: red;
-  font-weight: bold; 
-}
-.reference{
-  color: grey;
-  text-align: center;
-  font-size: 10px;
-  font-style: italic;
-}
-/*description pour livres, vetements et sport et loisirs (pas vraiment besoin pour musique)*/
-.description-prod{
-  color: grey;
-  font-size: 14px;
-  text-align: center; 
-  padding: 5px;
-}
-.caracteristic{
-  color: grey;
-  font-size: 14px;
-  text-align: center; 
-  padding: 5px;
-}
 
 /*pour les div qui contiennent les 4 best sellers de sa propre catégorie*/
 .best-livres{
@@ -224,62 +199,108 @@ h1 {
 .best-sport{
   margin-top: 40px;
 }
+
 /*h6 pour la description des produit : nom, auteur, blabla*/
 h6{
-  color: #87cefa;
+  color: #30285b;
   text-align: center;
 }
 
-/***********************Page Livres/Musique/Vetement/Sport... ************************/
-
-
-
-/**************************Pied de page******************************************/
-.page-footer {
+/***********************ZONE PRODUIT : cadre pour Livres/Musique/Vetement/Sport... ************************/
+.cadre-prod{
+  margin-top: 20px;
+  margin-left: 50px;
+  padding: 5px;
+  width : 1000px;
+  height: 200px;
+  border: solid;
+  color: #D1DBE1;
+  /*effet d'ombre autour du cadre du produit*/
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+.en-tete-prod{
+    color: #30285b;
+    font-size: 18px;
+}
+.prix-prod{
+  margin-top: 5px;
+  color: #F4261D;
+  font-weight: bold; 
+}
+.reference-prod{
+  color: grey;
+  font-size: 10px;
+  font-style: italic;
+}
+.description-prod{
+  color: grey;
+  margin-top: 15px;
+  font-size: 14px;
+}
+.remplir-infos-vet{
+  margin-top: 13px;
+}
+.remplir-infos-prod{
   margin-top: 40px;
- background-color: #222;
- color: #ccc;
- padding: 20px 0 5px;
-}
-.footer-copyright {
- color: #666;
- padding: 20px 0;
+  margin-left: 10px;
 }
 
-/**************************PAGE PANIER******************************************/
-.total {
-  float : bottom;
-  text-align: left;
-  border : solid;
-  border-color : #D1DBE1;
-  color: #222;
-  font-size : 20px;
-  margin: 10px;
-  padding: 8px;
-}
-
-.btt {
-    border:none;
-    padding:6px;
-    border-radius:2px;
-    box-shadow:3px 3px 12px #999;
-    background:#fff;
-    font:bold 13px Arial;
-    color:#555; 
-}
-
-.btt:hover {
+/**************Bouton ajout au panier********************************************/
+.ajout-panier-btn{
+  margin-left: 20px;
   border:none;
   padding:6px;
   border-radius:2px;
   box-shadow:3px 3px 12px #999;
-  background:#fff;
+  background:#ffa630  ;
   font:bold 13px Arial;
-  color:#555; 
-  cursor : pointer;
+  color:#f7f7f7;
+}
+.ajout-panier-btn:hover{
+  margin-left: 20px;
+  cursor: pointer;
+  border:none;
+  padding:6px;
+  border-radius:2px;
+  box-shadow:3px 3px 12px #999;
+  background:#ffa630  ;
+  font:bold 13px Arial;
+  color:#f7f7f7;
+}
+/**********************Button delete*****************************************/
+.btn-delete{
+  background-image: url('img/delete.jpg'); 
+  width: 40px;
+  height: 40px;
+  border:none;
+  padding:6px;
+  border-radius:2px;
+  box-shadow:3px 3px 12px #999;
+  font:bold 13px Arial;
+}
+.btn-delete:hover{
+  background-image: url('img/delete.jpg'); 
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border:none;
+  padding:6px;
+  border-radius:2px;
+  box-shadow:3px 3px 12px #999;
+  background:#d8d8d8;
+  font:bold 13px Arial;
 }
 
-/********************************PAGE VENDRE*************************************/
-.profil {
-  float : right;
+/**************************Pied de page******************************************/
+.page-footer {
+  margin-top: 40px;
+  background-color: #04263F;
+  color: #f7f7f7  ;
+  padding: 20px 0 5px;
+}
+.footer-copyright {
+ color: #f7f7f7 ;
+ padding: 20px 0;
 }
