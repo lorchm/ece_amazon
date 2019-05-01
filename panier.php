@@ -37,9 +37,9 @@
                 </li>
 
                 <li class="nav-item"><a class="nav-link" href="venteflash.php">Ventes Flash</a></li>             
-                <li class="nav-item"><a class="nav-link" href="#">Vendre</a></li> 
-                <li class="nav-item"><a class="nav-link" href="#">Votre Compte</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Admin</a></li>     
+                <li class="nav-item"><a class="nav-link" href="vendre.php">Vendre</a></li> 
+                <li class="nav-item"><a class="nav-link" href="info_compte.php">Votre Compte</a></li>
+                <li class="nav-item"><a class="nav-link" href="admin.php">Admin</a></li>     
                 <li class="nav-item"><a class="nav-link" href="panier.php">Panier</a></li> 
             </ul> 
             
@@ -69,7 +69,7 @@
                     <div class="remplir-infos-prod">
                         <p style="color:grey;">Quantité : ...</p> 
                     </div> 
-                    <div style="position: absolute; bottom: 5px; right: 20px; "><button class="btn-delete"></button> </div>
+                    <div style="position: absolute; bottom: 5px; right: 20px; "><button class="btn-delete"><img src="img/delete.png" style="width:20px; height: 20px;"></button> </div>
                 </div>
             </div>
         </div>
@@ -97,6 +97,7 @@
                         <p style="color:grey;">Sexe : ...</p> 
                         <p style="color:grey;">Pointure : ...</p> 
                     </div>
+                    <div style="position: absolute; bottom: 5px; right: 20px; "><button class="btn-delete"><img src="img/delete.png" style="width:20px; height: 20px;"></button> </div>
                 </div>
             </div>
         </div>
@@ -122,6 +123,7 @@
                         <p style="color:grey;">Sexe : ...</p> 
                         <p style="color:grey;">Taille : ...</p>     
                     </div>
+                    <div style="position: absolute; bottom: 5px; right: 20px; "><button class="btn-delete"><img src="img/delete.png" style="width:20px; height: 20px;"></button> </div>
                 </div>
             </div>
         </div>
@@ -130,12 +132,13 @@
         <div class ="total">
             <div class= "row">
                 <div class= "col-sm-9">
-
-                    Nombre d'articles total : X. PRIX TOTAL : &euro;
+                    <p style="color:grey;">Nombre d'articles total : X. PRIX TOTAL : &euro;</p>
                 </div>
                 <div class="col-sm-3">
-                    <button class="btt"> Retourner à mes achats </button>
-                    <button class="btt"> Payer </button>
+                    <div style="position: absolute; bottom: 17px;">
+                        <button class="btt"> Retourner à mes achats </button>
+                        <button class="btt"> Payer </button>
+                    </div>
                 </div>
             </div>
         </div>

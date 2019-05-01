@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-    <meta charset="utf-8">
+	<title>ECE Amazon</title>
+	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href ="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href ="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+    <!-- utile pour la galerie qui défile-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="program.js"></script>
     <link href="styles.css" rel="stylesheet" type="text/css" />
 
-
-    
 </head>
-
 <body>
-
+    <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-md">
 
-        <a class="navbar-brand" href="squelette.html"> <img src="img/logo.png"> </a>         
+        <a class="navbar-brand" href="homepage.php"> <img src="img/logo.png"> </a>         
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">      
             <span class="navbar-toggler-icon"></span>        
         </button>        
@@ -47,73 +45,14 @@
             </ul> 
             
         </div> 
-
-
-
     </nav>
 
-    <body>
-        <header class="page-header header container-fluid">
+<!-- Page Admin -->
+        <div class="description page-header header container-fluid"> 
+            <h1>Admin</h1> 
+        </div>
 
-            <div class="overlay"></div> 
-            <div class="description">
-
-               <h1 >Se connecter</h1>
-
-        </header> 
-
-        <br>
-           <div class="container fluid center_div" >
-
-            <form action ="tconnexion.php" method="post">
-
-                <table>
-                    <tr>
-                     <label>Login</label> <input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="login" size="10" /><br> <br>
-                 </tr>
-
-                 <tr>
-                   <label>Mot de passe</label><input class="form-control"style="width: 250px;margin-left: 240px;" type="password" name="password" size ="25"/><br><br>
-               </tr>
-
-
-            </table>
-
-           </div>
-
-            <div class="center-block">
-
-                    <div class="but">
-
-                         <tr>
-                              <td><input class="btn btn-primary" style="width:150px;" type="submit" value="Se connecter"></td>
-
-                        </tr>
-
-                    
-
-
-                        <tr>
-                                
-                                <td><input class="btn btn-primary" style="width:150px;"  type="reset" value="Réinitialiser"></a>
-                                 
-                                </td>
-                         </tr>
-
-                    </div>
-
-                    <br>
-                    <br>
-
-                </div>
-
-            </form> 
-    
-    <div class="center-block">
-
-        <a href="compte2.html"style="text-decoration: underline;">Se créer un compte</a>
-
-    </div>
+        
 
 <!--******************** PIED DE PAGE *********************************************************************************-->
     <footer class="page-footer">
@@ -135,5 +74,4 @@
         </div>
     </footer>
 </body>
-
 </html>
