@@ -32,10 +32,10 @@
                     </ul>
                 </li>
 
-                <li class="nav-item"><a class="nav-link" href="venteflash.html">Ventes Flash</a></li>             
-                <li class="nav-item"><a class="nav-link" href="#">Vendre</a></li> 
-                <li class="nav-item"><a class="nav-link" href="#">Votre Compte</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Admin</a></li>     
+                <li class="nav-item"><a class="nav-link" href="venteflash.php">Ventes Flash</a></li>             
+                <li class="nav-item"><a class="nav-link" href="vendre.php">Vendre</a></li> 
+                <li class="nav-item"><a class="nav-link" href="info_compte.php">Votre Compte</a></li>
+                <li class="nav-item"><a class="nav-link" href="admin.php">Admin</a></li>     
                 <li class="nav-item"><a class="nav-link" href="panier.php">Panier</a></li> 
             </ul> 
             

@@ -5,16 +5,16 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href ="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+    <!-- utile pour la galerie qui défile-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
 
     <script type="text/javascript" src="program.js"></script>
     <link href="styles.css" rel="stylesheet" type="text/css" />
 
 </head>
-<body class="page-sport">
-
+<body>
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-md">
 
@@ -23,7 +23,10 @@
             <span class="navbar-toggler-icon"></span>        
         </button>        
 
+
         <div class="collapse navbar-collapse" id="main-navigation">   
+
+
             <ul class="navbar-nav">             
                 <li class="nav-cat"><a class="nav-link" href="#">Catégories</a>   
                     <ul class="submenu">
@@ -33,7 +36,7 @@
                         <li><a href="sport_loisirs.php">Sports et Loisirs</a></li>
                     </ul>
                 </li>
-                
+
                 <li class="nav-item"><a class="nav-link" href="venteflash.php">Ventes Flash</a></li>             
                 <li class="nav-item"><a class="nav-link" href="vendre.php">Vendre</a></li> 
                 <li class="nav-item"><a class="nav-link" href="info_compte.php">Votre Compte</a></li>
@@ -44,37 +47,12 @@
         </div> 
     </nav>
 
-<!--************************************ Liste des sports ******************************************************-->
-    <div class="description page-header header container-fluid"> 
-        <h1>Sport et Loisirs</h1> 
-        <p>Besoin d'idées pour des activités ?</p> 
-    </div>
-
-    <div class="cadre-prod">
-        <div class="row">
-            <!-- 1. IMAGE -->
-            <div class="col-md-3">
-                <a href="img/sport.jpg" target="_blank"><img src="img/sport.jpg" style="width: 100%; height: 185px;"></a>
-            </div>
-            <!-- 2. DETAIL ARTICLE -->
-            <div class="col-md-5" style="margin-top: 10px;">
-                <div class="en-tete-prod">Nom</div>
-                <div class="prix-prod">Mettre le prix &euro;</div>
-                <div class="reference-prod">La référence RS55ZQ</div>
-                <div class="description-prod">j'aime le foot.</div>
-            </div>
-            <!-- 3. REMPLIR INFOS -->
-            <div class="col-md-4">
-                <div class="remplir-infos-prod">
-                    <form>
-                        <label style="color:grey;">Quantité </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
-                    </form> 
-                </div>
-                <!-- AJOUTER PANIER -->
-                <button name="ajout-panier" class="ajout-panier-btn" style="margin-top: 25px;">Ajouter au panier</button>  
-            </div>
+<!-- Page Admin -->
+        <div class="description page-header header container-fluid"> 
+            <h1>Admin</h1> 
         </div>
-    </div>
+
+        
 
 <!--******************** PIED DE PAGE *********************************************************************************-->
     <footer class="page-footer">

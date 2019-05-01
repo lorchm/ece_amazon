@@ -13,7 +13,7 @@
     <link href="styles.css" rel="stylesheet" type="text/css" />
 
 </head>
-<body class="page-sport">
+<body class="page-vetement">
 
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-md">
@@ -121,10 +121,12 @@
                         </select>
                     </form>
                     <!-- SEXE -->
+                    <div style="border: solid;">
                     <form>
                       <input type="radio" id="femme" name="sexe"><label style="color:grey;" for="femme">Femme</label>
                       <input type="radio" id="homme" name="sexe" style="margin-left: 15px;"><label style="color:grey;" for="homme">Homme</label>
                     </form>
+                </div>
                     <!-- TAILLE -->
                     <form>
                         <label style="color:grey;">Sélectionnez une taille</label>

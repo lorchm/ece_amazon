@@ -1,17 +1,17 @@
 <?php
+	
 
 session_start();
-	
 	$N= isset($_POST["login"])?$_POST["login"]:"";
 	$P= isset($_POST["password"])?$_POST["password"]:"";
 	
-	
+
 	define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASS', '');
 
     
-
+      
     //identifier le nom de base de données
     $database = "ECEamazon";
 
@@ -26,13 +26,14 @@ session_start();
         while($data = mysqli_fetch_assoc($result)) {
           	if($data['pseudo']=="$N" && $data['mdp']=="$P")
           	{
+             $_SESSION["login"]=$N;
           	 header('Location: info_compte.php'); 
           		
           	}
           	else
           	{
-          		echo"window.open('dzqdqzdqz','help','width=600, height=500')";
-          		header('Location: connexion.php');
+          		
+          		header('Location: info_compte.php');
           	}
           	
 
