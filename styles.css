@@ -23,7 +23,6 @@ body{
 /*Alignement des labels*/
 input
 {
-
   width: 300px;
 }
 
@@ -85,7 +84,7 @@ a.bouton-relief:hover {
   margin-right : 1em !important;
 }
 
-.nav-link : hover {
+.nav-link:hover {
   color : #000;
 }
 
@@ -100,15 +99,6 @@ a.bouton-relief:hover {
   background-position: center;        
   position: relative; 
 } 
-
-footer {
-  display: flex;
-  justify-content: center;
-  padding: 5px;
-  background-color: #04263F;
-  color: #fff;
-  position: 
-}
 
 nav li{
   list-style-type : none;

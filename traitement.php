@@ -60,7 +60,7 @@
             admins ENUM('0','1'),
             mdp VARCHAR(20),
             email VARCHAR(50),
-            nom VARCHAR(40)
+            nom VARCHAR(40),
             )";
         $result4 = mysqli_query($db_handle, $sql4);
 
@@ -86,6 +86,12 @@
 
         $sql6 = "INSERT INTO `acheteur` (`pseudo`, `mdp`, `email`, `nom`, `prenom`, `adresse1`, `adresse2`, `code_bp`, `ville`, `pays`, `tel`, `card_type`, `card_number`, `card_name`, `exp_date`, `sec_code`) VALUES ('gege2020', '0000', 'gege@edu.ece.fr', 'Pertier', 'Gege', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)";
         $result6 = mysqli_query($db_handle, $sql6);
+
+        $sql7 = "INSERT INTO `vendeur` (`pseudo`, `admins`, `mdp`, `email`, `nom`) VALUES ('admin', '1', '0000', 'laure.chamouard@edu.ece.fr', 'ECE')";
+        $result7 = mysqli_query($db_handle, $sql7);
+
+
+
     }
     //si la BDD n'existe pas
     else {
