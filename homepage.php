@@ -18,7 +18,7 @@
 <?php
 function connexion()
 {
-  echo"BONJOUR";
+    echo"BONJOUR";
     if($_SESSION["login"]=="")
     {
         header('Location: connexion.php');
@@ -75,8 +75,7 @@ function deconnexion()
 
              <div class="navbar-nav" >
 
-                    <td><button class="btn btn-primary" style="width:150px;"  onclick="connexion()" >Se connecter</button></td>
-                    <input class="btn btn-primary" style="width:150px;" type="button" onclick='connexion()'value="Se connecter" />
+                    <td><button class="btn btn-primary" style="width:150px;"  onclick="connexion()">Se connecter</button></td>
 
                      <td><a class="btn btn-primary" style="width:150px; margin-left: 50px;" onclick="deconnexion()" >Se déconnecter</a></td>
             </div>
