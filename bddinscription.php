@@ -1,7 +1,7 @@
 <?php
 
 
-	        $Ps=isset($_POST["pseudo"])?$_POST["pseudo"]:"";
+	        $Ps=isset($_POST["login"])?$_POST["login"]:"";
             $M=isset($_POST["mdp"])?$_POST["mdp"]:"";
             $Mail=isset($_POST["email"])?$_POST["email"]:"";
             $Nom=isset($_POST["nom"])?$_POST["nom"]:"";
@@ -24,7 +24,7 @@
     define('DB_USER', 'root');
     define('DB_PASS', '');
 
-    
+    echo "$Ps";
 
     //identifier le nom de base de données
     $database = "ECEamazon";
