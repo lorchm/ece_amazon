@@ -127,22 +127,24 @@
     <footer class="page-footer">
        <div class="container">
            <div class="row">
-                <div class="col-lg-8">
-                <p>INFORMATIONS ADDITIONNNELLES<br>Notre equipe<br>Laure CHAMOUARD<br>Barbara GERMANEAU<br>Victor LABEYRIE</p>
+                <div class="col-lg-4">
+                <p style="color:#ffa630; margin-left: 50px;">INFORMATIONS ADDITIONNNELLES</p><p style="margin-left: 50px;">Notre equipe<br>Laure CHAMOUARD<br>Barbara GERMANEAU<br>Victor LABEYRIE</p>
                 </div>
                 <div class="col-lg-4">
-                   <p>CONTACT<br>
+                    <img src="img/shiba_footer.png" style="margin-left:100px;margin-top: 20px; width:90px;height: 90px;">
+                </div>
+                <div class="col-lg-4">
+                   <p style="color:#ffa630;">CONTACT</p><p>
                        37, quai de Grenelle, 75015 Paris, France <br>
-                       <a href="mailto:ece.amazon@pro.com"> ece.amazon@pro.com</a> <br>
+                       <a href="mailto:ece.amazon@pro.com" style="color:#ffa630;"> ece.amazon@pro.com</a> <br>
                        +33 01 02 03 04 05 <br>
                        +33 01 03 02 05 04
                    </p>
                </div>
             </div>
-            <div class="footer-copyright text-center">&copy; 2019 ECE Amazon | Droit d'auteur: BLV</div>
+            <div class="footer-copyright text-center" style="text-align: center;">&copy; 2019 ECE Amazon | Droit d'auteur: BLV</div>
         </div>
     </footer>
->>>>>>> ab3aca753711565472b2f79e36bd63b87ffc3381
-</body>
 
+</body>
 </html>

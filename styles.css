@@ -2,7 +2,7 @@
 body{
   padding : 0px;
   margin: 0px;
-  background : #f2f6e9;
+  background : #f7f7f7;
 }
 
 /****************************************************************VICO**************************************************/
@@ -19,25 +19,6 @@ body{
   margin-right: 30px;
 
 }
-
-/*Alignement des labels*/
-input
-{
-  width: 300px;
-}
-
-/*Bouton connexion homepage*/
-
-/*.boutton {
-    background-color: #ffa630;
-    color:white;
-    font-weight: bold;
-    padding: 10px 40px;
-    border-radius: 3px;
-    cursor: pointer; 
-    
-  
-  }*/
 
 /*µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ***Pour le fichier compte.htmlµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ*/
 /*Pour les boutons*/
@@ -211,17 +192,11 @@ h1 {
 }
 
 .next {
-/* position: relative;
- top: 250px; left: 920px; */
- background-color: #ffff00;
  margin-left: 295px;
 }
 
 .prev {
-/* position: relative;
- top: 250px; left: 500px;*/
  margin-left: 510px;
- background-color: #ffff00;
 }
 .btn-galerie{
   width: 100px;
@@ -256,13 +231,6 @@ h1 {
  color: #04263F;
  background-color: #f7f7f7; 
 } 
-/*********************Style pour les différentes pages***************************/
-.page-livres {background-color: #f7f7f7; }
-.page-musique {background-color: #f7f7f7; }
-.page-vetement {background-color: #f7f7f7; }
-.page-sport {background-color: #f7f7f7; }
-.page-venteflash {background-color: #f7f7f7;}
-.page-style{background-color: #f7f7f7;}
 
 /*pour les div qui contiennent les 4 best sellers de sa propre catégorie*/
 .best-livres{
@@ -327,7 +295,8 @@ h6{
 
 /**************Bouton ajout au panier********************************************/
 .ajout-panier-btn{
-  margin-left: 20px;
+  width: 130px;
+  margin-left: 70px;
   border:none;
   padding:6px;
   border-radius:2px;
@@ -337,7 +306,7 @@ h6{
   color:#f7f7f7;
 }
 .ajout-panier-btn:hover{
-  margin-left: 20px;
+  margin-left: 70px;
   cursor: pointer;
   border:none;
   padding:6px;
@@ -424,4 +393,46 @@ h6{
 /********************************PAGE VENDRE*************************************/
 .profil {
   float : right;
+  text-align: center;
+  padding : 5px;
+
+}
+
+.pseud {
+  background-color: #C1E7ED ;
+  padding : 1px 30px 1px 30px;
+}
+
+.cadre-prod-2{
+  margin-top: 20px;
+  margin-left: 50px;
+  padding: 5px;
+  width : 500px;
+  height: 200px;
+  border: solid;
+  color: #D1DBE1;
+}
+
+/*****************************************PAGE ADMIN*************************************/
+.col1-admin{
+  border: solid;
+  color: #D1DBE1;
+  background-color: #c1e7ed;
+  height: 600px;
+  /*effet d'ombre autour du cadre du produit*/
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  background-color: #C1E7ED;
+}
+
+.roundedImage{
+  overflow:hidden;
+  -webkit-border-radius:50px;
+  -moz-border-radius:50px;
+  border-radius:50px;
+  width:90px;
+  height:90px;
+  margin : 5px;
+
 }

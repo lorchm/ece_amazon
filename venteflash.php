@@ -68,11 +68,18 @@
                     <div class="col-md-4">
                         <div class="remplir-infos-prod">
                             <form>
-                                <label style="color:grey;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
+                                <!-- QUANTITE -->
+                                <tr>
+                                    <td>
+                                        <label style="color:grey; margin-left: 70px;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
+                                    </td>
+                                </tr>
+                                <!-- AJOUTER PANIER -->
+                                <tr>
+                                    <td><input type="button" id="ajout-panier" name="ajout-panier" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "></td>
+                                </tr>
                             </form> 
                         </div>
-                        <!-- AJOUTER PANIER -->
-                        <button name="ajout-panier" class="ajout-panier-btn" style="margin-top: 25px;">Ajouter au panier</button>  
                     </div>
                 </div>
             </div>
@@ -102,11 +109,18 @@
                     <div class="col-md-4">
                         <div class="remplir-infos-prod">
                             <form>
-                                <label style="color:grey;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
+                                <!-- QUANTITE -->
+                                <tr>
+                                    <td>
+                                        <label style="color:grey; margin-left: 70px;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
+                                    </td>
+                                </tr>
+                                <!-- AJOUTER PANIER -->
+                                <tr>
+                                    <td><input type="button" id="ajout-panier" name="ajout-panier" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "></td>
+                                </tr>
                             </form> 
-                            <!-- AJOUTER PANIER -->
-                            <button name="ajout-panier" class="ajout-panier-btn" style="margin-top: 25px;">Ajouter au panier</button> 
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -116,7 +130,7 @@
         <div class="best-vetement">
             <h2 style="margin-left: 50px;">Vetements et Chaussures</h2>
             <h2 style="margin-left: 50px;">#1</h2>
-            <!-- POUR CHAUSSURES -->
+            <!-- POUR CHAUSSURES ET VETEMENTS-->
             <div class="cadre-prod">
                 <div class="row">
                     <!-- 1. IMAGE -->
@@ -133,73 +147,46 @@
                     <!-- 3. REMPLIR INFOS -->
                     <div class="col-md-4">
                         <div class="remplir-infos-vet">
-                            <!-- QUANTITE -->
                             <form>
-                                <label style="color:grey;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
+                                <table>
+                                    <!-- QUANTITE -->
+                                    <tr>
+                                        <td>
+                                            <label style="color:grey;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
+                                        </td>
+                                    </tr>
+                                    <!-- COULEUR -->
+                                    <tr>
+                                        <td>
+                                            <label style="color:grey;">Couleur</label>
+                                            <select style="width: 50px; margin-left:12px;"><OPTION><OPTION>Bleu <OPTION>Rouge <OPTION>Vert <OPTION>Blanc <OPTION>Noir <OPTION>Jaune<OPTION>Rose</select>
+                                        </td>
+                                    </tr>
+                                    <!-- SEXE -->
+                                    <tr>
+                                        <td>
+                                            <input type="radio" id="femme" name="sexe" ><label style="color:grey; margin-left: 10px;" for="femme">Femelle</label>
+                                            <input type="radio" id="homme" name="sexe" style="margin-left: 10px;"><label style="color:grey; margin-left: 10px;" for="homme">Male</label></td>
+                                        </td>
+                                    </tr>
+                                    <!-- TAILLE -->
+                                    <tr>
+                                        <td>
+                                            <label style="color:grey;">Sélectionnez une taille</label>
+                                            <select style=" width: 50px;" ><OPTION><OPTION>XS <OPTION>S <OPTION>M <OPTION>L <OPTION>XL</select>
+                                        </td>
+                                        <td>
+                                            <label style="color:grey;">Sélectionnez une pointure</label>
+                                            <select name="pointure" style=" width: 50px;"><OPTION><OPTION>36 <OPTION>37 <OPTION>38 <OPTION>39 <OPTION>40 <OPTION>41 <OPTION>42 <OPTION>43 <OPTION>44 <OPTION>45 </select>
+                                            </td>
+                                    </tr>
+                                    <!-- AJOUTER AU PANIER -->
+                                    <tr>
+                                        <td><input type="button" id="ajout-panier" name="ajout-panier" value="Ajouter au panier" class="ajout-panier-btn"></td>
+                                    </tr>
+                                </table>
                             </form>
-                            <!-- COULEUR -->
-                            <form>
-                                <label style="color:grey;">Couleur</label>
-                                <select style="width: 50px; margin-left:12px;"><OPTION><OPTION>Bleu <OPTION>Rouge <OPTION>Vert <OPTION>Blanc <OPTION>Noir <OPTION>Jaune<OPTION>Rose
-                                </select>
-                            </form>
-                            <!-- SEXE -->
-                             <form>
-                                <input type="radio" id="femme" name="sexe"><label style="color:grey;" for="femme">Femme</label>
-                                <input type="radio" id="homme" name="sexe" style="margin-left: 15px;"><label style="color:grey;" for="homme">Homme</label>
-                            </form>
-                            <!-- TAILLE -->
-                            <form>
-                                <label style="color:grey;">Sélectionnez une pointure</label>
-                                <select style=" width: 50px;"><OPTION><OPTION>36 <OPTION>37 <OPTION>38 <OPTION>39 <OPTION>40 <OPTION>41 <OPTION>42 <OPTION>43 <OPTION>44 <OPTION>45 </select>
-                            </form>
-                        </div>                            
-                        <!-- AJOUTER PANIER -->
-                        <button name="ajout-panier" class="ajout-panier-btn" style="margin-top: 5px;">Ajouter au panier</button>  
-                    </div>
-                </div>
-            </div>
-
-            <!-- POUR VETEMENTS -->
-            <div class="cadre-prod">
-                <div class="row">
-                    <!-- 1. IMAGE -->
-                    <div class="col-md-3">
-                        <a href="img/shoes.jpg" target="_blank"><img src="img/shoes.jpg" style="width: 100%; height: 185px;"></a>
-                    </div>
-                    <!-- 2. DETAIL ARTICLE -->
-                    <div class="col-md-5" style="margin-top: 10px;">
-                        <div class="en-tete-prod">Marque - Nom du Vetement</div>
-                        <div class="prix-prod">Mettre le prix &euro;</div>
-                        <div class="reference-prod">La référence RS55ZQ</div>
-                        <div class="description-prod">Pantalon plutot comfortable</div>
-                    </div>
-                    <!-- 3. INFOS A REMPLIR -->
-                    <div class="col-md-4">
-                        <div class="remplir-infos-vet">
-                            <!-- QUANTITE -->
-                            <form>
-                                <label style="color:grey;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
-                            </form> 
-                            <!-- COULEUR -->
-                            <form>
-                                <label style="color:grey;">Couleur</label>
-                                <select style="width: 50px; margin-left:12px;"><OPTION><OPTION>Bleu <OPTION>Rouge <OPTION>Vert <OPTION>Blanc <OPTION>Noir <OPTION>Jaune<OPTION>Rose
-                                </select>
-                            </form>
-                            <!-- SEXE -->
-                            <form>
-                              <input type="radio" id="femme" name="sexe"><label style="color:grey;" for="femme">Femme</label>
-                              <input type="radio" id="homme" name="sexe" style="margin-left: 15px;"><label style="color:grey;" for="homme">Homme</label>
-                            </form>
-                            <!-- TAILLE -->
-                            <form>
-                                <label style="color:grey;">Sélectionnez une taille</label>
-                                <select style=" width: 50px;" ><OPTION><OPTION>XS <OPTION>S <OPTION>M <OPTION>L <OPTION>XL</select>
-                            </form>
-                        </div>
-                        <!-- AJOUTER AU PANIER -->
-                        <button name="ajout-panier" class="ajout-panier-btn" style="margin-top: 5px;">Ajouter au panier</button>  
+                        </div>                             
                     </div>
                 </div>
             </div>
@@ -226,38 +213,46 @@
                         <div class="col-md-4">
                             <div class="remplir-infos-prod">
                                 <form>
-                                    <label style="color:grey;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
+                                    <!-- QUANTITE -->
+                                    <tr>
+                                        <td>
+                                            <label style="color:grey; margin-left: 70px;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
+                                        </td>
+                                    </tr>
+                                    <!-- AJOUTER PANIER -->
+                                    <tr>
+                                        <td><input type="button" id="ajout-panier" name="ajout-panier" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "></td>
+                                    </tr>
                                 </form> 
                             </div>
-                            <!-- AJOUTER PANIER -->
-                            <button name="ajout-panier" class="ajout-panier-btn" style="margin-top: 25px;">Ajouter au panier</button>  
                         </div>
                     </div>
                 </div>
-            
+            </div>
+        <!-- fin div page-venteflash -->
         </div>
-<!-- fin div page-venteflash -->
-    </div>
 
-<!--******************** PIED DE PAGE ********************************************************************************-->
+<!--******************** PIED DE PAGE *********************************************************************************-->
     <footer class="page-footer">
        <div class="container">
            <div class="row">
-                <div class="col-lg-8">
-                <p>INFORMATIONS ADDITIONNNELLES<br>Notre equipe<br>Laure CHAMOUARD<br>Barbara GERMANEAU<br>Victor LABEYRIE</p>
+                <div class="col-lg-4">
+                <p style="color:#ffa630; margin-left: 50px;">INFORMATIONS ADDITIONNNELLES</p><p style="margin-left: 50px;">Notre equipe<br>Laure CHAMOUARD<br>Barbara GERMANEAU<br>Victor LABEYRIE</p>
                 </div>
                 <div class="col-lg-4">
-                   <p>CONTACT<br>
+                    <img src="img/shiba_footer.png" style="margin-left:100px;margin-top: 20px; width:90px;height: 90px;">
+                </div>
+                <div class="col-lg-4">
+                   <p style="color:#ffa630;">CONTACT</p><p>
                        37, quai de Grenelle, 75015 Paris, France <br>
-                       <a href="mailto:ece.amazon@pro.com"> ece.amazon@pro.com</a> <br>
+                       <a href="mailto:ece.amazon@pro.com" style="color:#ffa630;"> ece.amazon@pro.com</a> <br>
                        +33 01 02 03 04 05 <br>
                        +33 01 03 02 05 04
                    </p>
                </div>
             </div>
-            <div class="footer-copyright text-center">&copy; 2019 ECE Amazon | Droit d'auteur: BLV</div>
+            <div class="footer-copyright text-center" style="text-align: center;">&copy; 2019 ECE Amazon | Droit d'auteur: BLV</div>
         </div>
     </footer>
-
 </body>
 </html>

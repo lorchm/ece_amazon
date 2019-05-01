@@ -67,11 +67,18 @@
             <div class="col-md-4">
                 <div class="remplir-infos-prod">
                     <form>
-                        <label style="color:grey;">Quantité </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
+                        <!-- QUANTITE -->
+                        <tr>
+                            <td>
+                                <label style="color:grey; margin-left: 70px;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
+                            </td>
+                        </tr>
+                        <!-- AJOUTER PANIER -->
+                        <tr>
+                            <td><input type="button" id="ajout-panier" name="ajout-panier" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "></td>
+                        </tr>
                     </form> 
                 </div>
-                <!-- AJOUTER PANIER -->
-                <button name="ajout-panier" class="ajout-panier-btn" style="margin-top: 25px;">Ajouter au panier</button>  
             </div>
         </div>
     </div>
@@ -80,19 +87,22 @@
     <footer class="page-footer">
        <div class="container">
            <div class="row">
-                <div class="col-lg-8">
-                <p>INFORMATIONS ADDITIONNNELLES<br>Notre equipe<br>Laure CHAMOUARD<br>Barbara GERMANEAU<br>Victor LABEYRIE</p>
+                <div class="col-lg-4">
+                <p style="color:#ffa630; margin-left: 50px;">INFORMATIONS ADDITIONNNELLES</p><p style="margin-left: 50px;">Notre equipe<br>Laure CHAMOUARD<br>Barbara GERMANEAU<br>Victor LABEYRIE</p>
                 </div>
                 <div class="col-lg-4">
-                   <p>CONTACT<br>
+                    <img src="img/shiba_footer.png" style="margin-left:100px;margin-top: 20px; width:90px;height: 90px;">
+                </div>
+                <div class="col-lg-4">
+                   <p style="color:#ffa630;">CONTACT</p><p>
                        37, quai de Grenelle, 75015 Paris, France <br>
-                       <a href="mailto:ece.amazon@pro.com"> ece.amazon@pro.com</a> <br>
+                       <a href="mailto:ece.amazon@pro.com" style="color:#ffa630;"> ece.amazon@pro.com</a> <br>
                        +33 01 02 03 04 05 <br>
                        +33 01 03 02 05 04
                    </p>
                </div>
             </div>
-            <div class="footer-copyright text-center">&copy; 2019 ECE Amazon | Droit d'auteur: BLV</div>
+            <div class="footer-copyright text-center" style="text-align: center;">&copy; 2019 ECE Amazon | Droit d'auteur: BLV</div>
         </div>
     </footer>
 </body>
