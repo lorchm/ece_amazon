@@ -12,16 +12,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link href="styles.css" rel="stylesheet" type="text/css" >
     <?php include('modif_cpte.php'); ?>
-
-
     
 </head>
+
 
 <body>
 
     <nav class="navbar navbar-expand-md">
 
-        <a class="navbar-brand" href="squelette.html"> <img src="img/logo.png"> </a>         
+        <a class="navbar-brand" href="homepage.php"> <img src="img/logo.png"> </a>         
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">      
             <span class="navbar-toggler-icon"></span>        
         </button>        
@@ -48,10 +47,23 @@
             </ul> 
             
         </div> 
+       
+          
+
+
 
 
 
     </nav>
+<?php 
+   
+
+    if($_SESSION["login"]=="")
+  {
+        header('Location: connexion.php');
+
+    }
+?>
 
     <body>
         <header class="page-header header container-fluid">

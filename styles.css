@@ -192,17 +192,11 @@ h1 {
 }
 
 .next {
-/* position: relative;
- top: 250px; left: 920px; */
- background-color: #ffff00;
  margin-left: 295px;
 }
 
 .prev {
-/* position: relative;
- top: 250px; left: 500px;*/
  margin-left: 510px;
- background-color: #ffff00;
 }
 .btn-galerie{
   width: 100px;
@@ -399,6 +393,24 @@ h6{
 /********************************PAGE VENDRE*************************************/
 .profil {
   float : right;
+  text-align: center;
+  padding : 5px;
+
+}
+
+.pseud {
+  background-color: #C1E7ED ;
+  padding : 1px 30px 1px 30px;
+}
+
+.cadre-prod-2{
+  margin-top: 20px;
+  margin-left: 50px;
+  padding: 5px;
+  width : 500px;
+  height: 200px;
+  border: solid;
+  color: #D1DBE1;
 }
 
 /*****************************************PAGE ADMIN*************************************/
@@ -411,4 +423,16 @@ h6{
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  background-color: #C1E7ED;
+}
+
+.roundedImage{
+  overflow:hidden;
+  -webkit-border-radius:50px;
+  -moz-border-radius:50px;
+  border-radius:50px;
+  width:90px;
+  height:90px;
+  margin : 5px;
+
 }

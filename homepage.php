@@ -14,6 +14,35 @@
     <link href="styles.css" rel="stylesheet" type="text/css" />
 
 </head>
+
+<?php
+function connexion()
+{
+    echo"BONJOUR";
+    if($_SESSION["login"]=="")
+    {
+        header('Location: connexion.php');
+    }
+    else
+    {
+        $_SESSION["login"]="";
+        header('Location: connexion.php');
+    }
+}
+function deconnexion()
+{
+    echo"BONJOUR";
+    if($_SESSION["login"]=="")
+    {
+
+    }
+    else
+    {
+        $_SESSION["login"]="";
+    }
+}
+?>
+
 <body>
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-md">
@@ -39,10 +68,17 @@
 
                 <li class="nav-item"><a class="nav-link" href="venteflash.php">Ventes Flash</a></li>             
                 <li class="nav-item"><a class="nav-link" href="vendre.php">Vendre</a></li> 
-                <li class="nav-item"><a class="nav-link" href="info_compte.php">Votre Compte</a></li>
+                <li class="nav-item"><a class="nav-link" href="connexion.php">Votre Compte</a></li>
                 <li class="nav-item"><a class="nav-link" href="admin.php">Admin</a></li>     
                 <li class="nav-item"><a class="nav-link" href="panier.php">Panier</a></li> 
             </ul> 
+
+             <div class="navbar-nav" >
+
+                    <td><button class="btn btn-primary" style="width:150px;"  onclick="connexion()">Se connecter</button></td>
+
+                     <td><a class="btn btn-primary" style="width:150px; margin-left: 50px;" onclick="deconnexion()" >Se déconnecter</a></td>
+            </div>
             
         </div> 
     </nav>

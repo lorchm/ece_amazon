@@ -13,6 +13,7 @@
     <link href="styles.css" rel="stylesheet" type="text/css" />
 
 
+
     
 </head>
 
@@ -73,7 +74,7 @@
                  </tr>
 
                  <tr>
-                   <label>Mot de passe</label><input class="form-control"style="width: 250px;margin-left: 240px;" type="password" name="password" size ="25"/><br><br>
+                   <label>Mot de passe</label><input class="form-control"  style="width: 250px;margin-left: 240px;" type="password" name="password" size ="25"/><br><br>
                </tr>
 
 
@@ -115,6 +116,12 @@
 
     </div>
 
+<<<<<<< HEAD
+<footer> Copyright &copy; 2019 ECE Amazon <br/>
+    <a href="mailto:ece.amazon@pro.com"> ece.amazon@pro.com</a>
+</footer>
+
+=======
 <!--******************** PIED DE PAGE *********************************************************************************-->
     <footer class="page-footer">
        <div class="container">
@@ -137,5 +144,6 @@
             <div class="footer-copyright text-center" style="text-align: center;">&copy; 2019 ECE Amazon | Droit d'auteur: BLV</div>
         </div>
     </footer>
+>>>>>>> ab3aca753711565472b2f79e36bd63b87ffc3381
 </body>
 </html>
