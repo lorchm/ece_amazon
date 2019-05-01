@@ -1,22 +1,22 @@
 <?php
 
 
-$Ps=isset($_POST["pseudo"])?$_POST["pseudo"]:"";
-$M=isset($_POST["mdp"])?$_POST["mdp"]:"";
-$Mail=isset($_POST["email"])?$_POST["email"]:"";
-  $Nom=isset($_POST["nom"])?$_POST["nom"]:"";
-  $Prenom=isset($_POST["prenom"])?$_POST["prenom"]:"";
-  $Adresse1=isset($_POST["adresse1"])?$_POST["adresse1"]:"";
-  $Adresse2=isset($_POST["adresse2"])?$_POST["adresse2"]:"";
-  $CP=isset($_POST["code_bp"])?$_POST["code_bp"]:"";
-  $Ville=isset($_POST["ville"])?$_POST["ville"]:"";
-  $Pays=isset($_POST["pays"])?$_POST["pays"]:"";
-  $Tel=isset($_POST["tel"])?$_POST["tel"]:"";
-  $Carte=isset($_POST["card_type"])?$_POST["card_type"]:"";
-  $Carte_num=isset($_POST["card_number"])?$_POST["card_number"]:"";
-  $Carte_name=isset($_POST["card_name"])?$_POST["card_name"]:"";
-  $Date_exp=isset($_POST["exp_date"])?$_POST["exp_date"]:"";
-  $Code=isset($_POST["sec_code"])?$_POST["sec_code"]:"";
+	        $Ps=isset($_POST["login"])?$_POST["login"]:"";
+            $M=isset($_POST["mdp"])?$_POST["mdp"]:"";
+            $Mail=isset($_POST["email"])?$_POST["email"]:"";
+            $Nom=isset($_POST["nom"])?$_POST["nom"]:"";
+            $Prenom=isset($_POST["prenom"])?$_POST["prenom"]:"";
+            $Adresse1=isset($_POST["adresse1"])?$_POST["adresse1"]:"";
+            $Adresse2=isset($_POST["adresse2"])?$_POST["adresse2"]:"";
+            $CP=isset($_POST["code_bp"])?$_POST["code_bp"]:"";
+            $Ville=isset($_POST["ville"])?$_POST["ville"]:"";
+            $Pays=isset($_POST["pays"])?$_POST["pays"]:"";
+            $Tel=isset($_POST["tel"])?$_POST["tel"]:"";
+            $Carte=isset($_POST["card_type"])?$_POST["card_type"]:"";
+            $Carte_num=isset($_POST["card_number"])?$_POST["card_number"]:"";
+            $Carte_name=isset($_POST["card_name"])?$_POST["card_name"]:"";
+            $Date_exp=isset($_POST["exp_date"])?$_POST["exp_date"]:"";
+            $Code=isset($_POST["sec_code"])?$_POST["sec_code"]:"";
 
 
 	
@@ -24,7 +24,7 @@ $Mail=isset($_POST["email"])?$_POST["email"]:"";
   define('DB_USER', 'root');
   define('DB_PASS', '');
 
-  
+    echo "$Ps";
 
     //identifier le nom de base de données
     $database = "ECEamazon";
