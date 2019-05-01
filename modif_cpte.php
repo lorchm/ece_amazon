@@ -4,9 +4,6 @@ session_start();
 
 	$N= isset($_POST["login"])?$_POST["login"]:"";
 	$P= isset($_POST["password"])?$_POST["password"]:"";
-	$test=0;
-        $test++;
-
 	
 	define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
@@ -54,8 +51,6 @@ session_start();
 
     
     mysqli_close($db_handle);
-    if($test==2)
-    { header('Location: info_compte.php');}
  
  
 ?>

@@ -26,6 +26,19 @@ input
   width: 300px;
 }
 
+/*Bouton connexion homepage*/
+
+/*.boutton {
+    background-color: #ffa630;
+    color:white;
+    font-weight: bold;
+    padding: 10px 40px;
+    border-radius: 3px;
+    cursor: pointer; 
+    
+  
+  }*/
+
 /*µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ***Pour le fichier compte.htmlµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ*/
 /*Pour les boutons*/
 a.bouton-relief {
@@ -220,6 +233,17 @@ h1 {
   font:bold 13px Arial;
   color:#f7f7f7;
 }
+.btn-galerie : hover{
+  width: 100px;
+  border:none;
+  padding:6px;
+  cursor: pointer;
+  border-radius:2px;
+  box-shadow:3px 3px 12px #999;
+  background:#DF912A;
+  font:bold 13px Arial;
+  color:#f7f7f7;
+}
 
 /****************Style pour titre en-tête des page***************************/
 .description { 
@@ -237,9 +261,8 @@ h1 {
 .page-musique {background-color: #f7f7f7; }
 .page-vetement {background-color: #f7f7f7; }
 .page-sport {background-color: #f7f7f7; }
-.page-venteflash {
-  background-color: #f7f7f7;
-  margin-left: 10px;}
+.page-venteflash {background-color: #f7f7f7;}
+.page-style{background-color: #f7f7f7;}
 
 /*pour les div qui contiennent les 4 best sellers de sa propre catégorie*/
 .best-livres{
@@ -309,7 +332,7 @@ h6{
   padding:6px;
   border-radius:2px;
   box-shadow:3px 3px 12px #999;
-  background:#ffa630  ;
+  background:#ffa630;
   font:bold 13px Arial;
   color:#f7f7f7;
 }
@@ -320,13 +343,12 @@ h6{
   padding:6px;
   border-radius:2px;
   box-shadow:3px 3px 12px #999;
-  background:#ffa630  ;
+  background:#DF912A  ;
   font:bold 13px Arial;
   color:#f7f7f7;
 }
 /**********************Button delete*****************************************/
 .btn-delete{
-  background-image: url('img/delete.jpg'); 
   width: 40px;
   height: 40px;
   border:none;
@@ -336,7 +358,6 @@ h6{
   font:bold 13px Arial;
 }
 .btn-delete:hover{
-  background-image: url('img/delete.jpg'); 
   width: 40px;
   height: 40px;
   cursor: pointer;
@@ -366,11 +387,17 @@ h6{
   float : bottom;
   text-align: left;
   border : solid;
-  border-color : #D1DBE1;
-  color: #222;
+  color: #D1DBE1;
   font-size : 20px;
-  margin: 10px;
+  margin-top: 20px;
+  margin-left: 50px;
   padding: 8px;
+  width : 1000px;
+  height: 50px;
+  /*effet d'ombre autour du cadre du produit*/
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .btt {
@@ -378,9 +405,9 @@ h6{
     padding:6px;
     border-radius:2px;
     box-shadow:3px 3px 12px #999;
-    background:#fff;
+    background:#ffa630;
     font:bold 13px Arial;
-    color:#555; 
+    color:#f7f7f7;
 }
 
 .btt:hover {
@@ -388,9 +415,9 @@ h6{
   padding:6px;
   border-radius:2px;
   box-shadow:3px 3px 12px #999;
-  background:#fff;
+  background:#DF912A;
   font:bold 13px Arial;
-  color:#555; 
+  color:#f7f7f7; 
   cursor : pointer;
 }
 
