@@ -16,7 +16,7 @@
     if($db_found) {
         
         //Création des tables de la BDD
-        $sql = "CREATE TABLE Vetement (ref INT(6) PRIMARY KEY,nom VARCHAR(50) NOT NULL,descri TEXT(30) NOT NULL,prix INT(6),sexe ENUM('0','1'),pointure INT(2),taille INT(3),marque VARCHAR(30))";
+        $sql = "CREATE TABLE Vetement (ref INT(6) PRIMARY KEY, type_vet ENUM('0','1'),nom VARCHAR(50) NOT NULL,descri TEXT(30) NOT NULL,prix INT(6),sexe ENUM('0','1'),pointure INT(2),taille INT(3),marque VARCHAR(30))";
         $result = mysqli_query($db_handle, $sql);
 
         $sql1 = "CREATE TABLE Musique (ref INT(6) PRIMARY KEY,titre VARCHAR(50) NOT NULL,artiste VARCHAR(30) NOT NULL,album VARCHAR(30),annee INT(4),prix INT(6))";
@@ -45,22 +45,22 @@
 
         //Insertion des articles
         //Vetements
-        $sql8 = "INSERT INTO `vetement` (`ref`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('1','Chaussettes pour chien','Protégez les petits petons de vos toutous préférés','6','','',NULL,'')";
+        $sql8 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('1','0','Chaussettes pour chien','Protégez les petits petons de vos toutous préférés','6','','',NULL,'')";
         $result8 = mysqli_query($db_handle, $sql8);
 
-        $sql9 = "INSERT INTO `vetement` (`ref`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('2','Bandana rafraichissant','Gardez un bon style pour votre chien tout en le protégeant de la chaleur','7','',NULL,'','')";
+        $sql9 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('2','1','Bandana rafraichissant','Gardez un bon style pour votre chien tout en le protégeant de la chaleur','7','',NULL,'','')";
         $result9 = mysqli_query($db_handle, $sql9);
 
-        $sql10 = "INSERT INTO `vetement` (`ref`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('3','Bottes confort','Favorise la cicatrisation des blessures','12','','',NULL,'')";
+        $sql10 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('3','0','Bottes confort','Favorise la cicatrisation des blessures','12','','',NULL,'')";
         $result10 = mysqli_query($db_handle, $sql10);
 
-        $sql11 = "INSERT INTO `vetement` (`ref`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('4','Noeud papillon','Accessorisez votre chien pour une classe légendaire',5,'',NULL,'','')";
+        $sql11 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('4','1','Noeud papillon','Accessorisez votre chien pour une classe légendaire',5,'',NULL,'','')";
         $result11 = mysqli_query($db_handle, $sql11);
 
-        $sql12 = "INSERT INTO `vetement` (`ref`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('5','Deguisement Captain America','A la sortie du dernier Avenger, soyez sûrs que votre animal reste dans la mode',7,'',NULL,'','')";
+        $sql12 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('5','1','Deguisement Captain America','A la sortie du dernier Avenger, soyez sûrs que votre animal reste dans la mode',7,'',NULL,'','')";
         $result12 = mysqli_query($db_handle, $sql12);
 
-        $sql13 = "INSERT INTO `vetement` (`ref`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('6','Pull Over Langley','Pour vos longues soirées d'hiver, couvrez vos animaux d'un bon pull en laine','17',NULL,'','')";
+        $sql13 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('6','1','Pull Over Langley','Pour vos longues soirées d'hiver, couvrez vos animaux d'un bon pull en laine','17',NULL,'','')";
         $result13 = mysqli_query($db_handle, $sql13);
 
         //Mus
