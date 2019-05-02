@@ -1,7 +1,4 @@
-<?php
-
-  
-        
+<?php   
         $Ps=$data['pseudo'];
    
             $M=$data['mdp'];

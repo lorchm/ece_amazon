@@ -48,7 +48,7 @@
 
         //Insertion des articles
         //Vetements
-        $sql8 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('1','0','Chaussettes pour chien','Protégez les petits petons de vos toutous préférés','6','','',NULL,'')";
+        $sql8 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('1','0','Chaussettes pour chien','Protégez les petits petons de vos toutous préférés','6',NULL,NULL,NULL,NULL)";
         $result8 = mysqli_query($db_handle, $sql8);
 
         $sql9 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('2','1','Bandana rafraichissant','Gardez un bon style pour votre chien tout en le protégeant de la chaleur','7','',NULL,'','')";
@@ -106,7 +106,7 @@
         $result25 = mysqli_query($db_handle, $sql25);
 
         //Livres
-        $sql26 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`) VALUES ('1', 'Petit ABC Rustica de l'éducation positive', 'Chloe Fesch', '2018', '20', 'Rustica', 'Apprendre à son chien des règles de vie, l éduquer avec respect et bienveillance, lui permettre de se dépenser suffisamment et opter pour une attitude cohérente')";
+        $sql26 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`) VALUES ('1', 'Petit ABC Rustica de l éducation positive', 'Chloe Fesch', '2018', '20', 'Rustica', 'Apprendre à son chien des règles de vie, l éduquer avec respect et bienveillance, lui permettre de se dépenser suffisamment et opter pour une attitude cohérente')";
         $result26 = mysqli_query($db_handle, $sql26);
 
         $sql27 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`) VALUES ('2', 'Le Petit Larousse des chiens', 'Dorling Kindersley', '2017', '23', 'Larousse', 'La bible pour choisir en toute connaissance de cause votre compagnon')";
