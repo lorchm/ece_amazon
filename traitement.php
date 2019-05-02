@@ -35,6 +35,9 @@
             code_bp INT(5),ville VARCHAR(40),pays VARCHAR(20),tel INT(10),card_type VARCHAR(15),card_number INT(16),card_name VARCHAR(50),exp_date DATE,sec_code INT(3))";
         $result5 = mysqli_query($db_handle, $sql5);
 
+        $sql32 = "CREATE TABLE obj_panier (pseudo VARCHAR(20) NOT NULL, categorie int(1) NOT NULL,id int(6),PRIMARY KEY (pseudo))";
+        $result32 = mysqli_query($db_handle, $sql32);
+
         //Insertion d'acheteurs
         $sql6 = "INSERT INTO `acheteur` (`pseudo`, `mdp`, `email`, `nom`, `prenom`, `adresse1`, `adresse2`, `code_bp`, `ville`, `pays`, `tel`, `card_type`, `card_number`, `card_name`, `exp_date`, `sec_code`) VALUES ('gege2020', '0000', 'gege@edu.ece.fr', 'Pertier', 'Gege', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)";
         $result6 = mysqli_query($db_handle, $sql6);
