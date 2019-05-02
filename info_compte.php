@@ -47,23 +47,9 @@
             </ul> 
             
         </div> 
-       
-          
-
-
-
-
-
+      
     </nav>
-<?php 
-   
 
-    if($_SESSION["login"]=="")
-  {
-        header('Location: connexion.php');
-
-    }
-?>
 
     <body>
         <header class="page-header header container-fluid">

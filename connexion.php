@@ -14,6 +14,7 @@
 
 
 
+
     
 </head>
 
@@ -53,6 +54,7 @@
 
     </nav>
 
+
     <body>
         <header class="page-header header container-fluid">
 
@@ -74,7 +76,7 @@
                  </tr>
 
                  <tr>
-                   <label>Mot de passe</label><input class="form-control"  style="width: 250px;margin-left: 240px;" type="password" name="password" size ="25"/><br><br>
+                   <label>Mot de passe</label><input class="form-control"  style="width: 250px;margin-left: 240px;" type="password" name="mdp" size ="25"/><br><br>
                </tr>
 
 
@@ -112,16 +114,15 @@
     
     <div class="center-block">
 
-        <a href="compte2.html"style="text-decoration: underline;">Se créer un compte</a>
+        <a href="creation.php"style="text-decoration: underline;">Se créer un compte</a>
 
     </div>
 
-<<<<<<< HEAD
-<footer> Copyright &copy; 2019 ECE Amazon <br/>
+
+<!-- <footer> Copyright &copy; 2019 ECE Amazon <br/>
     <a href="mailto:ece.amazon@pro.com"> ece.amazon@pro.com</a>
 </footer>
-
-=======
+ -->
 <!--******************** PIED DE PAGE *********************************************************************************-->
     <footer class="page-footer">
        <div class="container">
@@ -144,6 +145,6 @@
             <div class="footer-copyright text-center" style="text-align: center;">&copy; 2019 ECE Amazon | Droit d'auteur: BLV</div>
         </div>
     </footer>
->>>>>>> ab3aca753711565472b2f79e36bd63b87ffc3381
+
 </body>
 </html>

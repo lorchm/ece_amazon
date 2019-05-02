@@ -15,7 +15,7 @@
 
 </head>
 
-<?php
+<!-- <script>
 function connexion()
 {
     echo"BONJOUR";
@@ -34,18 +34,19 @@ function deconnexion()
     echo"BONJOUR";
     if($_SESSION["login"]=="")
     {
-
+        echo"Vous avez été deconnecté";
     }
     else
     {
         $_SESSION["login"]="";
     }
 }
-?>
+</script> -->
 
 <body>
     <!-- Barre de navigation -->
     <?php include('header.php') ?>
+
 
     <!-- milieu de la page -->
     <div id="galerie">

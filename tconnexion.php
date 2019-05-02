@@ -2,16 +2,15 @@
 	
 
 session_start();
+
 	$N= isset($_POST["login"])?$_POST["login"]:"";
-	$P= isset($_POST["password"])?$_POST["password"]:"";
+	$P= isset($_POST["mdp"])?$_POST["mdp"]:"";
 	
 
 	define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASS', '');
 
-    
-      
     //identifier le nom de base de données
     $database = "ECEamazon";
 
@@ -24,18 +23,23 @@ session_start();
         $sql = 'SELECT pseudo,mdp FROM acheteur';
         $result = mysqli_query($db_handle, $sql);
         while($data = mysqli_fetch_assoc($result)) {
-          	if($data['pseudo']=="$N" && $data['mdp']=="$P")
+          	if($N==$data['pseudo'] && $P==$data['mdp'])
           	{
-             $_SESSION["login"]=$N;
-          	 header('Location: info_compte.php'); 
-          		
-          	}
+               $_SESSION["login"]=$N;
+             header('Location: info_compte.php'); 
+
+              }
           	else
           	{
-          		
-          		header('Location: info_compte.php');
+          		 
+              
+              
+             echo"ERREUR";
+              header('Location: connexion.php');
+            
+           
+              
           	}
-          	
 
         }
        }

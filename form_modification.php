@@ -68,7 +68,7 @@
 
       <div class="col-md-4">
 
-        <form action ="modif_cpte.php" method="post">
+        <form action ="sql_modif.php" method="post">
 
          <div class="container fluid center_block" >
 
@@ -77,7 +77,7 @@
 
            <table>
             <tr>
-             <label >Pseudo : </label><input class="form-control" style="width: 300px;" type="text" name="pseudo" value="<?php echo $Ps; ?>" /><br><br>
+             <label >Pseudo : </label><input class="form-control" style="width: 300px;" type="text" name="login" value="<?php echo $Ps; ?>" /><br><br>
            </tr>
 
 
