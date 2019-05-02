@@ -47,226 +47,229 @@ function deconnexion()
     <!-- Barre de navigation -->
     <?php include('header.php') ?>
 
+    <!-- titre -->
+    <div class="description page-header header container-fluid"> 
+        <h1>Ajouter un article</h1> 
+    </div>
+
     <!-- milieu de la page -->
     
+<!-- AJOUT VETEMENT -->
 <div class="row">
 
+  <div class="col-md-3">
+
+    <form action ="ajout_vetement.php" method="post">
+
+      <div class="container fluid center_block" >
+        <h2>Vêtements</h2>
+
+         <table>
+            <tr>
+             <label >Référence : </label><input class="form-control" style="width: 300px;" type="text" name="ref"/><br><br>
+            </tr>
+
+            <tr>
+             <label>Nom du produit :</label><input class="form-control" style="width: 300px;" type="text" name="nom"/><br><br>
+            </tr>
+            <tr>
+             <label>Sexe : </label><input class="form-control" style="width: 300px;" ype="text" name="sexe"/><br><br>
+            </tr>
+
+            <tr>
+             <label>Couleur : </label><input class="form-control" style="width: 300px;" ype="text" name="couleur" /><br><br>
+            </tr>
+
+            <tr>
+             <label>Type : </label><input class="form-control" style="width: 300px;" ype="text" name="type"/><br><br>
+            </tr>
+
+            <tr>
+             <label>Pointures (si chaussures) : </label><input class="form-control" style="width: 300px;" ype="text" name="Pointeur"/><br><br>
+            </tr>
+
+            <tr>
+             <label>Taille (si vêtements) : </label><input class="form-control" style="width: 300px;" ype="text" name="taille" /><br><br>
+            </tr>
+
+            <tr>
+             <label>Description : </label><input class="form-control" style="width: 300px;" type="text" nom="descri"/><br><br>
+            </tr>
+
+
+           <tr>
+             <label>Prix : </label><input class="form-control" style="width: 300px;" ype="text" name="prix" /><br><br>
+           </tr>
+
+            <tr>
+             <label>Photo :</label><input class="form-control" style="width: 300px;" type="text" name="photo"/><br><br>
+            </tr>
+
+       </table>
+
+        <tr>
+          <td><input id="ajout_vetement" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
+        </tr>
+
+     </div>
+
+   </form>
+
+  </div>
+
+<!-- AJOUT MUSIQUE -->
 <div class="col-md-3">
 
-  <form action ="sql_modif.php" method="post">
+  <form action ="ajout_musique.php" method="post">
 
-   <div class="container fluid center_block" >
+    <div class="container fluid center_block" >
 
+      <h2>Musique</h2>
 
-     <h2>Vêtements</h2>
+      <table>
+        <tr>
+         <label>Référence: </label><input class="form-control" style="width: 300px;" type="text" nom="ref"/> <br> <br>
+        </tr>
 
-     <table>
-      <tr>
-       <label >Référence : </label><input class="form-control" style="width: 300px;" type="text" name="ref" value="<?php echo $Ps; ?>" /><br><br>
-     </tr>
+        <tr>
+           <label>Titre :</label><input class="form-control" style="width: 300px;" type="text" nom="titre"/><br><br>
+        </tr>
 
+        <tr>
+           <label>Artiste : </label><input class="form-control" style="width: 300px;" type="text" nom="artiste"/><br><br>
+        </tr>
 
+        <tr>
+           <label>Album :</label><input class="form-control" style="width: 300px;" type="text" nom="album"/><br><br>
+        </tr>
 
-     <tr>
-       <label>Nom du produit :</label><input class="form-control" style="width: 300px;" type="text" name="nom" value="<?php echo $M; ?>" /><br><br>
-     </tr>
+        <tr>
+           <label>Année :</label><input class="form-control" style="width: 300px;" type="text" nom="annee"/><br><br>
+        </tr>
 
-     <tr>
-       <label>Photos :</label><input class="form-control" style="width: 300px;" type="text" name="photo" value="<?php echo $Mail; ?>" /><br><br>
-     </tr>
+        <tr>
+          <label>Description :</label><input class="form-control" style="width: 300px;" type="text" nom="descri"/><br><br>
+        </tr>
 
-     <tr>
-       <label>Description : </label><input class="form-control" style="width: 300px;" type="text" nom="descri" value="<?php echo $Nom; ?>" /><br><br>
-     </tr>
+        <tr>
+           <label>Prix :</label><input  class="form-control" style="width: 300px;" type="text" nom="prix"/><br><br>
+        </tr>
 
-     <tr>
-       <label>Prix : </label><input class="form-control" style="width: 300px;" ype="text" name="prix" value="<?php echo $Prenom; ?>" /><br><br>
-     </tr>
+        <tr>
+           <label>Photo :</label><input  class="form-control" style="width: 300px;" type="text" nom="photo"/><br><br>
+        </tr>
 
-     <tr>
-       <label>Videos : </label><input class="form-control" style="width: 300px;" ype="text" name="prix" value="<?php echo $Prenom; ?>" /><br><br>
-     </tr>
+        <tr>
+          <td><input id="ajout_musique" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
+        </tr>
 
-     <tr>
-       <label>Sexe : </label><input class="form-control" style="width: 300px;" ype="text" name="sexe" value="<?php echo $Prenom; ?>" /><br><br>
-     </tr>
-
-     <tr>
-       <label>Couleur : </label><input class="form-control" style="width: 300px;" ype="text" name="couleur" value="<?php echo $Prenom; ?>" /><br><br>
-     </tr>
-
-     <tr>
-       <label>Pointures : </label><input class="form-control" style="width: 300px;" ype="text" name="Pointeur" value="<?php echo $Prenom; ?>" /><br><br>
-     </tr>
-
-     <tr>
-       <label>Type : </label><input class="form-control" style="width: 300px;" ype="text" name="type" value="<?php echo $Prenom; ?>" /><br><br>
-     </tr>
-
-     <tr>
-       <label>Taille : </label><input class="form-control" style="width: 300px;" ype="text" name="taille" value="<?php echo $Prenom; ?>" /><br><br>
-     </tr>
-
-
-   </table>
-
- </div>
-
+      </table>
+    </div>
+  </form>
 </div>
 
-
-
-
+<!-- AJOUT LIVRES -->
 <div class="col-md-3">
-<div class="container fluid center_block" >
 
-  <h2>Musique</h2>
+  <form action ="ajout_livre.php" method="post">
 
-  <table>
-    <tr>
-     <label>Référence: </label><input class="form-control" style="width: 300px;" type="text" nom="ref" value="<?php echo  $Adresse1; ?>"/> <br> <br>
-   </tr>
+    <div class="container fluid center_block" >
 
+      <h2>Livres</h2>
+      <table>
 
+        <tr>
+          <label>Référence :</label><input class="form-control" style="width: 300px;" type="text" nom="ref"/><br><br>
+        </tr>
 
-   <tr>
-     <label>Titre :</label><input class="form-control" style="width: 300px;" type="text" nom="titre" value=" <?php echo $Adresse2; ?>"/><br><br>
-   </tr>
+        <tr>
+         <label>Titre :</label><input class="form-control" style="width: 300px;" type="text" nom="titre"/><br><br>
+        </tr>
 
-   <tr>
-     <label>Artiste : </label><input class="form-control" style="width: 300px;" type="text" nom="artiste" value=" <?php echo $CP; ?>"/><br><br>
-   </tr>
+        <tr>
+          <label>Auteur :</label><input class="form-control" style="width: 300px;" type="text" nom="auteur" /><br><br>
+        </tr>
 
-   <tr>
-     <label>Album :</label><input class="form-control" style="width: 300px;" type="text" nom="album" value=" <?php echo $Ville; ?>"/><br><br>
-   </tr>
+        <tr>
+         <label>Maison d'édition :</label><input class="form-control" style="width: 300px;" type="text" nom="edition" /><br><br>
+        </tr>
 
-   <tr>
-     <label>Année :</label><input class="form-control" style="width: 300px;" type="text" nom="annee" value=" <?php echo $Pays; ?>"/><br><br>
-   </tr>
+       <tr>
+         <label>Année :</label><input class="form-control" style="width: 300px;" type="text" nom="annee"/><br><br>
+       </tr>
 
-   <tr>
-     <label>Prix :</label><input  class="form-control" style="width: 300px;" type="text" nom="prix" value=" <?php echo $Tel; ?>"/><br><br>
-   </tr>
+        <tr>
+         <label>Description :</label><input class="form-control" style="width: 300px;" type="text" nom="descri"/><br><br>
+       </tr>
 
-   <tr>
-     <label>Photo :</label><input  class="form-control" style="width: 300px;" type="text" nom="photo" value=" <?php echo $Tel; ?>"/><br><br>
-   </tr>
+       <tr>
+         <label>Prix :</label><input class="form-control" style="width: 300px;" type="text" nom="prix" /><br><br>
+       </tr>
 
- </table>
+       <tr>
+         <label>Photo :</label><input class="form-control" style="width: 300px;" type="text" nom="photo" /><br><br>
+       </tr>
 
+       <tr>
+          <td><input id="ajout_livre" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
+        </tr>
 
+      </table>
+
+    </div>
+
+  </form>
 
 </div>
 
-</div>
-
+<!-- AJOUT SPORT LOISIRS -->
 <div class="col-md-3">
-<div class="container fluid center_block" >
 
-<h2>Livres</h2>
-<table>
+  <form action ="ajout_sportloisirs.php" method="post">
 
-  <tr>
-    <label>Référence :</label><input class="form-control" style="width: 300px;" type="text" nom="ref" value=" <?php echo $Carte_num; ?>"/><br><br>
-  </tr>
-  <!-- <input class="form-control" style="width: 300px;" type="text" nom="adresse" value=" <?php echo $Carte; ?>"/><br> <br> -->
+    <div class="container fluid center_block" >
 
+      <h2>Sports/Loisirs</h2>
+      <table>
 
+        <tr>
+          <label>Référence :</label><input class="form-control" style="width: 300px;" type="text" nom="ref"/><br><br>
+        </tr>
 
+        <tr>
+         <label>Nom :</label><input class="form-control" style="width: 300px;" type="text" nom="nom"/><br><br>
+       </tr>
 
-  <tr>
-   <label>Titre :</label><input class="form-control" style="width: 300px;" type="text" nom="titre" value=" <?php echo $Carte_num; ?>"/><br><br>
- </tr>
+       <tr>
+         <label>Description :</label><input class="form-control" style="width: 300px;" type="text" nom="descri"/><br><br>
+       </tr>
 
- <tr>
-   <label>Auteur :</label><input class="form-control" style="width: 300px;" type="text" nom="auteur" value=" <?php echo $Carte_name; ?>"/><br><br>
- </tr>
+       <tr>
+         <label>Prix :</label><input class="form-control" style="width: 300px;" type="text" nom="prix"/><br><br>
+       </tr>
 
- <tr>
-   <label>Année :</label><input class="form-control" style="width: 300px;" type="text" nom="annee" value=" <?php echo $Date_exp; ?>"/><br><br>
- </tr>
+       <tr>
+         <label>Photo :</label><input class="form-control" style="width: 300px;" type="text" nom="photos"/><br><br>
+       </tr>
 
- <tr>
-   <label>Prix :</label><input class="form-control" style="width: 300px;" type="text" nom="prix" value=" <?php echo $Code; ?>"/><br><br>
- </tr>
+       <tr>
+         <label>Vidéos :</label><input class="form-control" style="width: 300px;" type="text" nom="videos"/><br><br>
+       </tr>
 
- <tr>
-   <label>Maison d'édition :</label><input class="form-control" style="width: 300px;" type="text" nom="edition" value=" <?php echo $Code; ?>"/><br><br>
- </tr>
+        <tr>
+          <td><input id="ajout_sportloisirs" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
+        </tr>
 
- <tr>
-   <label>Photos :</label><input class="form-control" style="width: 300px;" type="text" nom="photo" value=" <?php echo $Code; ?>"/><br><br>
- </tr>
+      </table>
 
+    </div>
 
-
-</table>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-<div class="container fluid center_block" >
-
-<h2>Sports/Loisirs</h2>
-<table>
-
-  <tr>
-    <label>Référence :</label><input class="form-control" style="width: 300px;" type="text" nom="ref" value=" <?php echo $Carte_num; ?>"/><br><br>
-  </tr>
-  <!-- <input class="form-control" style="width: 300px;" type="text" nom="adresse" value=" <?php echo $Carte; ?>"/><br> <br> -->
-
-
-
-
-  <tr>
-   <label>Nom :</label><input class="form-control" style="width: 300px;" type="text" nom="nom" value=" <?php echo $Carte_num; ?>"/><br><br>
- </tr>
-
- <tr>
-   <label>Prix :</label><input class="form-control" style="width: 300px;" type="text" nom="prix" value=" <?php echo $Carte_name; ?>"/><br><br>
- </tr>
-
- <tr>
-   <label>Photos :</label><input class="form-control" style="width: 300px;" type="text" nom="photos" value=" <?php echo $Date_exp; ?>"/><br><br>
- </tr>
-
- <tr>
-   <label>Vidéos :</label><input class="form-control" style="width: 300px;" type="text" nom="videos" value=" <?php echo $Code; ?>"/><br><br>
- </tr>
-
- <tr>
-   <label>Description :</label><input class="form-control" style="width: 300px;" type="text" nom="descri" value=" <?php echo $Code; ?>"/><br><br>
- </tr>
-
-
-</table>
+  </form>
 
 </div>
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- pied de page -->
     <?php include('footer.php') ?>
+
 </body>
 </html>

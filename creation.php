@@ -17,43 +17,8 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-md">
-
-        <a class="navbar-brand" href="squelette.html"> <img src="logo.png"> </a>         
-        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">      
-            <span class="navbar-toggler-icon"></span>        
-        </button>        
-
-
-        <div class="collapse navbar-collapse" id="main-navigation">   
-
-
-            <ul class="navbar-nav">             
-                <li class="nav-cat"><a class="nav-link" href="#">Catégories</a>   
-                    <ul class="submenu">
-                        <li><a href="#">Livres</a></li>
-                        <li><a href="#">Musiques</a></li>
-                        <li><a href="#">Vêtements</a></li>
-                        <li><a href="#">Sports et Loisirs</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item"><a class="nav-link" href="#">Ventes Flash</a></li>             
-                <li class="nav-item"><a class="nav-link" href="#">Vendre</a></li> 
-                <li class="nav-item"><a class="nav-link" href="#">Votre Compte</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Admin</a></li>     
-                <li class="nav-item"><a class="nav-link" href="#">Panier</a></li> 
-            </ul> 
-            
-        </div> 
-
-
-
-    </nav>
-
-    
-
-     <body>
+    <!-- Barre de navigation -->
+    <?php include('header.php') ?>
 
         <header class="page-header header container-fluid">
 
@@ -67,10 +32,10 @@
     <br> 
     <br>
 
-    <div class="container fluid center_div" >
+    <div class="row">
+    <div class="container fluid center_div"  >
 
         <form action ="sql_creation.php" method="post">
-
             <h2>Informations personnelles</h2>
 
                  <table>
@@ -85,78 +50,78 @@
 
 
                     <tr>
-                         <label>Nom</label> <input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="nom" size="25" /><br> <br>
+                         <label>Nom</label> <input class="form-control center-con"  style="width: 250px; " type="text" name="nom" size="25" /><br> <br>
                     </tr>
 
                     <tr>
-                        <label>Prenom</label><input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="prenom" size ="25"/><br><br>
+                        <label>Prenom</label><input class="form-control center-con"  style="width: 250px;" type="text" name="prenom" size ="25"/><br><br>
                     </tr>
 
                     <tr>
-                         <label>Adresse</label><input class="form-control center-con"  style="width: 250px;margin-left: 240px;"type="text" name="adresse" size ="25"/><br><br>
+                         <label>Adresse</label><input class="form-control center-con"  style="width: 250px;" type="text" name="adresse" size ="25"/><br><br>
                     </tr>
 
                     <tr>
-                         <label>Email</label><input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="email" size ="25" /><br><br>
+                         <label>Email</label><input class="form-control center-con"  style="width: 250px;" type="text" name="email" size ="25" /><br><br>
                     </tr>
 
             <h2>Informations sur le site de livraison</h2>
 
                     <tr>
-                         <label>Adresse 1</label> <input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="adresse1" size="25" /><br> <br>
+                         <label>Adresse 1</label> <input class="form-control center-con"  style="width: 250px; " type="text" name="adresse1" size="25" /><br> <br>
                     </tr>
 
                     <tr>
-                        <label>Adresse 2</label><input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="adresse2" size ="25"/><br><br>
+                        <label>Adresse 2</label><input class="form-control center-con"  style="width: 250px; " type="text" name="adresse2" size ="25"/><br><br>
                     </tr>
 
                     <tr>
-                         <label>Code Postal</label><input class="form-control center-con"  style="width: 250px;margin-left: 240px;"type="text" name="code_bp" size ="25"/><br><br>
+                         <label>Code Postal</label><input class="form-control center-con"  style="width: 250px; "type="text" name="code_bp" size ="25"/><br><br>
                     </tr>
 
                     <tr>
-                         <label>Ville</label><input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="ville" size ="25" /><br><br>
+                         <label>Ville</label><input class="form-control center-con"  style="width: 250px;" type="text" name="ville" size ="25" /><br><br>
                     </tr>
 
                     <tr>
-                         <label>Pays</label><input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="pays" size ="25" /><br><br>
+                         <label>Pays</label><input class="form-control center-con"  style="width: 250px;" type="text" name="pays" size ="25" /><br><br>
                     </tr>
 
                     <tr>
-                         <label>Portable</label><input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="tel" size ="25" /><br><br>
+                         <label>Portable</label><input class="form-control center-con"  style="width: 250px;" type="text" name="tel" size ="25" /><br><br>
                     </tr>
 
             <h2>Informations bancaires</h2>
 
                     <tr>
-                         <label>Type de carte</label> <input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="card_type" size="25" /><br> <br>
+                         <label>Type de carte</label> <input class="form-control center-con"  style="width: 250px;" type="text" name="card_type" size="25" /><br> <br>
                     </tr>
 
                     <tr>
-                        <label>Numéro de carte</label><input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="card_number" size ="25"/><br><br>
+                        <label>Numéro de carte</label><input class="form-control center-con"  style="width: 250px;" type="text" name="card_number" size ="25"/><br><br>
                     </tr>
 
                     <tr>
-                         <label>Nom sur la carte</label><input class="form-control center-con"  style="width: 250px;margin-left: 240px;"type="text" name="card_name" size ="25"/><br><br>
+                         <label>Nom sur la carte</label><input class="form-control center-con"  style="width: 250px;"type="text" name="card_name" size ="25"/><br><br>
                     </tr>
 
                     <tr>
-                         <label>Date d'expiration</label><input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="exp_date" size ="25" /><br><br>
+                         <label>Date d'expiration</label><input class="form-control center-con"  style="width: 250px;" type="text" name="exp_date" size ="25" /><br><br>
                     </tr>
 
                     <tr>
-                         <label>Code Secret</label><input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="password" name="sec_code" size ="25" /><br><br>
+                         <label>Code Secret</label><input class="form-control center-con"  style="width: 250px;" type="password" name="sec_code" size ="25" /><br><br>
                     </tr>
 
                     <tr>
-                         <label>Portable</label><input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="tel" size ="25" /><br><br>
+                         <label>Portable</label><input class="form-control center-con"  style="width: 250px;" type="text" name="tel" size ="25" /><br><br>
                     </tr>
 
              
              </table>
 
     </div>
-
+</div>
 
         <div class="center-block">
 
@@ -178,13 +143,8 @@
     </div>
 </form> 
 
-
-
-
-
-<footer> Copyright &copy; 2019 ECE Amazon <br/>
-    <a href="mailto:ece.amazon@pro.com"> ece.amazon@pro.com</a>
-</footer>
+<!--******************** PIED DE PAGE *********************************************************************************-->
+<?php include('footer.php') ?>
 </body>
 
 </html>
