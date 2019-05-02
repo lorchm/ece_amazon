@@ -2,13 +2,71 @@
 body{
   padding : 0px;
   margin: 0px;
-  background : #f2f6e9;
+  background : #f7f7f7;
 }
 
-/*--- Navigation bar ---*/
+/****************************************************************VICO**************************************************/
+/*Format connexion */
+.center-con{
+  width: 150px;
+  margin-left: 210px;
+}
+/*Format formulaire/*/
+.center-block {
+ 
+  text-align: center;
+  height: 100px;
+  margin-right: 30px;
+
+}
+
+/*µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ***Pour le fichier compte.htmlµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ*/
+/*Pour les boutons*/
+a.bouton-relief {
+  color: white;
+  background-color: #87CEFA;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+  border: 2px outset #c0c0c0;
+  cursor : default;
+}
+
+a.bouton-relief:hover {
+  background-color: #6495ED;
+  border: 2px inset #c0c0c0;
+
+}
+
+.Update{
+  text-align: 400px;
+  
+  float: top;
+  width: 100px;
+
+}
+.but{
+  position: center;
+
+}
+
+
+
+.center_div{
+    
+    /*float: right;*/
+    float :center;
+    text-align:center;
+    width:40%; /* value of your choice which suits your alignment */
+  
+    font-size: 15px;
+    
+}
+
+/****************************************************************FINVICO**************************************************/
 
 .navbar {
-  background : #87CEFA;
+  background : #04263F;
 }
 
 .nav-link, .navbar-brand {
@@ -20,7 +78,7 @@ body{
   margin-right : 1em !important;
 }
 
-.nav-link : hover {
+.nav-link:hover {
   color : #000;
 }
 
@@ -35,15 +93,6 @@ body{
   background-position: center;        
   position: relative; 
 } 
-
-footer {
-  display: flex;
-  justify-content: center;
-  padding: 5px;
-  background-color: #87CEFA;
-  color: #fff;
-  position: 
-}
 
 nav li{
   list-style-type : none;
@@ -117,13 +166,13 @@ nav li:hover .submenu{
 .nav-cat .submenu li:hover{
   background-color : RGB(200, 165, 75);
 }
-/*Galerie d'objets de la page d'accueil*/
+
+/**************Galerie d'objets de la page d'accueil****************/
 #galerie {
   position: relative;
-  height: 200px;
-  width: 700px;
+  width: 500px;
+  height: 400px;
   margin: auto;
-  
 }
 
 #galerie ul li {
@@ -131,6 +180,9 @@ nav li:hover .submenu{
   top: 0;
   left: 0;
   list-style: none;
+}
+.galerie{
+  margin-top: 20px;
 }
 
 h1 {
@@ -140,54 +192,247 @@ h1 {
 }
 
 .next {
- position: relative;
- top: 250px; left: 920px; 
- background-color: #ffff00;
+ margin-left: 295px;
 }
 
 .prev {
- position: relative;
- top: 250px; left: 500px;
- background-color: #ffff00;
+ margin-left: 510px;
+}
+.btn-galerie{
+  width: 100px;
+  border:none;
+  padding:6px;
+  border-radius:2px;
+  box-shadow:3px 3px 12px #999;
+  background:#ffa630;
+  font:bold 13px Arial;
+  color:#f7f7f7;
+}
+.btn-galerie : hover{
+  width: 100px;
+  border:none;
+  padding:6px;
+  cursor: pointer;
+  border-radius:2px;
+  box-shadow:3px 3px 12px #999;
+  background:#DF912A;
+  font:bold 13px Arial;
+  color:#f7f7f7;
 }
 
-/*Style page des différentes catégories*/
+/****************Style pour titre en-tête des page***************************/
 .description { 
  text-align: center; 
- color: #87cefa;
- background-color: #ffff;
+ color: #04263F;
+ background-color: #f7f7f7;
  padding: 5px;
- 
-}
+ }
 .description h1 { 
- color: #87cefa;
- background-color: #fff; 
+ color: #04263F;
+ background-color: #f7f7f7; 
 } 
 
-.page-livres {background-color: #CEFA87; }
-.page-musique {background-color: #CEFA87; }
-.page-vetement {background-color: #CEFA87; }
-.page-sport {background-color: #CEFA87; }
-.page-venteflash {background-color: #CEFA87;}
-
-/*style pour les produits (les cadres)*/
-.thumbnail{
-  margin-left: 10px;
-  width: 330px;
-  height: 300px;
-  border: double;
-}
-.property{
-  padding-right: 30px;
-  padding-top: 10px;
-}
-
-.cadre1{
+/*pour les div qui contiennent les 4 best sellers de sa propre catégorie*/
+.best-livres{
   margin-top: 10px;
-  width: 150px;
-  float: left;
 }
-.cadre2{
-  width: 170px;
-  float: right;
+.best-musique{
+  margin-top: 40px;
+}
+.best-vetement{
+  margin-top: 40px;
+}
+.best-sport{
+  margin-top: 40px;
+}
+
+/*h6 pour la description des produit : nom, auteur, blabla*/
+h6{
+  color: #30285b;
+  text-align: center;
+}
+
+/***********************ZONE PRODUIT : cadre pour Livres/Musique/Vetement/Sport... ************************/
+.cadre-prod{
+  margin-top: 20px;
+  margin-left: 50px;
+  padding: 5px;
+  width : 1000px;
+  height: 200px;
+  border: solid;
+  color: #D1DBE1;
+  /*effet d'ombre autour du cadre du produit*/
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+.en-tete-prod{
+    color: #30285b;
+    font-size: 18px;
+}
+.prix-prod{
+  margin-top: 5px;
+  color: #F4261D;
+  font-weight: bold; 
+}
+.reference-prod{
+  color: grey;
+  font-size: 10px;
+  font-style: italic;
+}
+.description-prod{
+  color: grey;
+  margin-top: 15px;
+  font-size: 14px;
+}
+.remplir-infos-vet{
+  margin-top: 13px;
+}
+.remplir-infos-prod{
+  margin-top: 40px;
+  margin-left: 10px;
+}
+
+/**************Bouton ajout au panier********************************************/
+.ajout-panier-btn{
+  width: 130px;
+  margin-left: 70px;
+  border:none;
+  padding:6px;
+  border-radius:2px;
+  box-shadow:3px 3px 12px #999;
+  background:#ffa630;
+  font:bold 13px Arial;
+  color:#f7f7f7;
+}
+.ajout-panier-btn:hover{
+  margin-left: 70px;
+  cursor: pointer;
+  border:none;
+  padding:6px;
+  border-radius:2px;
+  box-shadow:3px 3px 12px #999;
+  background:#DF912A  ;
+  font:bold 13px Arial;
+  color:#f7f7f7;
+}
+/**********************Button delete*****************************************/
+.btn-delete{
+  width: 40px;
+  height: 40px;
+  border:none;
+  padding:6px;
+  border-radius:2px;
+  box-shadow:3px 3px 12px #999;
+  font:bold 13px Arial;
+}
+.btn-delete:hover{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border:none;
+  padding:6px;
+  border-radius:2px;
+  box-shadow:3px 3px 12px #999;
+  background:#d8d8d8;
+  font:bold 13px Arial;
+}
+
+/**************************Pied de page******************************************/
+.page-footer {
+  margin-top: 40px;
+  background-color: #04263F;
+  color: #f7f7f7  ;
+  padding: 20px 0 5px;
+}
+.footer-copyright {
+ color: #f7f7f7 ;
+ padding: 20px 0;
+}
+
+
+/**************************PAGE PANIER******************************************/
+.total {
+  float : bottom;
+  text-align: left;
+  border : solid;
+  color: #D1DBE1;
+  font-size : 20px;
+  margin-top: 20px;
+  margin-left: 50px;
+  padding: 8px;
+  width : 1000px;
+  height: 50px;
+  /*effet d'ombre autour du cadre du produit*/
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.btt {
+    border:none;
+    padding:6px;
+    border-radius:2px;
+    box-shadow:3px 3px 12px #999;
+    background:#ffa630;
+    font:bold 13px Arial;
+    color:#f7f7f7;
+}
+
+.btt:hover {
+  border:none;
+  padding:6px;
+  border-radius:2px;
+  box-shadow:3px 3px 12px #999;
+  background:#DF912A;
+  font:bold 13px Arial;
+  color:#f7f7f7; 
+  cursor : pointer;
+}
+
+/********************************PAGE VENDRE*************************************/
+.profil {
+  float : right;
+  text-align: center;
+  padding : 5px;
+
+}
+
+.pseud {
+  background-color: #C1E7ED ;
+  padding : 1px 30px 1px 30px;
+}
+
+.cadre-prod-2{
+  margin-top: 20px;
+  margin-left: 50px;
+  padding: 5px;
+  width : 500px;
+  height: 200px;
+  border: solid;
+  color: #D1DBE1;
+}
+
+/*****************************************PAGE ADMIN*************************************/
+.col1-admin{
+  border: solid;
+  color: #D1DBE1;
+  background-color: #c1e7ed;
+  height: 600px;
+  /*effet d'ombre autour du cadre du produit*/
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  background-color: #C1E7ED;
+}
+
+.roundedImage{
+  overflow:hidden;
+  -webkit-border-radius:50px;
+  -moz-border-radius:50px;
+  border-radius:50px;
+  width:90px;
+  height:90px;
+  margin : 5px;
+
 }
