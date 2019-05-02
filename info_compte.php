@@ -96,10 +96,6 @@
                          <label>Prenom : <?php echo $Prenom; ?></label><br><br>
                        </tr>
 
-                      <tr>
-                         <label>Truc :</label><br><br>
-                       </tr>
-
                 </table>
             </div>
 

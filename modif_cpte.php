@@ -2,16 +2,14 @@
 
 session_start();
 
-	/*$N= isset($_POST["login"])?$_POST["login"]:"";
-	$P= isset($_POST["password"])?$_POST["password"]:"";
-	*/
+	   
     $N=$_SESSION["login"];
 
 	define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASS', '');
     
-
+    echo "$N";
     //identifier le nom de base de données
     $database = "ECEamazon";
 
@@ -27,7 +25,6 @@ session_start();
         while($data = mysqli_fetch_assoc($result)) {
 
             $Ps=$data['pseudo'];
-    ;
             $M=$data['mdp'];
             $Mail=$data['email'];
             $Nom=$data['nom'];
@@ -48,14 +45,12 @@ session_start();
         
        }
    }
-        
-
-       if(!$db_found)
-       { echo "Database not found";} 
+   else
+   {
+    echo "Database not found";
+   }
        
     
-    //end else
-
     
     mysqli_close($db_handle);
  

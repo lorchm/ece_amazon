@@ -23,8 +23,7 @@
     define('DB_USER', 'root');
     define('DB_PASS', '');
    
-   /*<!-- ATTENTION CA CRACHE QUAND ON CHANGE LE PSEUDO PUISQUE CE QUE N EST PLUS LE BON PSEUDO QUI EST CO A LA SESSION -->
-*/
+   /*<!-- ATTENTION CA CRACHE QUAND ON CHANGE LE PSEUDO PUISQUE CE QUE N EST PLUS LE BON PSEUDO QUI EST CO A LA SESSION -->*/
     //identifier le nom de base de données
     $database = "ECEAmazon";
 

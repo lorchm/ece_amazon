@@ -43,33 +43,32 @@
                 <li class="nav-item"><a class="nav-link" href="info_compte.php">Votre Compte</a></li>
                 <li class="nav-item"><a class="nav-link" href="admin.php">Admin</a></li>     
                 <li class="nav-item"><a class="nav-link" href="panier.php">Panier</a></li> 
-            </ul> 
-            
+            </ul>             
         </div> 
     </nav>
-<!-- *********************************** PAGE VENDRE ***************************************************************** -->
+    <!-- *********************************** PAGE VENDRE ***************************************************************** -->
 
-<!-- ***** boutons + profil ***** -->
+    <!-- ***** boutons + profil ***** -->
 
 
-<div class="description page-header header container-fluid"> 
-    <h1> MES PRODUITS EN VENTE</h1> 
-    <div style="background-image: url('img/aya.jpg');">
-            <div class="col-lg-12"> 
-                <div class = "profil"> 
-                    <img src="img/shiba.jpg" class="roundedImage" style="width : 100px;height : 100px;">
-                    <b class="pseud"> Patrick </b>
+    <div class="description page-header header container-fluid"> 
+        <h1> MES PRODUITS EN VENTE</h1> 
+        <div style="background-image: url('img/aya.jpg');">
+                <div class="col-lg-12"> 
+                    <div class = "profil"> 
+                        <img src="img/shiba.jpg" class="roundedImage" style="width : 100px;height : 100px;">
+                        <b class="pseud"> Patrick </b>
+                    </div>
                 </div>
-            </div>
+        </div>
     </div>
-</div>
+
+
+    
 
 
 
-
-
-
-<!--******************** PIED DE PAGE *********************************************************************************-->
+    <!--******************** PIED DE PAGE *********************************************************************************-->
     <footer class="page-footer">
         <div class="container">
             <div class="row">
