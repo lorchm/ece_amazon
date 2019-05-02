@@ -208,7 +208,7 @@ h1 {
   font:bold 13px Arial;
   color:#f7f7f7;
 }
-.btn-galerie : hover{
+.btn-galerie:hover{
   width: 100px;
   border:none;
   padding:6px;
