@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -67,6 +68,7 @@
                       <tr>
                          <label>Portable :<?php echo  $Tel; ?></label><br><br>
                        </tr>
+
                 </table>
             </div>
 
@@ -185,4 +187,5 @@
 <!--******************** PIED DE PAGE *********************************************************************************-->
     <?php include('footer.php') ?>
 </body>
+
 </html>

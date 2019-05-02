@@ -45,7 +45,7 @@
 
            <table>
             <tr>
-             <label >Pseudo : </label><input class="form-control" style="width: 300px;" type="text" name="login" value="<?php echo $Ps; ?>" /><br><br>
+             <label >Pseudo : </label><input class="form-control" style="width: 300px;" type="text" name="login" /><br><br>
            </tr>
            <tr>
              <label>Password :</label><input class="form-control" style="width: 300px;" type="text" name="mdp" value="<?php echo $M; ?>" /><br><br>
@@ -80,13 +80,13 @@
 
         <table>
           <tr>
-           <label>Adresse Ligne 1 : </label><input class="form-control" style="width: 300px;" type="text" nom="adresse" value="<?php echo  $Adresse1; ?>"/> <br> <br>
+           <label>Adresse Ligne 1 : </label><input class="form-control" style="width: 300px;" type="text" nom="Adresse1" value="<?php echo  $Adresse1; ?>"/> <br> <br>
          </tr>
 
 
 
          <tr>
-           <label>Adresse Ligne 2 :</label><input class="form-control" style="width: 300px;" type="text" nom="adresse" value=" <?php echo $Adresse2; ?>"/><br><br>
+           <label>Adresse Ligne 2 :</label><input class="form-control" style="width: 300px;" type="text" nom="$Adresse2" value=" <?php echo $Adresse2; ?>"/><br><br>
          </tr>
 
          <tr>
@@ -94,11 +94,11 @@
          </tr>
 
          <tr>
-           <label>Ville :</label><input class="form-control" style="width: 300px;" type="text" nom="adresse" value=" <?php echo $Ville; ?>"/><br><br>
+           <label>Ville :</label><input class="form-control" style="width: 300px;" type="text" nom="ville" value=" <?php echo $Ville; ?>"/><br><br>
          </tr>
 
          <tr>
-           <label>Pays :</label><input class="form-control" style="width: 300px;" type="text" nom="adresse" value=" <?php echo $Pays; ?>"/><br><br>
+           <label>Pays :</label><input class="form-control" style="width: 300px;" type="text" nom="pays" value=" <?php echo $Pays; ?>"/><br><br>
          </tr>
        </table>
 
@@ -115,7 +115,7 @@
       <table>
 
         <tr>
-          <label>Type de cartes (Visa,MasterCard,...) :</label><input class="form-control" style="width: 300px;" type="text" nom="adresse" value=" <?php echo $Carte_num; ?>"/><br><br>
+          <label>Type de cartes (Visa,MasterCard,...) :</label><input class="form-control" style="width: 300px;" type="text" nom="carte_type" value=" <?php echo $Carte_num; ?>"/><br><br>
         </tr>
         <!-- <input class="form-control" style="width: 300px;" type="text" nom="adresse" value=" <?php echo $Carte; ?>"/><br> <br> -->
 
@@ -123,19 +123,19 @@
 
 
         <tr>
-         <label>Numéro de carte :</label><input class="form-control" style="width: 300px;" type="text" nom="adresse" value=" <?php echo $Carte_num; ?>"/><br><br>
+         <label>Numéro de carte :</label><input class="form-control" style="width: 300px;" type="text" nom="arte_num" value=" <?php echo $Carte_num; ?>"/><br><br>
        </tr>
 
        <tr>
-         <label>Nom sur la carte :</label><input class="form-control" style="width: 300px;" type="text" nom="adresse" value=" <?php echo $Carte_name; ?>"/><br><br>
+         <label>Nom sur la carte :</label><input class="form-control" style="width: 300px;" type="text" nom="card_name" value=" <?php echo $Carte_name; ?>"/><br><br>
        </tr>
 
        <tr>
-         <label>Date d'expiration :</label><input class="form-control" style="width: 300px;" type="text" nom="adresse" value=" <?php echo $Date_exp; ?>"/><br><br>
+         <label>Date d'expiration :</label><input class="form-control" style="width: 300px;" type="text" nom="exp_date" value=" <?php echo $Date_exp; ?>"/><br><br>
        </tr>
 
        <tr>
-         <label>Code de sécurité :</label><input class="form-control" style="width: 300px;" type="text" nom="adresse" value=" <?php echo $Code; ?>"/><br><br>
+         <label>Code de sécurité :</label><input class="form-control" style="width: 300px;" type="text" nom="sec_code" value=" <?php echo $Code; ?>"/><br><br>
        </tr>
 
 

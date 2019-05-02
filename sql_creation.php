@@ -1,24 +1,24 @@
 <?php
+   // session_start();
+            $Ps= isset($_POST["login"])?$_POST["login"]:"";
+          //  $_SESSION["login"]="$Ps";
+            $M= isset($_POST["mdp"])?$_POST["mdp"]:"";
+            $Mail=isset($_POST["email"])?$_POST["email"]:"";
+            $Nom=isset($_POST["nom"])?$_POST["nom"]:"";
+            $Prenom=isset($_POST["prenom"])?$_POST["prenom"]:"";
+            $Adresse1=isset($_POST["adresse1"])?$_POST["adresse1"]:"";
+            $Adresse2=isset($_POST["adresse2"])?$_POST["adresse2"]:"";
+            $CP=isset($_POST["code_bp"])?$_POST["code_bp"]:"";
+            $Ville=isset($_POST["ville"])?$_POST["ville"]:"";
+            $Pays=isset($_POST["pays"])?$_POST["pays"]:"";
+            $Tel=isset($_POST["tel"])?$_POST["tel"]:"";            
+            $Carte=isset($_POST["card_type"])?$_POST["card_type"]:"";
+            $Carte_num=isset($_POST["card_number"])?$_POST["card_number"]:"";
+            $Carte_name=isset($_POST["card_name"])?$_POST["card_name"]:"";
+            $Date_exp=isset($_POST["exp_date"])?$_POST["exp_date"]:"";
+            $Code=isset($_POST["sec_code"])?$_POST["sec_code"]:"";
 
-  
-        
-        $Ps=$data['pseudo'];
-   
-            $M=$data['mdp'];
-            $Mail=$data['email'];
-            $Nom=$data['nom'];
-            $Prenom=$data['prenom'];
-            $Adresse1=$data['adresse1'];
-            $Adresse2=$data['adresse2'];
-            $CP=$data['code_bp'];
-            $Ville=$data['ville'];
-            $Pays=$data['pays'];
-            $Tel=$data['tel'];
-            $Carte=$data['card_type'];
-            $Carte_num=$data['card_number'];
-            $Carte_name=$data['card_name'];
-            $Date_exp=$data['exp_date'];
-            $Code=$data['sec_code'];
+           
 
     define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
@@ -35,19 +35,25 @@
     if($db_found) {
 
         //variable qui contient le pseudo de la personne à qui faut changer
-        
-        echo "$a0";
-        echo "$N";
 
-        /*$a0 = $_POST['pseudo'];*/
-        $sql0 = 'INSERT INTO `acheteur` (`pseudo`, `mdp`, `email`, `nom`, `prenom`, `adresse1`, `adresse2`, `code_bp`, `ville`, `pays`, `tel`, `card_type`, `card_number`, `card_name`, `exp_date`, `sec_code`) VALUES ("'.$Ps.'", "'.$M.'", "'.$Mail.'", "'.$Nom.'", "'.$Prenom.'", "'.$Adresse1.'","'.$Adresse2.'", "'.$CP.'", "'.$Ville.'", "'.$Pays.'", "'.$Tel.'", "'.$Carte.'","'.$Carte_num.'", "'.$Carte_name.'", "'.$Date_exp.'","'.$Code.'");';
-        $result0 = mysqli_query($db_handle, $sql0);
+        $sql = "INSERT INTO acheteur (pseudo, mdp,email,nom,prenom,adresse1,adresse2,code_bp,ville,pays) VALUES ('$Ps', '$M',
+        '$Mail','$Nom','$Prenom','$Adresse1','$Adresse2','$CP','$Ville','$Pays')";
+        $result = mysqli_query($db_handle, $sql);
 
+        /*"INSERT INTO acheteur (pseudo,mdp) values ('$Ps','$M')"; */
     }
+
     else
     {
         echo"Database not found";
     }
+        echo"$Ps";
+        echo"$Mail";
+        echo"$Nom";
+        echo"$Prenom";
+       echo"$M";
 
         mysqli_close($db_handle);
+        
+        //header('Location: info_compte.php');
 ?>
