@@ -16,36 +16,7 @@
 </head>
 <body>
     <!-- Barre de navigation -->
-    <nav class="navbar navbar-expand-md">
-
-        <a class="navbar-brand" href="homepage.php"> <img src="img/logo.png"> </a>         
-        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">      
-            <span class="navbar-toggler-icon"></span>        
-        </button>        
-
-
-        <div class="collapse navbar-collapse" id="main-navigation">   
-
-
-            <ul class="navbar-nav">             
-                <li class="nav-cat"><a class="nav-link" href="#">Catégories</a>   
-                    <ul class="submenu">
-                        <li><a href="livres.php">Livres</a></li>
-                        <li><a href="musique.php">Musiques</a></li>
-                        <li><a href="vetements.php">Vêtements</a></li>
-                        <li><a href="sport_loisirs.php">Sports et Loisirs</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item"><a class="nav-link" href="venteflash.php">Ventes Flash</a></li>             
-                <li class="nav-item"><a class="nav-link" href="vendre.php">Vendre</a></li> 
-                <li class="nav-item"><a class="nav-link" href="info_compte.php">Votre Compte</a></li>
-                <li class="nav-item"><a class="nav-link" href="admin.php">Admin</a></li>     
-                <li class="nav-item"><a class="nav-link" href="panier.php">Panier</a></li> 
-            </ul> 
-            
-        </div> 
-    </nav>
+    <?php include('header.php') ?>
 
 <!-- Page Admin -->
         <div class="description page-header header container-fluid"> 
@@ -62,7 +33,7 @@
                         <div style="margin-left: 70px;">
                             <!-- Ajouter un produit -->
                             <h3 style="color:#DF912A; margin-top: 20px; margin-left: 30px;">Ajouter un Article</h3>
-                            <a href="ajouter_produit.php"><button  id="ajouter_produit" class="btt" style="margin-top: 10px; width: 300px; height: 30px;">Ajouter</button></a>
+                            <a href="ajout_article.php"><button  id="ajouter_produit" class="btt" style="margin-top: 10px; width: 300px; height: 30px;">Ajouter</button></a>
 
                             <!-- Supprimer un produit -->
                             <h3 style="color:#DF912A; margin-top: 20px;  margin-left: 20px;">Supprimer un Article</h3>
@@ -85,9 +56,9 @@
                 </div>
                 <!-- GESTION DES VENDEURS -->
                 <div class="col-lg-8">
+
                     <div class="col1-admin">
                         <h2 style="color:#04263F; text-align: center; margin-top: 20px;">Gestion des vendeurs</h2>
-
                         <div style="margin-left: 100px;  margin-top: 20px; ">
                             <div class="row">
                                 <div class="col-sm-6">
@@ -115,7 +86,7 @@
                                                 <td><label style="color:grey;">Photo de Couverture: </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 45px;" type="file" name="photo_couv"/></td>
                                            </tr>
                                            <tr>
-                                                <td><input id="ajouter_vendeur" class="btt" type="submit" value="Supprimer" style="margin-top: 10px;"></td>
+                                                <td><input id="ajouter_vendeur" class="btt" type="submit" value="Ajouter" style="margin-top: 10px;"></td>
                                             </tr>
                                          </table>
                                     </form>
@@ -145,27 +116,7 @@
 
         
 
-<!--******************** PIED DE PAGE *********************************************************************************-->
-    <footer class="page-footer">
-       <div class="container">
-           <div class="row">
-                <div class="col-lg-4">
-                <p style="color:#ffa630; margin-left: 50px;">INFORMATIONS ADDITIONNNELLES</p><p style="margin-left: 50px;">Notre equipe<br>Laure CHAMOUARD<br>Barbara GERMANEAU<br>Victor LABEYRIE</p>
-                </div>
-                <div class="col-lg-4">
-                    <img src="img/shiba_footer.png" style="margin-left:100px;margin-top: 20px; width:90px;height: 90px;">
-                </div>
-                <div class="col-lg-4">
-                   <p style="color:#ffa630;">CONTACT</p><p>
-                       37, quai de Grenelle, 75015 Paris, France <br>
-                       <a href="mailto:ece.amazon@pro.com" style="color:#ffa630;"> ece.amazon@pro.com</a> <br>
-                       +33 01 02 03 04 05 <br>
-                       +33 01 03 02 05 04
-                   </p>
-               </div>
-            </div>
-            <div class="footer-copyright text-center" style="text-align: center;">&copy; 2019 ECE Amazon | Droit d'auteur: BLV</div>
-        </div>
-    </footer>
+    <!-- PIED DE PAGE -->
+    <?php include('footer.php') ?>
 </body>
 </html>

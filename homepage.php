@@ -64,7 +64,7 @@ function deconnexion()
     </div> 
 
 
-<!--******************** PIED DE PAGE *********************************************************************************-->
+    <!-- PIED DE PAGE -->
     <?php include('footer.php') ?>
 </body>
 </html>
