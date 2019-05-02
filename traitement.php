@@ -48,22 +48,22 @@
 
         //Insertion des articles
         //Vetements
-        $sql8 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('1','0','Chaussettes pour chien','Protegez les petits petons de vos toutous preferes','6','','',NULL,'')";
+        $sql8 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('1','0','Chaussettes pour chien','Protegez les petits petons de vos toutous preferes','6',NULL,NULL,NULL,NULL)";
         $result8 = mysqli_query($db_handle, $sql8);
 
-        $sql9 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('2','1','Bandana rafraichissant','Gardez un bon style pour votre chien tout en le protegeant de la chaleur','7','',NULL,'','')";
+        $sql9 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('2','1','Bandana rafraichissant','Gardez un bon style pour votre chien tout en le protegeant de la chaleur','7',NULL,NULL,NULL,NULL)";
         $result9 = mysqli_query($db_handle, $sql9);
 
-        $sql10 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('3','0','Bottes confort','Favorise la cicatrisation des blessures','12','','',NULL,'')";
+        $sql10 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('3','0','Bottes confort','Favorise la cicatrisation des blessures','12',NULL,NULL,NULL,NULL)";
         $result10 = mysqli_query($db_handle, $sql10);
 
-        $sql11 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('4','1','Noeud papillon','Accessorisez votre chien pour une classe legendaire','5','',NULL,'','')";
+        $sql11 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('4','1','Noeud papillon','Accessorisez votre chien pour une classe legendaire','5',NULL,NULL,NULL,NULL)";
         $result11 = mysqli_query($db_handle, $sql11);
 
-        $sql12 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('5','1','Deguisement Captain America','A la sortie du dernier Avenger, soyez surs que votre animal reste a la mode','7','',NULL,'','')";
+        $sql12 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('5','1','Deguisement Captain America','A la sortie du dernier Avenger, soyez surs que votre animal reste a la mode','7',NULL,NULL,NULL,NULL)";
         $result12 = mysqli_query($db_handle, $sql12);
 
-        $sql13 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('6','1','Pull Over Langley','Pour vos longues soirees d hiver, couvrez vos animaux d un bon pull en laine','17','',NULL,'','')";
+        $sql13 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`) VALUES ('6','1','Pull Over Langley','Pour vos longues soirees d hiver, couvrez vos animaux d un bon pull en laine','17',NULL,NULL,NULL,NULL)";
         $result13 = mysqli_query($db_handle, $sql13);
 
         //Mus
