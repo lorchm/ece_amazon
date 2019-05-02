@@ -75,6 +75,15 @@
 
                  <table>
 
+                     <tr>
+                         <label>Login</label> <input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="login" size="25" /><br> <br>
+                    </tr>
+
+                      <tr>
+                         <label>Mot de passe</label> <input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="mdp" size="25" /><br> <br>
+                    </tr>
+
+
                     <tr>
                          <label>Nom</label> <input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="nom" size="25" /><br> <br>
                     </tr>
