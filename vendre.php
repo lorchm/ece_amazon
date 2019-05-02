@@ -61,16 +61,13 @@
                 <button class="btt"> SUPPRIMER UN ARTICLE </button>
             </div>
 
-        <div class="col-lg-7"></div>
+            <div class="col-lg-7"></div>
 
-        <div class="col-lg-1"> 
-
-            <div class = "profil">
-
-                
-                <img src="img/shiba.jpg" class="roundedImage" style="width : 100px;height : 100px;">
-                <b class="pseud"> Patrick </b>
-
+            <div class="col-lg-1"> 
+                <div class = "profil"> 
+                    <img src="img/shiba.jpg" class="roundedImage" style="width : 100px;height : 100px;">
+                    <b class="pseud"> Patrick </b>
+                </div>
             </div>
         </div>
 
@@ -92,10 +89,6 @@
         </div>
     </div>
 </div>
-
-
-
-
 
 
 
