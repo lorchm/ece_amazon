@@ -35,8 +35,7 @@
 
 <body>
     <!-- Barre de navigation -->
-    <?php include('header.php');
-    echo $N; ?>
+    <?php include('header.php') ?>
 <!-- *********************************** PAGE VENDRE ***************************************************************** -->
     <!-- ***** boutons + profil ***** -->
 
@@ -104,7 +103,7 @@
             <div class="row">
                 <!-- 1. IMAGE -->
                 <div class="col-md-3 col-sm-12">
-                    <a href="img/aya.jpg" target="_blank"><img class="img-fluid" src="img/aya.jpg" style="width: auto; height: 185px;"></a>
+                    <a href="<?php echo $data['url_img']?>" target="_blank"><img class="img-fluid" src="<?php echo $data['url_img']?>" style="width: auto; height: 185px;"></a>
                 </div>
                 <!-- 2. DETAILS ARTICLE -->
                 <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
@@ -130,7 +129,7 @@
                 <div class="row">
                     <!-- 1. IMAGE -->
                     <div class="col-md-3 col-sm-12">
-                        <a href="img/livre.jpg" target="_blank"><img class="img-fluid" src="img/livre.jpg" style="width: auto; height: 185px;"></a>
+                        <a href="<?php echo $data['url_img']?>" target="_blank"><img class="img-fluid" src="<?php echo $data['url_img']?>" style="width: auto; height: 185px;"></a>
                     </div>
                     <!-- 2. DETAIL ARTICLE -->
                     <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
@@ -157,7 +156,8 @@
             <div class="row">
                 <!-- 1. IMAGE -->
                 <div class="col-md-3 col-sm-12">
-                    <a href="img/sport.jpg" target="_blank"><img class="img-fluid" src="img/sport.jpg" style="width: auto; height: 185px;"></a>
+
+                    <a href="<?php echo $data['url_img']  ?>" target="_blank"><img class="img-fluid" src="<?php echo $data['url_img']  ?>" style="width: auto; height: 185px;"></a>
                 </div>
                 <!-- 2. DETAIL ARTICLE -->
                 <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
@@ -183,7 +183,7 @@
         <div class="row">
             <!-- 1. IMAGE -->
             <div class="col-md-3 col-sm-12">
-                <a href="img/shoes.jpg" target="_blank"><img class="img-fluid" src="img/shoes.jpg" style="width: auto; height: 185px;"></a>
+                <a href="<?php echo $data['url_img']?>" target="_blank"><img class="img-fluid" src="<?php echo $data['url_img']?>" style="width: auto; height: 185px;"></a>
             </div>
             <!-- 2. DETAIL ARTICLE -->
             <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
