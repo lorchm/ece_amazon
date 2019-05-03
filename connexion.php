@@ -20,6 +20,18 @@
     <!-- Barre de navigation -->
     <?php include('header.php') ?>
 
+    <?php 
+    session_start();
+        if($_SESSION["login"]!="")
+        {
+            header('Location: info_compte.php');
+        }
+        else
+        {
+            header('Location: connexion.php');
+        }
+    ?>
+
     <body>
         <!-- titre -->
         <div class="description page-header header container-fluid"> 
