@@ -28,6 +28,7 @@ a.bouton-relief {
   padding: 5px;
   border: 2px outset #c0c0c0;
   cursor : default;
+  
 }
 
 a.bouton-relief:hover {
@@ -65,6 +66,7 @@ a.bouton-relief:hover {
 
 .navbar {
   background : #04263F;
+  
 }
 
 .nav-link, .navbar-brand {
@@ -413,6 +415,8 @@ h6{
   border: solid;
   color: #D1DBE1;
 }
+
+
 
 /*****************************************PAGE ADMIN*************************************/
 .col1-admin{
