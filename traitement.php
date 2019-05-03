@@ -1,4 +1,4 @@
-<?php
+,<?php
 
     define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
@@ -29,14 +29,14 @@
         $sql3 = "CREATE TABLE SportLoisir (ref INT(6) PRIMARY KEY,nom VARCHAR(50) NOT NULL,prix INT(6),descri TEXT, nb_vendu INT(5), id_vendeur VARCHAR(20),url_img VARCHAR(50),FOREIGN KEY (id_vendeur) REFERENCES Vendeur(pseudo))";
         $result3 = mysqli_query($db_handle, $sql3);
 
-        $sql4 = "CREATE TABLE Vendeur (pseudo VARCHAR(20) PRIMARY KEY,admins ENUM('0','1'),mdp VARCHAR(20),email VARCHAR(50),nom VARCHAR(40))";
+        $sql4 = "CREATE TABLE Vendeur (pseudo VARCHAR(20) PRIMARY KEY,admins ENUM('0','1'),mdp VARCHAR(20),email VARCHAR(50),nom VARCHAR(40), url_pdp VARCHAR(50), url_pdc VARCHAR(50))";
         $result4 = mysqli_query($db_handle, $sql4);
 
         $sql5 = "CREATE TABLE Acheteur (pseudo VARCHAR(20) PRIMARY KEY,mdp VARCHAR(20),email VARCHAR(50),nom VARCHAR(20),prenom VARCHAR(20),adresse1 VARCHAR(50),adresse2 VARCHAR(50),
             code_bp INT(5),ville VARCHAR(40),pays VARCHAR(20),tel INT(10),card_type VARCHAR(15),card_number INT(16),card_name VARCHAR(50),exp_date DATE,sec_code INT(3))";
         $result5 = mysqli_query($db_handle, $sql5);
 
-        $sql32 = "CREATE TABLE obj_panier (ref_panier INT(6) PRIMARY KEY,pseudo VARCHAR(20) NOT NULL, categorie int(1) NOT NULL,id int(6),FOREIGN KEY (pseudo) REFERENCES acheteur(pseudo))";
+        $sql32 = "CREATE TABLE obj_panier (ref_panier INT(6) PRIMARY KEY,pseudo VARCHAR(20) NOT NULL, categorie int(1) NOT NULL,id int(6), quantite INT(3), FOREIGN KEY (pseudo) REFERENCES acheteur(pseudo))";
         $result32 = mysqli_query($db_handle, $sql32);
 
         //Insertion d'acheteurs
@@ -44,7 +44,7 @@
         $result6 = mysqli_query($db_handle, $sql6);
 
         //Insertion de l'admin
-        $sql7 = "INSERT INTO `vendeur` (`pseudo`, `admins`, `mdp`, `email`, `nom`) VALUES ('admin', '1', '0000', 'laure.chamouard@edu.ece.fr', 'ECE')";
+        $sql7 = "INSERT INTO `vendeur` (`pseudo`, `admins`, `mdp`, `email`, `nom`, `url_pdp`, `url_pdc`) VALUES ('admin', '1', '0000', 'laure.chamouard@edu.ece.fr', 'ECE', 'img/shiba.jpg', 'img/fond1.jpg' )";
         $result7 = mysqli_query($db_handle, $sql7);
 
         //Insertion des articles
@@ -126,19 +126,19 @@
         $result31 = mysqli_query($db_handle, $sql31);
 
         //Panier déjà existant
-        $sql33 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`) VALUES ('1','gege2020', '0', '1')";
+        $sql33 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`) VALUES ('1','gege2020', '0', '1', '1')";
         $result33 = mysqli_query($db_handle, $sql33);
 
-        $sql34 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`) VALUES ('2','gege2020', '0', '2')";
+        $sql34 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`) VALUES ('2','gege2020', '0', '2', '2')";
         $result34 = mysqli_query($db_handle, $sql34);
 
-        $sql35 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`) VALUES ('3','gege2020', '1', '1')";
+        $sql35 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`) VALUES ('3','gege2020', '1', '1', '1')";
         $result35 = mysqli_query($db_handle, $sql35);
 
-        $sql36 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`) VALUES ('4','gege2020', '2', '1')";
+        $sql36 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`) VALUES ('4','gege2020', '2', '1', '3')";
         $result36 = mysqli_query($db_handle, $sql36);
 
-        $sql37 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`) VALUES ('5','gege2020', '3', '1')";
+        $sql37 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`) VALUES ('5','gege2020', '3', '1', '2')";
         $result37 = mysqli_query($db_handle, $sql37);
     }
     //si la BDD n'existe pas

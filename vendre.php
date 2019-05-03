@@ -43,7 +43,15 @@
         <h1> MES PRODUITS EN VENTE</h1> 
     </div>
 
-    <div  class="container" style="background-image: url('img/aya.jpg');">
+    <?php
+    $sql="SELECT * FROM vendeur WHERE pseudo LIKE '".$N."'";
+    $result=mysqli_query($db_handle, $sql);
+    ?>
+
+
+
+
+    <div  class="container" style="background-image: url('img/fond1.jpg');">
         <!-- ***** PARTIE DU PROFIL ET DES BOUTONS ***** -->
         <div class="row">
             <div class="col-md-9 col-sm-12"> 
