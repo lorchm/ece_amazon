@@ -1,4 +1,9 @@
 <?php
+
+    Session_start();
+    $N = $_SESSION["login"];
+
+    
     define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASS', '');
@@ -14,7 +19,7 @@
 
 <html>
 <head>
-	<title>ECE Amazon</title>
+	<title>ECE Amazon :: Vendre</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -83,11 +88,12 @@
             </div>
         </div>
 
+        <!--********** PARTIE AFFICHAGE DES PRODUITS EN VENTE SELON LE PSEUDO *********** -->
         <?php 
         //si le BDD existe, faire le traitement
         if($db_found) {
 
-        $sql="SELECT * FROM musique";
+        $sql='SELECT * FROM musique WHERE id_vendeur =".$N."';
         $result=mysqli_query($db_handle, $sql);
 
         //début boucle

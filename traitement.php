@@ -70,19 +70,19 @@
         $sql14 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('1', 'Black Dog', 'Led Zeppelin', 'Led Zeppelin IV', '1971', '3','4','admin')";
         $result14 = mysqli_query($db_handle, $sql14);
 
-        $sql15 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('2', 'Who Let the Dogs Out?', 'Baha Men', 'Who Let the Dogs Out', '2000', '3','8','admin')";
+        $sql15 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('2', 'Who Let the Dogs Out?', 'Baha Men', 'Who Let the Dogs Out', '2000', '3','8',NULL)";
         $result15 = mysqli_query($db_handle, $sql15);
 
-        $sql16 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('3', 'The Dogs Of War', 'Pink Floyd', 'A Momentary Lapse of Reason', '1988', '3','2','admin')";
+        $sql16 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('3', 'The Dogs Of War', 'Pink Floyd', 'A Momentary Lapse of Reason', '1988', '3','2',NULL)";
         $result16 = mysqli_query($db_handle, $sql16);
 
-        $sql17 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('4', 'Hey Bulldog', 'The Beatles', 'Yellow Submarine', '1969', '3','0','admin')";
+        $sql17 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('4', 'Hey Bulldog', 'The Beatles', 'Yellow Submarine', '1969', '3','0',NULL)";
         $result17 = mysqli_query($db_handle, $sql17);
 
-        $sql18 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('5', 'Given The Dog A Bone', 'AC/DC', 'Back in Black', '1980', '3','0','admin')";
+        $sql18 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('5', 'Given The Dog A Bone', 'AC/DC', 'Back in Black', '1980', '3','0',NULL)";
         $result18 = mysqli_query($db_handle, $sql18);
 
-        $sql19 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('6', 'Hound Dog', 'Elvis Presley', 'Dont Be Cruel', '1956', '3','7','admin')";
+        $sql19 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('6', 'Hound Dog', 'Elvis Presley', 'Dont Be Cruel', '1956', '3','7',NULL)";
         $result19 = mysqli_query($db_handle, $sql19);
 
 

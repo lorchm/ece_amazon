@@ -30,10 +30,7 @@ session_start();
 
               }
           	else
-          	{
-          		 
-              
-              
+          	{ 
              echo"ERREUR";
               header('Location: connexion.php');
             

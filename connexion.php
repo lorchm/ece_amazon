@@ -26,10 +26,7 @@
         {
             header('Location: info_compte.php');
         }
-        else
-        {
-            header('Location: connexion.php');
-        }
+       
     ?>
 
     <body>
