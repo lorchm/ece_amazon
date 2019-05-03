@@ -1,7 +1,7 @@
 <?php
-   session_start();
+            session_start();
             $Ps= isset($_POST["login"])?$_POST["login"]:"";
-          $_SESSION["login"]="$Ps";
+            $_SESSION["login"]="$Ps";
             $M= isset($_POST["mdp"])?$_POST["mdp"]:"";
             $Mail=isset($_POST["email"])?$_POST["email"]:"";
             $Nom=isset($_POST["nom"])?$_POST["nom"]:"";
@@ -17,8 +17,6 @@
             $Carte_name=isset($_POST["card_name"])?$_POST["card_name"]:"";
             $Date_exp=isset($_POST["exp_date"])?$_POST["exp_date"]:"";
             $Code=isset($_POST["sec_code"])?$_POST["sec_code"]:"";
-
-           
 
     define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');

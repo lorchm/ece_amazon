@@ -23,6 +23,7 @@
     <?php 
     session_start();
         $_SESSION["login"]="";    
+
         if($_SESSION["login"]!="")
         {
             header('Location: info_compte.php');

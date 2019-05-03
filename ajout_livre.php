@@ -47,4 +47,5 @@
     }//end else
 
     mysqli_close($db_handle);
+
 ?>

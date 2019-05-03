@@ -35,8 +35,7 @@
 
 <body>
     <!-- Barre de navigation -->
-    <?php include('header.php');
-    echo $N; ?>
+    <?php include('header.php') ?>
 <!-- *********************************** PAGE VENDRE ***************************************************************** -->
     <!-- ***** boutons + profil ***** -->
 
@@ -44,7 +43,17 @@
         <h1> MES PRODUITS EN VENTE</h1> 
     </div>
 
-    <div  class="container" style="background-image: url('img/aya.jpg');">
+    <?php
+    if($db_found) {
+
+    $sql="SELECT * FROM vendeur WHERE pseudo LIKE '".$N."'";
+    $result=mysqli_query($db_handle, $sql);
+
+    while ($data = mysqli_fetch_assoc($result)){
+    ?>
+
+
+    <div  class="container" style="background-image: url('<?php echo $data['url_pdc'] ?>');">
         <!-- ***** PARTIE DU PROFIL ET DES BOUTONS ***** -->
         <div class="row">
             <div class="col-md-9 col-sm-12"> 
@@ -81,30 +90,29 @@
 
             <div class="col-md-3 col-sm-12"> 
                 <div class = "profil"> 
-                        <img src="img/shiba.jpg" class="roundedImage" style="width : 100px;height : 100px;"> <br>
-                        <b class="pseud"> Patrick </b>
+                        <img src="<?php echo $data['url_pdp'] ?>" class="roundedImage" style="width : 100px;height : 100px;"> <br>
+                        <b class="pseud"> <?php echo $data['pseudo'] ?> </b>
                 </div>
             </div>
         </div>
 
         <!--********** PARTIE AFFICHAGE DES PRODUITS EN VENTE SELON LE PSEUDO *********** -->
         <?php 
+            }// fin du while
 
         //si le BDD existe, faire le traitement
-        if($db_found) {
-
-        $sql="SELECT * FROM musique WHERE id_vendeur LIKE '".$N."'";
-        $result=mysqli_query($db_handle, $sql);
+        $sql7="SELECT * FROM musique WHERE id_vendeur LIKE '".$N."'";
+        $result7=mysqli_query($db_handle, $sql7);
 
         //début boucle 1
-        while ($data = mysqli_fetch_assoc($result)) {      
+        while ($data = mysqli_fetch_assoc($result7)) {      
         ?>
 
         <div class="cadre-prod container">
             <div class="row">
                 <!-- 1. IMAGE -->
                 <div class="col-md-3 col-sm-12">
-                    <a href="img/aya.jpg" target="_blank"><img class="img-fluid" src="img/aya.jpg" style="width: auto; height: 185px;"></a>
+                    <a href="<?php echo $data['url_img']?>" target="_blank"><img class="img-fluid" src="<?php echo $data['url_img']?>" style="width: auto; height: 185px;"></a>
                 </div>
                 <!-- 2. DETAILS ARTICLE -->
                 <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
@@ -130,7 +138,7 @@
                 <div class="row">
                     <!-- 1. IMAGE -->
                     <div class="col-md-3 col-sm-12">
-                        <a href="img/livre.jpg" target="_blank"><img class="img-fluid" src="img/livre.jpg" style="width: auto; height: 185px;"></a>
+                        <a href="<?php echo $data['url_img']?>" target="_blank"><img class="img-fluid" src="<?php echo $data['url_img']?>" style="width: auto; height: 185px;"></a>
                     </div>
                     <!-- 2. DETAIL ARTICLE -->
                     <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
@@ -157,7 +165,8 @@
             <div class="row">
                 <!-- 1. IMAGE -->
                 <div class="col-md-3 col-sm-12">
-                    <a href="img/sport.jpg" target="_blank"><img class="img-fluid" src="img/sport.jpg" style="width: auto; height: 185px;"></a>
+
+                    <a href="<?php echo $data['url_img']  ?>" target="_blank"><img class="img-fluid" src="<?php echo $data['url_img']  ?>" style="width: auto; height: 185px;"></a>
                 </div>
                 <!-- 2. DETAIL ARTICLE -->
                 <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
@@ -183,7 +192,7 @@
         <div class="row">
             <!-- 1. IMAGE -->
             <div class="col-md-3 col-sm-12">
-                <a href="img/shoes.jpg" target="_blank"><img class="img-fluid" src="img/shoes.jpg" style="width: auto; height: 185px;"></a>
+                <a href="<?php echo $data['url_img']?>" target="_blank"><img class="img-fluid" src="<?php echo $data['url_img']?>" style="width: auto; height: 185px;"></a>
             </div>
             <!-- 2. DETAIL ARTICLE -->
             <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
@@ -205,11 +214,10 @@
         } //fin boucle
 
     }//fin if
-
-        //si la BDD n'existe pas
-        else {
-            echo "Database not found";
-        }//end else
+    //si la BDD n'existe pas
+    else {
+        echo "Database not found";
+    }//end else
 
         mysqli_close($db_handle);
     ?>
