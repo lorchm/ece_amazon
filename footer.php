@@ -19,10 +19,10 @@
        <div class="container">
            <div class="row">
                 <div class="col-lg-4">
-                <p style="color:#ffa630; margin-left: 50px;">INFORMATIONS ADDITIONNNELLES</p><p style="margin-left: 50px;">Notre equipe<br>Laure CHAMOUARD<br>Barbara GERMANEAU<br>Victor LABEYRIE</p>
+                <p style="color:#ffa630;">INFORMATIONS ADDITIONNNELLES</p><p  >Notre equipe<br>Laure CHAMOUARD<br>Barbara GERMANEAU<br>Victor LABEYRIE</p>
                 </div>
                 <div class="col-lg-4">
-                    <img src="img/shiba_footer.png" style="margin-left:100px;margin-top: 20px; width:90px;height: 90px;">
+                    <img class="fluid" src="img/shiba_footer.png" style="margin-left:100px;margin-top: 20px; width:90px;height: 90px;">
                 </div>
                 <div class="col-lg-4">
                    <p style="color:#ffa630;">CONTACT</p><p>

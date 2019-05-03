@@ -28,6 +28,7 @@ a.bouton-relief {
   padding: 5px;
   border: 2px outset #c0c0c0;
   cursor : default;
+  
 }
 
 a.bouton-relief:hover {
@@ -65,6 +66,7 @@ a.bouton-relief:hover {
 
 .navbar {
   background : #04263F;
+  
 }
 
 .nav-link, .navbar-brand {
@@ -253,10 +255,9 @@ h6{
 /***********************ZONE PRODUIT : cadre pour Livres/Musique/Vetement/Sport... ************************/
 .cadre-prod{
   margin-top: 20px;
-  margin-left: 50px;
-  padding: 8px;
+/*  margin-left: 50px;
+*/  padding: 8px;
   width : 1000px;
-  height: 210px;
   border: solid;
   color: #D1DBE1;
   /*effet d'ombre autour du cadre du produit*/
@@ -413,6 +414,8 @@ h6{
   border: solid;
   color: #D1DBE1;
 }
+
+
 
 /*****************************************PAGE ADMIN*************************************/
 .col1-admin{

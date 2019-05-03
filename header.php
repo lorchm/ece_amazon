@@ -18,7 +18,7 @@
 </head>
 <body>
 	<!-- Barre de navigation -->
-    <nav class="navbar navbar-expand-md">
+    <nav class="navbar navbar-expand-md" style="padding : 0px 12px;">
 
         <a class="navbar-brand" href="homepage.php"> <img src="img/logo.png"> </a>         
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">      

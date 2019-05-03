@@ -48,15 +48,14 @@
             while ($data = mysqli_fetch_assoc($result)) {
                 
     ?>
-
-    <div class="cadre-prod">
+    <div class="cadre-prod container">
         <div class="row">
             <!-- 1. IMAGE -->
-            <div class="col-md-3">
-                <a href="img/livre.jpg" target="_blank"><img src="img/livre.jpg" style="width: 100%; height: 185px;"></a>
+            <div class="col-md-3 col-sm-12">
+                <a href="img/livre.jpg" target="_blank"><img class="img-fluid" src="img/livre.jpg" style="width: auto; height: 185px;"></a>
             </div>
             <!-- 2. DETAIL ARTICLE -->
-            <div class="col-md-5" style="margin-top: 10px;">
+            <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
                 <div class="en-tete-prod"> <b><?php echo $data['titre']?> </b></div>
                 <div class="en-tete-prod-deux"> <p><?php echo $data['auteur']." - ".$data['annee']." - ".$data['editeur']?></p> </div>
                 <div class="prix-prod"><?php echo $data['prix']?> &euro;</div>
@@ -64,7 +63,7 @@
                 <div class="description-prod"><?php echo $data['descri']?></div>
             </div>
             <!-- 3. REMPLIR INFOS -->
-            <div class="col-md-4">
+            <div class="col-md-4  col-sm-12">
                 <div class="remplir-infos-prod">
                     <form>
                         <!-- QUANTITE -->
@@ -82,7 +81,6 @@
             </div>
         </div>
     </div>
-
     <?php 
             }//fin boucle
         }//fin if
