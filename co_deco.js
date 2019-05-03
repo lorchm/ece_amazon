@@ -1,14 +1,15 @@
 
-<?php session_start() ?>
+/*<?php session_start() ?>*/
+
 function connexion()
 {
-
-	if($_SESSION["login"]=="")
+	window.open("connexion.php");
+	/*if($_SESSION["login"]=="")
 	{
 		<?php header('Location: connexion.php'); ?>
 	}
 	else
 		{
 
-		}
+		}*/
 } 

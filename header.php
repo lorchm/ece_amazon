@@ -11,11 +11,14 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
 
     <script type="text/javascript" src="program.js"></script>
+    <script src="co_deco.js" type="text/javascript" ></script>
     <link href="styles.css" rel="stylesheet" type="text/css" />
+    
+
 </head>
 <body>
 	<!-- Barre de navigation -->
-    <nav class="navbar navbar-expand-md">
+    <nav class="navbar navbar-expand-md" style="padding : 0px 12px;">
 
         <a class="navbar-brand" href="homepage.php"> <img src="img/logo.png"> </a>         
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">      
@@ -37,7 +40,7 @@
                 </li>
 
                 <li class="nav-item"><a class="nav-link" href="venteflash.php">Ventes Flash</a></li>             
-                <li class="nav-item"><a class="nav-link" href="vendre.php">Vendre</a></li> 
+                <li class="nav-item"><a class="nav-link" href="tvendeur.php">Vendre</a></li> 
                 <li class="nav-item"><a class="nav-link" href="connexion.php">Votre Compte</a></li>
                 <li class="nav-item"><a class="nav-link" href="admin.php">Admin</a></li>     
                 <li class="nav-item"><a class="nav-link" href="panier.php">Panier</a></li> 
@@ -45,7 +48,7 @@
 
              <div class="navbar-nav" >
 
-                    <td><button class="btn btn-primary" style="width:150px;"  onclick="connexion()">Se connecter</button></td>
+                    <button class="btn btn-primary" style="width:150px;"  onClick="connexion()">Se connecter</button>
 
                      <td><a class="btn btn-primary" style="width:150px; margin-left: 50px;" onclick="deconnexion()" >Se déconnecter</a></td>
             </div>
