@@ -1,4 +1,5 @@
 <?php
+session_start();
     define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASS', '');
@@ -24,6 +25,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
 
     <script type="text/javascript" src="program.js"></script>
+    <script type="text/javascript" src="ajout_article.js"></script>
+
     <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="page-livres">
@@ -37,8 +40,23 @@
         <p> ECE Amazon vous propose pleins de livres sympas.</p> 
     </div>
 
+ <!--    <script >
+        function ajout_article(test,cat)
+            {
+                $(document).ready(function(){
+                    document.load('venteflash.php');
+                          /*$.post('ajout_article_bdd.php',{test,cat}){
+
+                    };*/
+              
+    
+                };
+            }
+    </script>
+ -->
     <?php 
         //si le BDD existe, faire le traitement
+        
         if($db_found) {
 
             $sql="SELECT * FROM livre";
@@ -46,8 +64,11 @@
 
             //début boucle
             while ($data = mysqli_fetch_assoc($result)) {
+                   $_SESSION['livre']=$data['ref'];
+            
                 
     ?>
+
     <div class="cadre-prod container">
         <div class="row">
             <!-- 1. IMAGE -->
@@ -65,23 +86,28 @@
             <!-- 3. REMPLIR INFOS -->
             <div class="col-md-4  col-sm-12">
                 <div class="remplir-infos-prod">
-                    <form>
+                    <form action ="ajout_livre.php" method="post">
                         <!-- QUANTITE -->
                         <tr>
                             <td>
+
                                 <label style="color:grey; margin-left: 70px;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
                             </td>
                         </tr>
                         <!-- AJOUTER PANIER -->
+
                         <tr>
-                            <td><input type="button" id="ajout-panier" name="ajout-panier" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "></td>
+                            <td><button type="submit" id="ajout-panier" name="ajout_article" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "></button></td>
                         </tr> 
                     </form> 
                 </div>
             </div>
         </div>
     </div>
+
+    
     <?php 
+
             }//fin boucle
         }//fin if
 
