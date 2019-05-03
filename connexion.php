@@ -22,11 +22,11 @@
 
     <?php 
     session_start();
+    
         if($_SESSION["login"]!="")
         {
             header('Location: info_compte.php');
         }
-       
     ?>
 
     <body>
