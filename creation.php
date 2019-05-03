@@ -38,14 +38,14 @@
         <form action ="sql_creation.php" method="post">
             <h2>Informations personnelles</h2>
 
-                 <table>
+                 <table class="container fluid">
 
                      <tr>
-                         <label>Login</label> <input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="login" size="25" /><br> <br>
+                         <label>Login</label> <input class="form-control center-con"  style="width: 250px;" type="text" name="login" size="25" /><br> <br>
                     </tr>
 
                       <tr>
-                         <label>Mot de passe</label> <input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="password" name="mdp" size="25" /><br> <br>
+                         <label>Mot de passe</label> <input class="form-control center-con"  style="width: 250px;" type="password" name="mdp" size="25" /><br> <br>
                     </tr>
 
 

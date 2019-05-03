@@ -19,7 +19,7 @@
 
 <!--************************************ Liste articles du panier ******************************************************-->
 
-    <div class="page-venteflash">
+    <div class="page-venteflash container">
         <!-- Titre -->
         <div class="description page-header header container-fluid"> 
             <h1>Mon Panier</h1> 
@@ -28,15 +28,15 @@
             <h2>Si c'est un livre/musique/sport</h2>
         <div class="cadre-prod">
             <div class="row">
-                <div class="col-md-3">
-                    <a href="img/livre.jpg" target="_blank"><img src="img/livre.jpg" style="width: 100%; height: 185px;"></a>
+                <div class="col-md-3 col-sm-12">
+                    <a href="img/livre.jpg" target="_blank"><img class="img-fluid" src="img/livre.jpg" style="width: 100%; height: 185px;"></a>
                 </div>
-                <div class="col-md-5" style="margin-top: 10px;">
+                <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
                     <div class="en-tete-prod">Titre de Auteur | Annee publication  | Edition</div>
                     <div class="prix-prod">Mettre le prix &euro;</div>
                     <div class="reference-prod">La référence RS55ZQ</div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-12">
                     <div class="remplir-infos-prod">
                         <p style="color:grey;">Quantité : ...</p> 
                     </div> 
@@ -51,17 +51,17 @@
         <div class="cadre-prod">
             <div class="row">
                 <!-- 1. IMAGE -->
-                <div class="col-md-3">
-                    <a href="img/shoes.jpg" target="_blank"><img src="img/shoes.jpg" style="width: 100%; height: 185px;"></a>
+                <div class="col-md-3 col-sm-12">
+                    <a href="img/shoes.jpg" target="_blank"><img class="img-fluid" src="img/shoes.jpg" style="width: 100%; height: 185px;"></a>
                 </div>
                 <!-- 2. DETAIL ARTICLE -->
-                <div class="col-md-5" style="margin-top: 10px;">
+                <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
                     <div class="en-tete-prod">Marque - Nom de la Chaussures</div>
                     <div class="prix-prod">Mettre le prix &euro;</div>
                     <div class="reference-prod">La référence RS55ZQ</div>
                 </div>
                 <!-- 3. REMPLIR INFOS -->
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-12">
                     <div class="remplir-infos-vet">
                         <p style="color:grey;">Quantité : ...</p>
                         <p style="color:grey;">Couleur : ...</p>
@@ -77,17 +77,17 @@
         <div class="cadre-prod">
             <div class="row">
                 <!-- 1. IMAGE -->
-                <div class="col-md-3">
-                    <a href="img/shoes.jpg" target="_blank"><img src="img/shoes.jpg" style="width: 100%; height: 185px;"></a>
+                <div class="col-md-3 col-sm-12">
+                    <a href="img/shoes.jpg" target="_blank"><img class="img-fluid" src="img/shoes.jpg" style="width: 100%; height: 185px;"></a>
                 </div>
                 <!-- 2. DETAIL ARTICLE -->
-                <div class="col-md-5" style="margin-top: 10px;">
+                <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
                     <div class="en-tete-prod">Marque - Nom du Vetement</div>
                     <div class="prix-prod">Mettre le prix &euro;</div>
                     <div class="reference-prod">La référence RS55ZQ</div>
                 </div>
                 <!-- 3. REMPLIR INFOS -->
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-12">
                     <div class="remplir-infos-vet">
                         <p style="color:grey;">Quantité : ...</p>
                         <p style="color:grey;">Couleur : ...</p>
@@ -100,12 +100,12 @@
         </div>
 
 
-        <div class ="total">
+        <div class ="total ">
             <div class= "row">
-                <div class= "col-sm-9">
+                <div class= "col-md-9 col-sm-12">
                     <p style="color:grey;">Nombre d'articles total : X. PRIX TOTAL : &euro;</p>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-md-3 col-sm-12">
                     <div style="position: absolute; bottom: 17px;">
                         <a href="homepage.php"><button class="btt"> Retourner à mes achats </button></a>
                         <a href="payer.php"><button class="btt"> Payer </button></a>

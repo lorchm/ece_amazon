@@ -10,6 +10,9 @@
     $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
     $db_found = mysqli_select_db($db_handle, $database);
 
+    //si le BDD existe, faire le traitement
+    if($db_found) {
+
 ?>
 
 <!DOCTYPE html>
@@ -39,32 +42,18 @@
         </div>
 
         <!--**** BEST SELLERS LIVRES****-->
-        <?php 
-            //si le BDD existe, faire le traitement
-            if($db_found) {
-
-                $sql="SELECT * FROM livre";
-                $result=mysqli_query($db_handle, $sql);
-                $top = 1;
-                $tab;
-                //début boucle
-                while ($data = mysqli_fetch_assoc($result)) {
-                    $tab[] = array( $data['ref'] => $data['nb_vendu']);
-                }
-                //tri décroissant des valeurs 
-                arsort($tab);
-                foreach ($tab as $key => $value) {
-
-                    $sql="SELECT FROM livre WHERE nb_vendu = ".$key."";
-                }
-               
-                   
-        ?>
-
-
         <div class="best-livres">
-            <h2 style="margin-left: 50px;">Livre</h2>
-            <h2 style="margin-left: 50px;">#<?php echo $top ?></h2>
+            <h2 style="margin-left: 55px;">Livre</h2>
+            <?php 
+                    $top=1; //sert vous affihez le num des best sellers
+                    $sql="SELECT * FROM livre ORDER BY nb_vendu DESC";
+                    $result=mysqli_query($db_handle, $sql);
+                    $i=0;
+                    //début boucle
+                    while ($data = mysqli_fetch_assoc($result)) { 
+                        if($i < 4){     
+            ?>
+            <h2 style="margin-left: 55px;">#<?php echo $top ?></h2>
             <div class="cadre-prod container">
                 <div class="row">
                     <div class="col-md-3 col-sm-12">
@@ -95,24 +84,27 @@
                     </div>
                 </div>
             </div>
-        </div>
+            <?php
+                $i++;
+                $top++;
+                    }//fin du if affiche les 4 best sellers 
+                }//fin du while
+            ?>
         <!-- fin pour les livres -->
-        <?php 
-            // $top ++;
-            //     }//fin boucle
-                $top = 1;
-            }//fin if
-            //si la BDD n'existe pas
-            else {
-                echo "Database not found";
-            }//end else
-            mysqli_close($db_handle);
-        ?>
 
 <!--**** BEST SELLERS MUSIQUE****-->
         <div class="best-musique">
-            <h2 style="margin-left: 50px;">Musique</h2>
-            <h2 style="margin-left: 50px;">#1</h2>
+            <h2 style="margin-left: 55px;">Musique</h2>
+            <?php 
+                $top=1; //sert vous affihez le num des best sellers
+                $sql="SELECT * FROM musique ORDER BY nb_vendu DESC";
+                $result=mysqli_query($db_handle, $sql);
+                $i=0;
+                //début boucle
+                while ($data = mysqli_fetch_assoc($result)) { 
+                    if($i < 4){     
+            ?>
+            <h2 style="margin-left: 55px;">#<?php echo $top ?></h2>
             <div class="cadre-prod container">
                 <div class="row">
                     <!-- 1. IMAGE -->
@@ -145,18 +137,35 @@
                     </div>
                 </div>
             </div>
+            <?php
+                $i++;
+                $top++;
+                    }//fin du if affiche les 4 best sellers 
+                }//fin du while
+            ?>
         </div>
+
+
 
 <!--**** BEST SELLERS VETEMENTS ET CHASSURES****-->
         <div class="best-vetement">
             <h2 style="margin-left: 50px;">Vetements et Chaussures</h2>
-            <h2 style="margin-left: 50px;">#1</h2>
+            <?php 
+                $top=1; //sert vous affihez le num des best sellers
+                $sql="SELECT * FROM vetement ORDER BY nb_vendu DESC";
+                $result=mysqli_query($db_handle, $sql);
+                $i=0;
+                //début boucle
+                while ($data = mysqli_fetch_assoc($result)) { 
+                    if($i < 4){     
+            ?>
+            <h2 style="margin-left: 50px;">#<?php echo $top ?></h2>
             <!-- POUR CHAUSSURES ET VETEMENTS-->
             <div class="cadre-prod container">
                 <div class="row">
                     <!-- 1. IMAGE -->
                     <div class="col-md-3 col-sm-12">
-                        <a href="img/shoes.jpg" target="_blank"><img src="img/shoes.jpg" style="width: auto; height: 185px;"></a>
+                        <a href="img/shoes.jpg" target="_blank"><img class="img-fluid" src="img/shoes.jpg" style="width: auto; height: 185px;"></a>
                     </div>
                     <!-- 2. DETAIL ARTICLE -->
                     <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
@@ -227,12 +236,27 @@
                     </div>
                 </div>
             </div>
+            <?php
+                $i++;
+                $top++;
+                    }//fin du if affiche les 4 best sellers 
+                }//fin du while
+            ?>
         </div>
 
 <!--**** BEST SELLERS SPORTS ET LOISIRS****-->
         <div class="best-sport">
-            <h2 style="margin-left: 50px;">Sports et Loisirs</h2>
-            <h2 style="margin-left: 50px;">#1</h2>
+            <h2 style="margin-left: 55px;">Sports et Loisirs</h2>
+            <?php 
+                $top=1; //sert vous affihez le num des best sellers
+                $sql="SELECT * FROM sportloisir ORDER BY nb_vendu DESC";
+                $result=mysqli_query($db_handle, $sql);
+                $i=0;
+                //début boucle
+                while ($data = mysqli_fetch_assoc($result)) { 
+                    if($i < 4){     
+            ?>
+            <h2 style="margin-left: 55px;">#<?php echo $top ?></h2>
                 <div class="cadre-prod container">
                     <div class="row">
                         <!-- 1. IMAGE -->
@@ -265,10 +289,26 @@
                         </div>
                     </div>
                 </div>
+                <?php
+                    $i++;
+                    $top++;
+                        }//fin du if affiche les 4 best sellers 
+                    }//fin du while
+                ?>
             </div>
         <!-- fin div page-venteflash -->
         </div>
 
+        <?php
+             }//fin du if
+                //si la BDD n'existe pas
+                else {
+                    echo "Database not found";
+                }//end else
+                mysqli_close($db_handle);
+        ?>
+
+        </div>
 
     <!-- PIED DE PAGE -->
     <?php include('footer.php') ?>
