@@ -35,7 +35,7 @@
             code_bp INT(5),ville VARCHAR(40),pays VARCHAR(20),tel INT(10),card_type VARCHAR(15),card_number INT(16),card_name VARCHAR(50),exp_date DATE,sec_code INT(3))";
         $result5 = mysqli_query($db_handle, $sql5);
 
-        $sql32 = "CREATE TABLE obj_panier (pseudo VARCHAR(20) NOT NULL, categorie int(1) NOT NULL,id int(6),PRIMARY KEY (pseudo))";
+        $sql32 = "CREATE TABLE obj_panier (ref_panier INT(6) PRIMARY KEY,pseudo VARCHAR(20) NOT NULL, categorie int(1) NOT NULL,id int(6),FOREIGN KEY (pseudo) REFERENCES acheteur(pseudo))";
         $result32 = mysqli_query($db_handle, $sql32);
 
         //Insertion d'acheteurs
@@ -118,26 +118,26 @@
         $sql29 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('4', 'Eduquer son chien pour les Nuls', 'Jack VOLHARD', '2012', '13', 'Les Nuls', 'Assis, debout, couche ! Eduquez votre animal de compagnie prefere !','5','admin')";
         $result29 = mysqli_query($db_handle, $sql29);
 
-        $sql30 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('5', 'Comment elever son chiot (au top !)', 'Gwen Bailey', '2012', '12', 'Larissa', 'Ce guide donne les cles d’une education reussie fondee sur la confiance, l amour et surtout un apprentissage positif des regles de vie.','3','admin')";
+        $sql30 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('5', 'Comment elever son chiot (au top !)', 'Gwen Bailey', '2012', '12', 'Larissa', 'Ce guide donne les cles d une education reussie fondee sur la confiance, l amour et surtout un apprentissage positif des regles de vie.','3','admin')";
         $result30 = mysqli_query($db_handle, $sql30);
 
         $sql31 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('6', '365 idees pour rendre mon chien heureux', 'Laetitia OuafMag', '2016', '15', 'Ouafmag', 'Vous cherchez des idees pour occuper votre chien, lui faire developper ses talents, briser la routine, devenir plus complices… en voici 365 !','7','admin')";
         $result31 = mysqli_query($db_handle, $sql31);
 
         //Panier déjà existant
-        $sql33 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`) VALUES (`1`,'gege2020', '0', '1')";
+        $sql33 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`) VALUES ('1','gege2020', '0', '1')";
         $result33 = mysqli_query($db_handle, $sql33);
 
-        $sql34 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`) VALUES (`2`,'gege2020', '0', '2')";
+        $sql34 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`) VALUES ('2','gege2020', '0', '2')";
         $result34 = mysqli_query($db_handle, $sql34);
 
-        $sql35 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`) VALUES (`3`,'gege2020', '1', '1')";
+        $sql35 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`) VALUES ('3','gege2020', '1', '1')";
         $result35 = mysqli_query($db_handle, $sql35);
 
-        $sql36 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`) VALUES (`4`,'gege2020', '2', '1')";
+        $sql36 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`) VALUES ('4','gege2020', '2', '1')";
         $result36 = mysqli_query($db_handle, $sql36);
 
-        $sql37 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`) VALUES (`5`,'gege2020', '3', '1')";
+        $sql37 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`) VALUES ('5','gege2020', '3', '1')";
         $result37 = mysqli_query($db_handle, $sql37);
     }
     //si la BDD n'existe pas
