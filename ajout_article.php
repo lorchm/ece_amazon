@@ -13,6 +13,12 @@
     <script type="text/javascript" src="program.js"></script>
     <link href="styles.css" rel="stylesheet" type="text/css" />
 
+      <script type="text/javascript">
+        function ajout_livre(){
+          alert("Votre article a bien été ajouté !");
+        }
+  </script>
+
 </head>
 
 <!-- <script>
@@ -85,7 +91,7 @@ function deconnexion()
             </tr>
 
             <tr>
-             <label>Pointures (si chaussures) : </label><input class="form-control" style="width: 300px;" ype="text" name="Pointeur"/><br><br>
+             <label>Pointures (si chaussures) : </label><input class="form-control" style="width: 300px;" ype="text" name="Pointuer"/><br><br>
             </tr>
 
             <tr>
@@ -93,7 +99,7 @@ function deconnexion()
             </tr>
 
             <tr>
-             <label>Description : </label><input class="form-control" style="width: 300px;" type="text" nom="descri"/><br><br>
+             <label>Description : </label><textarea class="form-control" style="width: 300px; display: block;" type="text" nom="descri"/></textarea><br><br>
             </tr>
 
 
@@ -108,7 +114,7 @@ function deconnexion()
        </table>
 
         <tr>
-          <td><input id="ajout_vetement" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
+          <td><button name="ajout_vetement" class="btn btn-primary" style="width:80px;" type="submit">Ajouter</button></td>
         </tr>
 
      </div>
@@ -125,12 +131,10 @@ function deconnexion()
     <div class="container fluid center_block" >
 
       <h2>Musique</h2>
-
-      <table>
+        <table>
         <tr>
          <label>Référence: </label><input class="form-control" style="width: 300px;" type="text" nom="ref"/> <br> <br>
         </tr>
-
         <tr>
            <label>Titre :</label><input class="form-control" style="width: 300px;" type="text" nom="titre"/><br><br>
         </tr>
@@ -148,7 +152,7 @@ function deconnexion()
         </tr>
 
         <tr>
-          <label>Description :</label><input class="form-control" style="width: 300px;" type="text" nom="descri"/><br><br>
+          <label>Description :</label><textarea class="form-control" style="width: 300px;" type="text" nom="descri"/></textarea><br><br>
         </tr>
 
         <tr>
@@ -160,7 +164,7 @@ function deconnexion()
         </tr>
 
         <tr>
-          <td><input id="ajout_musique" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
+          <td><button name="ajout_musique" class="btn btn-primary" style="width:80px;" type="submit">Ajouter</button></td>
         </tr>
 
       </table>
@@ -191,7 +195,7 @@ function deconnexion()
         </tr>
 
         <tr>
-         <label>Maison d'édition :</label><input class="form-control" style="width: 300px;" type="text" nom="edition" /><br><br>
+         <label>Maison d'édition :</label><input class="form-control" style="width: 300px;" type="text" nom="editeur" /><br><br>
         </tr>
 
        <tr>
@@ -199,7 +203,7 @@ function deconnexion()
        </tr>
 
         <tr>
-         <label>Description :</label><input class="form-control" style="width: 300px;" type="text" nom="descri"/><br><br>
+         <label>Description :</label><textarea class="form-control" style="width: 300px;" type="text" nom="descri"/></textarea><br><br>
        </tr>
 
        <tr>
@@ -211,7 +215,7 @@ function deconnexion()
        </tr>
 
        <tr>
-          <td><input id="ajout_livre" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
+          <td><input name="ajout_livre" onclick="ajout_livre()" class="btn btn-primary" style="width:80px;" type="submit" value=" Ajouter"/></td>
         </tr>
 
       </table>
@@ -241,7 +245,7 @@ function deconnexion()
        </tr>
 
        <tr>
-         <label>Description :</label><input class="form-control" style="width: 300px;" type="text" nom="descri"/><br><br>
+         <label>Description :</label><textarea class="form-control" style="width: 300px;" type="text" nom="descri"/></textarea><br><br>
        </tr>
 
        <tr>
@@ -257,7 +261,7 @@ function deconnexion()
        </tr>
 
         <tr>
-          <td><input id="ajout_sportloisirs" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
+          <td><button name="ajout_sportloisirs" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></button></td>
         </tr>
 
       </table>
@@ -267,7 +271,7 @@ function deconnexion()
   </form>
 
 </div>
-
+</div>
     <!-- pied de page -->
     <?php include('footer.php') ?>
 
