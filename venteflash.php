@@ -31,29 +31,53 @@
     <?php include('header.php') ?>
 
 <!-- debut page des best seller -->
-    <div class="page-venteflash">
+    <div class="page-venteflash container">
         <!-- Titre -->
         <div class="description page-header header container-fluid"> 
             <h1>Ventes Flash</h1> 
             <p>Retrouvez nos meilleures ventes</p> 
         </div>
 
-<!--**** BEST SELLERS LIVRES****-->
+        <!--**** BEST SELLERS LIVRES****-->
+        <?php 
+            //si le BDD existe, faire le traitement
+            if($db_found) {
+
+                $sql="SELECT * FROM livre";
+                $result=mysqli_query($db_handle, $sql);
+                $top = 1;
+                $tab;
+                //début boucle
+                while ($data = mysqli_fetch_assoc($result)) {
+                    $tab[] = array( $data['ref'] => $data['nb_vendu']);
+                }
+                //tri décroissant des valeurs 
+                arsort($tab);
+                foreach ($tab as $key => $value) {
+
+                    $sql="SELECT FROM livre WHERE nb_vendu = ".$key."";
+                }
+               
+                   
+        ?>
+
+
         <div class="best-livres">
             <h2 style="margin-left: 50px;">Livre</h2>
-            <h2 style="margin-left: 50px;">#1</h2>
-            <div class="cadre-prod">
+            <h2 style="margin-left: 50px;">#<?php echo $top ?></h2>
+            <div class="cadre-prod container">
                 <div class="row">
-                    <div class="col-md-3">
-                        <a href="img/livre.jpg" target="_blank"><img src="img/livre.jpg" style="width: 100%; height: 185px;"></a>
+                    <div class="col-md-3 col-sm-12">
+                        <a href="img/livre.jpg" target="_blank"><img class="img-fluid" src="img/livre.jpg" style="width: auto; height: 185px;"></a>
                     </div>
-                    <div class="col-md-5" style="margin-top: 10px;">
-                        <div class="en-tete-prod">Titre de Auteur | Annee publication  | Edition</div>
-                        <div class="prix-prod">Mettre le prix &euro;</div>
-                        <div class="reference-prod">La référence RS55ZQ</div>
-                        <div class="description-prod">Description balblabal 100% coton et bien éduqué. Il fait ouaf ouaf quand il est content et vous mort à la carotide quand pas content. voilà</div>
+                    <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
+                        <div class="en-tete-prod"> <b><?php echo $data['titre']?> </b></div>
+                        <div class="en-tete-prod-deux"> <p><?php echo $data['auteur']." - ".$data['annee']." - ".$data['editeur']?></p> </div>
+                        <div class="prix-prod"><?php echo $data['prix']?> &euro;</div>
+                        <div class="reference-prod">Référence <?php echo $data['ref']?></div>
+                        <div class="description-prod"><?php echo $data['descri']?></div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-12">
                         <div class="remplir-infos-prod">
                             <form>
                                 <!-- QUANTITE -->
@@ -71,30 +95,39 @@
                     </div>
                 </div>
             </div>
-
         </div>
-            <h2 style="margin-left: 50px;">#2</h2>
-            <h2 style="margin-left: 50px;">#3</h2>
-            <h2 style="margin-left: 50px;">#4</h2>
+        <!-- fin pour les livres -->
+        <?php 
+            // $top ++;
+            //     }//fin boucle
+                $top = 1;
+            }//fin if
+            //si la BDD n'existe pas
+            else {
+                echo "Database not found";
+            }//end else
+            mysqli_close($db_handle);
+        ?>
+
 <!--**** BEST SELLERS MUSIQUE****-->
         <div class="best-musique">
             <h2 style="margin-left: 50px;">Musique</h2>
             <h2 style="margin-left: 50px;">#1</h2>
-            <div class="cadre-prod">
+            <div class="cadre-prod container">
                 <div class="row">
                     <!-- 1. IMAGE -->
-                    <div class="col-md-3">
-                        <a href="img/aya.jpg" target="_blank"><img src="img/aya.jpg" style="width: 100%; height: 185px;"></a>
+                    <div class="col-md-3 col-sm-12">
+                        <a href="img/aya.jpg" target="_blank"><img class="img-fluid" src="img/aya.jpg" style="width: auto; height: 185px;"></a>
                     </div>
                     <!-- 2. DETAIL ARTICLE -->
-                    <div class="col-md-5" style="margin-top: 10px;">
-                        <div class="en-tete-prod">Album de Artiste</div>
-                        <div class="prix-prod">Mettre le prix &euro;</div>
-                        <div class="reference-prod">La référence RS55ZQ</div>
-                        <div class="description-prod">Description Aya la best.</div>
+                    <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
+                        <div class="en-tete-prod"> <b><?php echo $data['titre']?> </b></div>
+                        <div class="en-tete-prod-deux"> <p><?php echo $data['artiste']." - ".$data['annee']?></p> </div>
+                        <div class="prix-prod"><?php echo $data['prix']?> &euro;</div>
+                        <div class="reference-prod">Référence <?php echo $data['ref']?></div>
                     </div>
                     <!-- REMPLIR INFOS -->
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-12">
                         <div class="remplir-infos-prod">
                             <form>
                                 <!-- QUANTITE -->
@@ -119,21 +152,22 @@
             <h2 style="margin-left: 50px;">Vetements et Chaussures</h2>
             <h2 style="margin-left: 50px;">#1</h2>
             <!-- POUR CHAUSSURES ET VETEMENTS-->
-            <div class="cadre-prod">
+            <div class="cadre-prod container">
                 <div class="row">
                     <!-- 1. IMAGE -->
-                    <div class="col-md-3">
-                        <a href="img/shoes.jpg" target="_blank"><img src="img/shoes.jpg" style="width: 100%; height: 185px;"></a>
+                    <div class="col-md-3 col-sm-12">
+                        <a href="img/shoes.jpg" target="_blank"><img src="img/shoes.jpg" style="width: auto; height: 185px;"></a>
                     </div>
                     <!-- 2. DETAIL ARTICLE -->
-                    <div class="col-md-5" style="margin-top: 10px;">
-                        <div class="en-tete-prod">Marque - Nom de la Chaussures</div>
-                        <div class="prix-prod">Mettre le prix &euro;</div>
-                        <div class="reference-prod">La référence RS55ZQ</div>
-                        <div class="description-prod">Chaussures plutot comfortable</div>
+                    <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
+                        <div class="en-tete-prod"> <b><?php echo $data['nom']?> </b></div>
+                        <div class="en-tete-prod-deux"> <p><?php echo $data['marque']?></p> </div>
+                        <div class="prix-prod"><?php echo $data['prix']?> &euro;</div>
+                        <div class="reference-prod">Référence <?php echo $data['ref']?></div>
+                        <div class="description-prod"><?php echo $data['descri']?></div>
                     </div>
                     <!-- 3. REMPLIR INFOS -->
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-12">
                         <div class="remplir-infos-vet">
                             <form>
                                 <table>
@@ -158,15 +192,30 @@
                                         </td>
                                     </tr>
                                     <!-- TAILLE -->
+                                    <?php 
+                                        if($data['type_vet'] == 1){
+
+                                    ?>
                                     <tr>
                                         <td>
                                             <label style="color:grey;">Sélectionnez une taille</label>
                                             <select style=" width: 50px;" ><OPTION><OPTION>XS <OPTION>S <OPTION>M <OPTION>L <OPTION>XL</select>
                                         </td>
+                                        <?php
+                                            }//fin if pour typ_vet = vetements
+                                            
+                                            else if ($data['type_vet'] == 0) {
+                                            
+                                        ?>
                                         <td>
                                             <label style="color:grey;">Sélectionnez une pointure</label>
                                             <select name="pointure" style=" width: 50px;"><OPTION><OPTION>36 <OPTION>37 <OPTION>38 <OPTION>39 <OPTION>40 <OPTION>41 <OPTION>42 <OPTION>43 <OPTION>44 <OPTION>45 </select>
-                                            </td>
+                                        </td>
+
+                                        <?php
+                                            }//fin else if type_vet = chaussures
+                                        ?>
+
                                     </tr>
                                     <!-- AJOUTER AU PANIER -->
                                     <tr>
@@ -184,21 +233,21 @@
         <div class="best-sport">
             <h2 style="margin-left: 50px;">Sports et Loisirs</h2>
             <h2 style="margin-left: 50px;">#1</h2>
-                <div class="cadre-prod">
+                <div class="cadre-prod container">
                     <div class="row">
                         <!-- 1. IMAGE -->
-                        <div class="col-md-3">
-                            <a href="img/sport.jpg" target="_blank"><img src="img/sport.jpg" style="width: 100%; height: 185px;"></a>
+                        <div class="col-md-3 col-sm-12">
+                            <a href="img/sport.jpg" target="_blank"><img class="img-fluid" src="img/sport.jpg" style="width: auto; height: 185px;"></a>
                         </div>
                         <!-- 2. DETAIL ARTICLE -->
-                        <div class="col-md-5" style="margin-top: 10px;">
-                            <div class="en-tete-prod">Nom</div>
-                            <div class="prix-prod">Mettre le prix &euro;</div>
-                            <div class="reference-prod">La référence RS55ZQ</div>
-                            <div class="description-prod">j'aime le foot.</div>
+                        <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
+                            <div class="en-tete-prod"> <b><?php echo $data['nom']?> </b></div>
+                            <div class="prix-prod"><?php echo $data['prix']?> &euro;</div>
+                            <div class="reference-prod">Référence <?php echo $data['ref']?></div>
+                            <div class="description-prod"><?php echo $data['descri']?></div>
                         </div>
                         <!-- 3. REMPLIR INFOS -->
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-12">
                             <div class="remplir-infos-prod">
                                 <form>
                                     <!-- QUANTITE -->
@@ -220,17 +269,6 @@
         <!-- fin div page-venteflash -->
         </div>
 
-    <?php 
-            }//fin boucle
-        }//fin if
-
-        //si la BDD n'existe pas
-        else {
-            echo "Database not found";
-        }//end else
-
-        mysqli_close($db_handle);
-    ?>
 
     <!-- PIED DE PAGE -->
     <?php include('footer.php') ?>

@@ -37,22 +37,34 @@
         <h1>Vêtements et Chaussures</h1> 
         <p>Coucou les boyz and girlz , regardez les dernières tendances ;)</p> 
     </div>
+
+    <?php 
+        //si le BDD existe, faire le traitement
+        if($db_found) {
+
+            $sql="SELECT * FROM vetement";
+            $result=mysqli_query($db_handle, $sql);
+
+            //début boucle
+            while ($data = mysqli_fetch_assoc($result)) {       
+    ?>
     <!-- POUR CHAUSSURES -->
-    <div class="cadre-prod">
+    <div class="cadre-prod container">
         <div class="row">
             <!-- 1. IMAGE -->
-            <div class="col-md-3">
-                <a href="img/shoes.jpg" target="_blank"><img src="img/shoes.jpg" style="width: 100%; height: 185px;"></a>
+            <div class="col-md-3 col-sm-12">
+                <a href="img/shoes.jpg" target="_blank"><img class="img-fluid" src="img/shoes.jpg" style="width: auto; height: 185px;"></a>
             </div>
             <!-- 2. DETAIL ARTICLE -->
-            <div class="col-md-5" style="margin-top: 10px;">
-                <div class="en-tete-prod">Marque - Nom de la Chaussures</div>
-                <div class="prix-prod">Mettre le prix &euro;</div>
-                <div class="reference-prod">La référence RS55ZQ</div>
-                <div class="description-prod">Chaussures plutot comfortable</div>
+            <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
+                <div class="en-tete-prod"> <b><?php echo $data['nom']?> </b></div>
+                <div class="en-tete-prod-deux"> <p><?php echo $data['marque']?></p> </div>
+                <div class="prix-prod"><?php echo $data['prix']?> &euro;</div>
+                <div class="reference-prod">Référence <?php echo $data['ref']?></div>
+                <div class="description-prod"><?php echo $data['descri']?></div>
             </div>
             <!-- 3. REMPLIR INFOS -->
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-12">
                 <div class="remplir-infos-vet">
                     <form>
                         <table>
@@ -77,15 +89,30 @@
                                 </td>
                             </tr>
                             <!-- TAILLE -->
+                            <?php 
+                                if($data['type_vet'] == 1){
+
+                            ?>
                             <tr>
                                 <td>
                                     <label style="color:grey;">Sélectionnez une taille</label>
                                     <select style=" width: 50px;" ><OPTION><OPTION>XS <OPTION>S <OPTION>M <OPTION>L <OPTION>XL</select>
                                 </td>
+                                <?php
+                                    }//fin if pour typ_vet = vetements
+                                    
+                                    else if ($data['type_vet'] == 0) {
+                                    
+                                ?>
                                 <td>
                                     <label style="color:grey;">Sélectionnez une pointure</label>
                                     <select name="pointure" style=" width: 50px;"><OPTION><OPTION>36 <OPTION>37 <OPTION>38 <OPTION>39 <OPTION>40 <OPTION>41 <OPTION>42 <OPTION>43 <OPTION>44 <OPTION>45 </select>
-                                    </td>
+                                </td>
+
+                                <?php
+                                    }//fin else if type_vet = chaussures
+                                ?>
+
                             </tr>
                             <!-- AJOUTER AU PANIER -->
                             <tr>
