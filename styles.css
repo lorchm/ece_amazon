@@ -255,11 +255,11 @@ h6{
 /***********************ZONE PRODUIT : cadre pour Livres/Musique/Vetement/Sport... ************************/
 .cadre-prod{
   margin-top: 20px;
-/*  margin-left: 50px;
-*/  padding: 8px;
+  padding: 8px;
   width : 1000px;
   border: solid;
   color: #D1DBE1;
+  background-color : #f7f7f7;
   /*effet d'ombre autour du cadre du produit*/
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
