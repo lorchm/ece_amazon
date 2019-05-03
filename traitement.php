@@ -109,7 +109,7 @@
         $sql26 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('1', 'Petit ABC Rustica de l education positive', 'Chloe Fesch', '2018', '20', 'Rustica', 'Apprendre a son chien des regles de vie, l eduquer avec respect et bienveillance, lui permettre de se depenser suffisamment et opter pour une attitude coherente','4','admin')";
         $result26 = mysqli_query($db_handle, $sql26);
 
-        $sql27 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('2', 'Le Petit Larousse des chiens', 'Dorling Kindersley', '2017', '23', 'Larousse', 'La bible pour choisir en toute connaissance de cause votre compagnon','0','admin')";
+        $sql27 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('2', 'Le Petit Larousse des chiens', 'Dorling Kindersley', '2017', '23', 'Larousse', 'La bible pour choisir en toute connaissance de cause votre compagnon','4','admin')";
         $result27 = mysqli_query($db_handle, $sql27);
 
         $sql28 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('3', 'Encyclopedie visuelle des races de chien', 'Alain Fournier', '2009', '29', 'ECE Event', 'La presentation toute illustree des 337 races de chiens referencees par la FCI ( federation canine internationale.)','1','admin')";
