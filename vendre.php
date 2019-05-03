@@ -44,14 +44,16 @@
     </div>
 
     <?php
+    if($db_found) {
+
     $sql="SELECT * FROM vendeur WHERE pseudo LIKE '".$N."'";
     $result=mysqli_query($db_handle, $sql);
+
+    while ($data = mysqli_fetch_assoc($result)){
     ?>
 
 
-
-
-    <div  class="container" style="background-image: url('img/fond1.jpg');">
+    <div  class="container" style="background-image: url('<?php echo $data['url_pdc'] ?>');">
         <!-- ***** PARTIE DU PROFIL ET DES BOUTONS ***** -->
         <div class="row">
             <div class="col-md-9 col-sm-12"> 
@@ -88,23 +90,22 @@
 
             <div class="col-md-3 col-sm-12"> 
                 <div class = "profil"> 
-                        <img src="img/shiba.jpg" class="roundedImage" style="width : 100px;height : 100px;"> <br>
-                        <b class="pseud"> Patrick </b>
+                        <img src="<?php echo $data['url_pdp'] ?>" class="roundedImage" style="width : 100px;height : 100px;"> <br>
+                        <b class="pseud"> <?php echo $data['pseudo'] ?> </b>
                 </div>
             </div>
         </div>
 
         <!--********** PARTIE AFFICHAGE DES PRODUITS EN VENTE SELON LE PSEUDO *********** -->
         <?php 
+            }// fin du while
 
         //si le BDD existe, faire le traitement
-        if($db_found) {
-
-        $sql="SELECT * FROM musique WHERE id_vendeur LIKE '".$N."'";
-        $result=mysqli_query($db_handle, $sql);
+        $sql7="SELECT * FROM musique WHERE id_vendeur LIKE '".$N."'";
+        $result7=mysqli_query($db_handle, $sql7);
 
         //début boucle 1
-        while ($data = mysqli_fetch_assoc($result)) {      
+        while ($data = mysqli_fetch_assoc($result7)) {      
         ?>
 
         <div class="cadre-prod container">
@@ -213,11 +214,10 @@
         } //fin boucle
 
     }//fin if
-
-        //si la BDD n'existe pas
-        else {
-            echo "Database not found";
-        }//end else
+    //si la BDD n'existe pas
+    else {
+        echo "Database not found";
+    }//end else
 
         mysqli_close($db_handle);
     ?>
