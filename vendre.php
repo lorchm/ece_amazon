@@ -1,4 +1,9 @@
 <?php
+
+    Session_start();
+    $N = $_SESSION["login"];
+
+    
     define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASS', '');
@@ -14,7 +19,7 @@
 
 <html>
 <head>
-	<title>ECE Amazon</title>
+	<title>ECE Amazon :: Vendre</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -30,7 +35,8 @@
 
 <body>
     <!-- Barre de navigation -->
-    <?php include('header.php') ?>
+    <?php include('header.php');
+    echo $N; ?>
 <!-- *********************************** PAGE VENDRE ***************************************************************** -->
     <!-- ***** boutons + profil ***** -->
 
@@ -48,11 +54,9 @@
                         <!-- Ajouter un produit -->
                         <h3 style="color:#04263F; background-color:#C1E7ED; width: 170px; margin-top: 20px; margin-left: 30px;">Ajouter un Article</h3>
                         <a href="ajout_article.php"><button  id="ajouter_produit" class="btt" style="background-color:#C1E7ED; color:#04263F; margin-top: 10px; width: 230px; height: 30px;">Ajouter</button></a>
-
                     </div>
                     
                     <div class="col-md-4">
-
                         <!-- Supprimer un produit -->
                         <h3 style="color:#04263F; background-color:#C1E7ED; width : 200px; margin-top: 20px;  margin-left: 20px;">Supprimer un Article</h3>
                                         
@@ -67,7 +71,7 @@
                                 <tr>
                                     <td><input id="supprimer_produit" class="btt" type="submit" value="Supprimer" style="color:#04263F ;background-color:#C1E7ED; margin-top:10px;"></td>
                                 </tr>
-                                </table>
+                            </table>
                         </form>
                     </div>
                     <div class="col-md-4">
@@ -83,53 +87,124 @@
             </div>
         </div>
 
+        <!--********** PARTIE AFFICHAGE DES PRODUITS EN VENTE SELON LE PSEUDO *********** -->
         <?php 
+
         //si le BDD existe, faire le traitement
         if($db_found) {
 
-        $sql="SELECT * FROM musique";
+        $sql="SELECT * FROM musique WHERE id_vendeur LIKE '".$N."'";
         $result=mysqli_query($db_handle, $sql);
 
-        //début boucle
+        //début boucle 1
         while ($data = mysqli_fetch_assoc($result)) {      
         ?>
 
         <div class="cadre-prod container">
+            <div class="row">
+                <!-- 1. IMAGE -->
+                <div class="col-md-3 col-sm-12">
+                    <a href="img/aya.jpg" target="_blank"><img class="img-fluid" src="img/aya.jpg" style="width: auto; height: 185px;"></a>
+                </div>
+                <!-- 2. DETAILS ARTICLE -->
+                <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
+                    <div class="en-tete-prod"> <b><?php echo $data['titre']?> </b></div>
+                    <div class="en-tete-prod-deux"> <p><?php echo $data['artiste']." - ".$data['annee']?></p> </div>
+                    <div class="prix-prod"><?php echo $data['prix']?> &euro;</div>
+                    <div class="reference-prod">Référence <?php echo $data['ref']?></div>
+                </div>
+            </div>
+        </div>
+
+        <?php
+        }//fin boucle 1
+
+        $sql1="SELECT * FROM livre WHERE id_vendeur LIKE '".$N."'";
+        $result1=mysqli_query($db_handle, $sql1);
+
+        //début boucle 2
+        while ($data = mysqli_fetch_assoc($result1)) {      
+        ?>
+
+            <div class="cadre-prod container">
+                <div class="row">
+                    <!-- 1. IMAGE -->
+                    <div class="col-md-3 col-sm-12">
+                        <a href="img/livre.jpg" target="_blank"><img class="img-fluid" src="img/livre.jpg" style="width: auto; height: 185px;"></a>
+                    </div>
+                    <!-- 2. DETAIL ARTICLE -->
+                    <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
+                        <div class="en-tete-prod"> <b><?php echo $data['titre']?> </b></div>
+                        <div class="en-tete-prod-deux"> <p><?php echo $data['auteur']." - ".$data['annee']." - ".$data['editeur']?></p> </div>
+                        <div class="prix-prod"><?php echo $data['prix']?> &euro;</div>
+                        <div class="reference-prod">Référence <?php echo $data['ref']?></div>
+                        <div class="description-prod"><?php echo $data['descri']?></div>
+                    </div>
+                </div>
+            </div>
+
+        <?php
+        }//fin boucle
+
+        $sql2="SELECT * FROM sportloisir WHERE id_vendeur LIKE '".$N."'";
+        $result2=mysqli_query($db_handle, $sql2);
+
+        //début boucle
+        while ($data = mysqli_fetch_assoc($result2)) {      
+        ?>
+
+        <div class="cadre-prod container-fluid">
+            <div class="row">
+                <!-- 1. IMAGE -->
+                <div class="col-md-3 col-sm-12">
+                    <a href="img/sport.jpg" target="_blank"><img class="img-fluid" src="img/sport.jpg" style="width: auto; height: 185px;"></a>
+                </div>
+                <!-- 2. DETAIL ARTICLE -->
+                <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
+                    <div class="en-tete-prod"> <b><?php echo $data['nom']?> </b></div>
+                    <div class="prix-prod"><?php echo $data['prix']?> &euro;</div>
+                    <div class="reference-prod">Référence <?php echo $data['ref']?></div>
+                    <div class="description-prod"><?php echo $data['descri']?></div>
+                </div>
+            </div>
+        </div>
+
+    <?php
+    }//fin boucle
+
+    $sql3="SELECT * FROM vetement WHERE id_vendeur LIKE '".$N."'";
+    $result3=mysqli_query($db_handle, $sql3);
+
+    //début boucle
+    while ($data = mysqli_fetch_assoc($result3)) {      
+    ?>
+
+    <div class="cadre-prod container">
         <div class="row">
             <!-- 1. IMAGE -->
             <div class="col-md-3 col-sm-12">
-                <a href="img/aya.jpg" target="_blank"><img class="img-fluid" src="img/aya.jpg" style="width: auto; height: 185px;"></a>
+                <a href="img/shoes.jpg" target="_blank"><img class="img-fluid" src="img/shoes.jpg" style="width: auto; height: 185px;"></a>
             </div>
-            <!-- 2. DETAILS ARTICLE -->
+            <!-- 2. DETAIL ARTICLE -->
             <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
-                <div class="en-tete-prod"> <b><?php echo $data['titre']?> </b></div>
-                <div class="en-tete-prod-deux"> <p><?php echo $data['artiste']." - ".$data['annee']?></p> </div>
+                <div class="en-tete-prod"> <b><?php echo $data['nom']?> </b></div>
+                <div class="en-tete-prod-deux"> <p><?php echo $data['marque']?></p> </div>
                 <div class="prix-prod"><?php echo $data['prix']?> &euro;</div>
                 <div class="reference-prod">Référence <?php echo $data['ref']?></div>
+                <div class="description-prod"><?php echo $data['descri']?></div>
             </div>
             <!-- 3. REMPLIR INFOS -->
-            <div class="col-md-4 col-sm-12">
-                <div class="remplir-infos-prod">
-                    <form>
-                        <!-- QUANTITE -->
-                        <tr>
-                            <td>
-                                <label style="color:grey; margin-left: 70px;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
-                            </td>
-                        </tr>
-                        <!-- AJOUTER PANIER -->
-                        <tr>
-                            <td><input type="button" id="ajout-panier" name="ajout-panier" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "></td>
-                        </tr>
-                    </form> 
-                </div> 
+            <div class="col-md-4 col-sm-12">                         
             </div>
         </div>
     </div>
 
     <?php 
-            }//fin boucle
-        }//fin if
+            
+
+        } //fin boucle
+
+    }//fin if
 
         //si la BDD n'existe pas
         else {

@@ -49,77 +49,77 @@
 
         //Insertion des articles
         //Vetements
-        $sql8 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`) VALUES ('1','0','Chaussettes pour chien','Protegez les petits petons de vos toutous preferes','6',NULL,NULL,NULL,NULL,'0','admin')";
+        $sql8 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`) VALUES ('1','0','Chaussettes pour chien','Protegez les petits petons de vos toutous preferes','6',NULL,NULL,NULL,NULL,'0',NULL)";
         $result8 = mysqli_query($db_handle, $sql8);
 
         $sql9 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`) VALUES ('2','1','Bandana rafraichissant','Gardez un bon style pour votre chien tout en le protegeant de la chaleur','7',NULL,NULL,NULL,NULL,'7','admin')";
         $result9 = mysqli_query($db_handle, $sql9);
 
-        $sql10 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`) VALUES ('3','0','Bottes confort','Favorise la cicatrisation des blessures','12',NULL,NULL,NULL,NULL,'5','admin')";
+        $sql10 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`) VALUES ('3','0','Bottes confort','Favorise la cicatrisation des blessures','12',NULL,NULL,NULL,NULL,'5',NULL)";
         $result10 = mysqli_query($db_handle, $sql10);
 
-        $sql11 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`) VALUES ('4','1','Noeud papillon','Accessorisez votre chien pour une classe legendaire','5',NULL,NULL,NULL,NULL,'0','admin')";
+        $sql11 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`) VALUES ('4','1','Noeud papillon','Accessorisez votre chien pour une classe legendaire','5',NULL,NULL,NULL,NULL,'0',NULL)";
         $result11 = mysqli_query($db_handle, $sql11);
 
-        $sql12 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`) VALUES ('5','1','Deguisement Captain America','A la sortie du dernier Avenger, soyez surs que votre animal reste a la mode','7',NULL,NULL,NULL,NULL,'3','admin')";
+        $sql12 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`) VALUES ('5','1','Deguisement Captain America','A la sortie du dernier Avenger, soyez surs que votre animal reste a la mode','7',NULL,NULL,NULL,NULL,'3',NULL)";
         $result12 = mysqli_query($db_handle, $sql12);
 
-        $sql13 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`) VALUES ('6','1','Pull Over Langley','Pour vos longues soirees d hiver, couvrez vos animaux d un bon pull en laine','17',NULL,NULL,NULL,NULL,'6','admin')";
+        $sql13 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`) VALUES ('6','1','Pull Over Langley','Pour vos longues soirees d hiver, couvrez vos animaux d un bon pull en laine','17',NULL,NULL,NULL,NULL,'6',NULL)";
         $result13 = mysqli_query($db_handle, $sql13);
 
         //Mus
         $sql14 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('1', 'Black Dog', 'Led Zeppelin', 'Led Zeppelin IV', '1971', '3','4','admin')";
         $result14 = mysqli_query($db_handle, $sql14);
 
-        $sql15 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('2', 'Who Let the Dogs Out?', 'Baha Men', 'Who Let the Dogs Out', '2000', '3','8','admin')";
+        $sql15 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('2', 'Who Let the Dogs Out?', 'Baha Men', 'Who Let the Dogs Out', '2000', '3','8',NULL)";
         $result15 = mysqli_query($db_handle, $sql15);
 
-        $sql16 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('3', 'The Dogs Of War', 'Pink Floyd', 'A Momentary Lapse of Reason', '1988', '3','2','admin')";
+        $sql16 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('3', 'The Dogs Of War', 'Pink Floyd', 'A Momentary Lapse of Reason', '1988', '3','2',NULL)";
         $result16 = mysqli_query($db_handle, $sql16);
 
-        $sql17 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('4', 'Hey Bulldog', 'The Beatles', 'Yellow Submarine', '1969', '3','0','admin')";
+        $sql17 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('4', 'Hey Bulldog', 'The Beatles', 'Yellow Submarine', '1969', '3','0',NULL)";
         $result17 = mysqli_query($db_handle, $sql17);
 
-        $sql18 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('5', 'Given The Dog A Bone', 'AC/DC', 'Back in Black', '1980', '3','0','admin')";
+        $sql18 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('5', 'Given The Dog A Bone', 'AC/DC', 'Back in Black', '1980', '3','0',NULL)";
         $result18 = mysqli_query($db_handle, $sql18);
 
-        $sql19 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('6', 'Hound Dog', 'Elvis Presley', 'Dont Be Cruel', '1956', '3','7','admin')";
+        $sql19 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`) VALUES ('6', 'Hound Dog', 'Elvis Presley', 'Dont Be Cruel', '1956', '3','7',NULL)";
         $result19 = mysqli_query($db_handle, $sql19);
 
 
         //Sp&L
-        $sql20 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('1', 'Agility', '45', 'L agility (signifiant tout simplement  agilite  en anglais), ou agilite, est un sport canin, dans lequel le chien evolue sur un parcours d obstacles sous la conduite de son maitre.','2','admin')";
+        $sql20 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('1', 'Agility', '45', 'L agility (signifiant tout simplement  agilite  en anglais), ou agilite, est un sport canin, dans lequel le chien evolue sur un parcours d obstacles sous la conduite de son maitre.','2',NULL)";
         $result20 = mysqli_query($db_handle, $sql20);
 
-        $sql21 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('2', 'Freesbee', '5', 'Disque en plastique, legerement bombe, que les joueurs se lancent et qui plane en tournant sur lui-meme.','4','admin')";
+        $sql21 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('2', 'Freesbee', '5', 'Disque en plastique, legerement bombe, que les joueurs se lancent et qui plane en tournant sur lui-meme.','4',NULL)";
         $result21 = mysqli_query($db_handle, $sql21);
 
-        $sql22 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('3', 'Lance le baton', '2', 'Long morceau de bois rond que l on peut tenir a la main.','0','admin')";
+        $sql22 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('3', 'Lance le baton', '2', 'Long morceau de bois rond que l on peut tenir a la main.','0',NULL)";
         $result22 = mysqli_query($db_handle, $sql22);
 
-        $sql23 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('4', 'Lancer la balle', '3', 'Petite sphere, boule elastique dont on se sert pour divers jeux.','9','admin')";
+        $sql23 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('4', 'Lancer la balle', '3', 'Petite sphere, boule elastique dont on se sert pour divers jeux.','9',NULL)";
         $result23 = mysqli_query($db_handle, $sql23);
 
         $sql24 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('5', 'Promenade', '1', 'Action de se promener ; trajet fait en se promenant.','0','admin')";
         $result24 = mysqli_query($db_handle, $sql24);
 
-        $sql25 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('6', 'Manger le canape', '300', 'Action de manger un long siege a dossier ou plusieurs personnes peuvent s asseoir ensemble.','7','admin')";
+        $sql25 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('6', 'Manger le canape', '300', 'Action de manger un long siege a dossier ou plusieurs personnes peuvent s asseoir ensemble.','7',NULL)";
         $result25 = mysqli_query($db_handle, $sql25);
 
         //Livres
-        $sql26 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('1', 'Petit ABC Rustica de l education positive', 'Chloe Fesch', '2018', '20', 'Rustica', 'Apprendre a son chien des regles de vie, l eduquer avec respect et bienveillance, lui permettre de se depenser suffisamment et opter pour une attitude coherente','4','admin')";
+        $sql26 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('1', 'Petit ABC Rustica de l education positive', 'Chloe Fesch', '2018', '20', 'Rustica', 'Apprendre a son chien des regles de vie, l eduquer avec respect et bienveillance, lui permettre de se depenser suffisamment et opter pour une attitude coherente','4',NULL)";
         $result26 = mysqli_query($db_handle, $sql26);
 
-        $sql27 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('2', 'Le Petit Larousse des chiens', 'Dorling Kindersley', '2017', '23', 'Larousse', 'La bible pour choisir en toute connaissance de cause votre compagnon','4','admin')";
+        $sql27 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('2', 'Le Petit Larousse des chiens', 'Dorling Kindersley', '2017', '23', 'Larousse', 'La bible pour choisir en toute connaissance de cause votre compagnon','4',NULL)";
         $result27 = mysqli_query($db_handle, $sql27);
 
-        $sql28 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('3', 'Encyclopedie visuelle des races de chien', 'Alain Fournier', '2009', '29', 'ECE Event', 'La presentation toute illustree des 337 races de chiens referencees par la FCI ( federation canine internationale.)','1','admin')";
+        $sql28 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('3', 'Encyclopedie visuelle des races de chien', 'Alain Fournier', '2009', '29', 'ECE Event', 'La presentation toute illustree des 337 races de chiens referencees par la FCI ( federation canine internationale.)','1',NULL)";
         $result28 = mysqli_query($db_handle, $sql28);
 
-        $sql29 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('4', 'Eduquer son chien pour les Nuls', 'Jack VOLHARD', '2012', '13', 'Les Nuls', 'Assis, debout, couche ! Eduquez votre animal de compagnie prefere !','5','admin')";
+        $sql29 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('4', 'Eduquer son chien pour les Nuls', 'Jack VOLHARD', '2012', '13', 'Les Nuls', 'Assis, debout, couche ! Eduquez votre animal de compagnie prefere !','5',NULL)";
         $result29 = mysqli_query($db_handle, $sql29);
 
-        $sql30 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('5', 'Comment elever son chiot (au top !)', 'Gwen Bailey', '2012', '12', 'Larissa', 'Ce guide donne les cles d une education reussie fondee sur la confiance, l amour et surtout un apprentissage positif des regles de vie.','3','admin')";
+        $sql30 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('5', 'Comment elever son chiot (au top !)', 'Gwen Bailey', '2012', '12', 'Larissa', 'Ce guide donne les cles d une education reussie fondee sur la confiance, l amour et surtout un apprentissage positif des regles de vie.','3',NULL)";
         $result30 = mysqli_query($db_handle, $sql30);
 
         $sql31 = "INSERT INTO `livre` (`ref`, `titre`, `auteur`, `annee`, `prix`, `editeur`, `descri`, `nb_vendu`, `id_vendeur`) VALUES ('6', '365 idees pour rendre mon chien heureux', 'Laetitia OuafMag', '2016', '15', 'Ouafmag', 'Vous cherchez des idees pour occuper votre chien, lui faire developper ses talents, briser la routine, devenir plus complices… en voici 365 !','7','admin')";
