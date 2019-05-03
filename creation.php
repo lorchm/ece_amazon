@@ -45,7 +45,7 @@
                     </tr>
 
                       <tr>
-                         <label>Mot de passe</label> <input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="text" name="mdp" size="25" /><br> <br>
+                         <label>Mot de passe</label> <input class="form-control center-con"  style="width: 250px;margin-left: 240px;" type="password" name="mdp" size="25" /><br> <br>
                     </tr>
 
 
@@ -57,9 +57,6 @@
                         <label>Prenom</label><input class="form-control center-con"  style="width: 250px;" type="text" name="prenom" size ="25"/><br><br>
                     </tr>
 
-                    <tr>
-                         <label>Adresse</label><input class="form-control center-con"  style="width: 250px;" type="text" name="adresse" size ="25"/><br><br>
-                    </tr>
 
                     <tr>
                          <label>Email</label><input class="form-control center-con"  style="width: 250px;" type="text" name="email" size ="25" /><br><br>
@@ -106,17 +103,12 @@
                     </tr>
 
                     <tr>
-                         <label>Date d'expiration</label><input class="form-control center-con"  style="width: 250px;" type="text" name="exp_date" size ="25" /><br><br>
+                         <label>Date d'expiration</label><input class="form-control center-con"  style="width: 250px;" type="date" name="exp_date" size ="25" /><br><br>
                     </tr>
 
                     <tr>
                          <label>Code Secret</label><input class="form-control center-con"  style="width: 250px;" type="password" name="sec_code" size ="25" /><br><br>
                     </tr>
-
-                    <tr>
-                         <label>Portable</label><input class="form-control center-con"  style="width: 250px;" type="text" name="tel" size ="25" /><br><br>
-                    </tr>
-
              
              </table>
 
