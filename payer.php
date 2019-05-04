@@ -92,15 +92,25 @@
                     echo $type;echo $number;echo $card_name;echo $expdate;
                     echo $sec_code;
 
-/*              $sql= "SELECT * FROM acheteur WHERE pseudo LIKE '".$N."'";
-                $result = mysqli_query($db_handle, $sql);
+                    $sql= "SELECT * FROM acheteur WHERE pseudo LIKE '".$N."'";
+                    $result = mysqli_query($db_handle, $sql);
 
-            while ($data = mysqli_fetch_assoc($result)){
+                    //si les infos saisies correspondent pas à celle du compte on réinitialise la page
+                    while ($data = mysqli_fetch_assoc($result)){
+                        if ($type!=$data['card_type'] && $number!=$data['card_number'] && $card_name!=$data['card_name'] && $expdate!=$data['exp_date'] && $sec_code!=$data['sec_code']) {
+                            
+                            header('location:payer.php');
 
-            }*/
+                ?>
+
+                <p class="text-warning">Les informations saisies ne correspondent pas à celle renseignées dans votre compte ! Veuillez ressaisir s'il vous plait.</p>
 
 
-?>
+                <?php
+                        }//fin if
+                    }//fin while
+
+                ?>
             </div>
 
     </div>
