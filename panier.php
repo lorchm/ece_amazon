@@ -87,7 +87,7 @@
                         <p style="color:grey;">Quantité : <?php echo $data['quantite']?></p>
                         <b style="color:red;"> Prix total =  <?php echo $data['quantite']*$data1['prix']?> &euro;</b>
                     </div>
-                    <div style="position: absolute; bottom: 5px; right: 20px; "><button class="btn-delete"><img src="img/delete.png" style="width:20px; height: 20px;"></button> </div>
+                    <div style="position: absolute; bottom: 5px; right: 20px; "><input class="btn-delete" type="image" name="Supprimer" value="suppr" src="img/delete.png" /></div>
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@
                         <p style="color:grey;">Quantité : <?php echo $data['quantite']?></p>
                         <b style="color:red;"> Prix total =  <?php echo $data['quantite']*$data2['prix']?> &euro;</b>
                     </div>
-                    <div style="position: absolute; bottom: 5px; right: 20px; "><button class="btn-delete"><img src="img/delete.png" style="width:20px; height: 20px;"></button> </div>
+                    <div style="position: absolute; bottom: 5px; right: 20px; "><input class="btn-delete" type="image" name="Supprimer" value="suppr" src="img/delete.png" /> </div>
                 </div>
             </div>
         </div>
@@ -162,7 +162,7 @@
                         <p style="color:grey;">Quantité : <?php echo $data['quantite']?></p>
                         <b style="color:red;"> Prix total =  <?php echo $data['quantite']*$data3['prix']?> &euro;</b>
                     </div>
-                    <div style="position: absolute; bottom: 5px; right: 20px; "><button class="btn-delete"><img src="img/delete.png" style="width:20px; height: 20px;"></button> </div>
+                    <div style="position: absolute; bottom: 5px; right: 20px; "><input class="btn-delete" type="image" name="Supprimer" value="suppr" src="img/delete.png" /> </div>
                 </div>
             </div>
         </div>
@@ -214,7 +214,8 @@
                         ?>
                         <b style="color:red;"> Prix total =  <?php echo $data['quantite']*$data4['prix']?> &euro;</b> 
                     </div>
-                    <div style="position: absolute; bottom: 5px; right: 20px; "><button class="btn-delete"><img src="img/delete.png" style="width:20px; height: 20px;"></button> </div>
+                    <div style="position: absolute; bottom: 5px; right: 20px; "><input class="btn-delete" type="image" name="Supprimer" value="suppr" src="img/delete.png" /></button>
+                    </div>
                 </div>
             </div>
         </div>
