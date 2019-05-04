@@ -22,6 +22,7 @@
     <!-- Test de connexion -->
     <?php 
     session_start();
+    $N=$_SESSION["login"];
     $error=0;
         if($_SESSION["login"]=="")
         {
@@ -43,25 +44,45 @@
             $db_found = mysqli_select_db($db_handle, $database);
 
             if($db_found) {
-                    
-                $sql = "SELECT * FROM vendeur ";
-                $result=mysqli_query($db_handle, $sql);
-        
-                while ($data = mysqli_fetch_assoc($result)){
 
-                   if($data['pseudo']=="$N")
-                   {
-                    echo"Bonjour";
-                        $error=1;
-                   }
+                $sql0="SELECT pseudo FROM vendeur ";
+                 $result0=mysqli_query($db_handle, $sql0);
+                  while ($data0= mysqli_fetch_assoc($result0)){
+                    
+                        if($data0['pseudo']==$N)
+                        {
+
+                                $sql = "SELECT admins FROM vendeur WHERE pseudo LIKE '".$N."'";
+                                $result=mysqli_query($db_handle, $sql);
+                        
+                                while ($data = mysqli_fetch_assoc($result)){
+
+                                       if($data['admins']==0)
+                                       {
+                                        echo"bonjou";
+                                         $_SESSION["login"]="";
+                                        header('Location: connexion.php');
+                                        $error=1;
+                                       }
+
+                                } 
+                        }
+                        else
+                        {
+                            echo"hello";
+                             /* $_SESSION["login"]="";
+                            header('Location:connexion.php');*/
+                        }
+                    }
+               
+                    if($error==0)
+                    {
+                       
+                    }
                 }
-                if($error==0)
-                {
-                    $_SESSION["login"]="";
-                    header('Location: connexion.php');
-                }   
-            }
-        }
+                
+                 }
+            
         
     ?>
 <!-- Page Admin -->

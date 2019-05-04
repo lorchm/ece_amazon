@@ -20,15 +20,55 @@
     <!-- Barre de navigation -->
     <?php include('header.php') ?>
 
-    <?php 
+<?php 
     session_start();
-  
-            
+ /* $_SESSION["login"]="";*/
         if($_SESSION["login"]!="")
         {
-            header('Location: info_compte.php');
-        }
-    ?>
+                $N=$_SESSION["login"];
+                define('DB_SERVER', 'localhost');
+                define('DB_USER', 'root');
+                define('DB_PASS', '');
+
+                //identifier le nom de base de données
+                $database = "ECEamazon";
+
+                //connecter l'utilisateur dans BDD
+                $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
+                $db_found = mysqli_select_db($db_handle, $database);
+
+                if($db_found) {
+                    
+                    $sql = 'SELECT pseudo FROM acheteur ';
+                    $result = mysqli_query($db_handle, $sql);
+                    while($data = mysqli_fetch_assoc($result)) {
+
+                        if($N==$data['pseudo'])
+                        {
+                         header('Location: info_compte.php'); 
+
+                        }
+                    }
+                     $sql1 = 'SELECT pseudo FROM vendeur ';
+                    $result1 = mysqli_query($db_handle, $sql1);
+                    while($data1 = mysqli_fetch_assoc($result1)) {
+
+                        if($N==$data1['pseudo'])
+                        {
+                         header('Location: info_vendeur.php'); 
+
+                        }
+                    }
+                }
+        
+         else {
+            echo "Database not found";
+          }//end else
+
+    mysqli_close($db_handle);
+    }
+     
+?>
 
     <body>
         <!-- titre -->
@@ -42,11 +82,11 @@
 
                     <table>
                         <tr>
-                         <label>Login</label> <input class="form-control center-con container"  style="width: 250px; " type="text" name="login" size="10" /><br> <br>
+                         <label>Login</label> <input required class="form-control center-con container"  style="width: 250px; " type="text" name="login" size="10" /><br> <br>
                         </tr>
 
                         <tr>
-                           <label>Mot de passe</label><input class="form-control center-con container"  style="width: 250px;" type="password" name="mdp" size ="25"/><br><br>
+                           <label>Mot de passe</label><input required class="form-control center-con container"  style="width: 250px;" type="password" name="mdp" size ="25"/><br><br>
                        </tr>
                     </table>
 

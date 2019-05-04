@@ -38,25 +38,7 @@
     <?php include('header.php') ?>
 <!-- *********************************** PAGE VENDRE ***************************************************************** -->
     <!-- ***** boutons + profil ***** -->
-     <?php 
-   
-    $error=0;
 
-       $sql0 = "SELECT pseudo FROM vendeur ";
-        $result0 = mysqli_query($db_handle, $sql0);
-        while($data0 = mysqli_fetch_assoc($result0)) {
-
-            echo "ID: " .$data0['pseudo']. '<br>';
-               if($N==$data0['pseudo'])
-                {
-                    
-                    $error=1;
-                }
-        
-         }
-         
-        
-    ?>
 
     <div class="description page-header header container-fluid"> 
         <h1> MES PRODUITS EN VENTE</h1> 
@@ -216,7 +198,6 @@
             <!-- 2. DETAIL ARTICLE -->
             <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
                 <div class="en-tete-prod"> <b><?php echo $data['nom']?> </b></div>
-                <div class="en-tete-prod-deux"> <p><?php echo $data['marque']?></p> </div>
                 <div class="prix-prod"><?php echo $data['prix']?> &euro;</div>
                 <div class="reference-prod">Référence <?php echo $data['ref']?></div>
                 <div class="description-prod"><?php echo $data['descri']?></div>

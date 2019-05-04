@@ -3,7 +3,7 @@
 
 session_start();
 
-	
+	$error=0;
 	$N=$_SESSION["login"];
 
 	define('DB_SERVER', 'localhost');
@@ -22,37 +22,38 @@ session_start();
 
     		if($N=="")
     		{	
-    			echo"$N";
-    			header('Location: connexion.php');
+    			/*echo"CACAAAAAA";*/
+    			header('Location: vendre.php');
     		}
     		else
     		{
-    			 $sql = 'SELECT pseudo FROM vendeur';
+       
+    			 $sql = "SELECT pseudo FROM vendeur ";
 			     $result = mysqli_query($db_handle, $sql);
-
+           /*header('Location: vendre.php');*/
 			     while($data = mysqli_fetch_assoc($result)) {
 
-          			if($N==$data['pseudo'])
+          			if($data['pseudo']==$N)
           				{
+                    echo"Hello";
+                    $error=1;
+                     header('Location: vendre.php'); 
 
-    						
-				             header('Location: vendre.php'); 
 
              			 }
-		          	else
-		          	{
-          		 
-			           	  $_SESSION["login"]="";
-			              header('Location: connexion.php');
-
-         		 	}
-
-       
-    			}	
-        
-       
-       		}
-       	}
+            } 
+            if($error==0)
+            {
+              echo"It's me";
+                    $_SESSION["login"]="";
+                    header('Location: connexion.php');
+            }
+		    
+          		     
+       		
+  	    }
+     }
+    
 
        else {
         echo "Database not found";
