@@ -1,15 +1,12 @@
 <?php
-//ajouter un livre
+
     Session_start();
-    $N=$_SESSION["livre"];
-    
-     $A= isset($_POST["test"])?$_POST["test"]:"";
-     echo "$A";
+   /*$N=$_SESSION["livre"];*/
+    echo "$_livre";
     $Q= isset($_POST["quantite"])?$_POST["quantite"]:"";
     $nb_vendu = 0;
 
     // INSERTION LIVRE
-
  
     define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
@@ -21,16 +18,16 @@
     //connecter l'utilisateur dans BDD
     $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
     $db_found = mysqli_select_db($db_handle, $database);
+   
+                      
 
-                  
+    if($db_found){
+   
+               echo "$Q";
 
-    if($db_found) {
-
-             echo "$Q";
-
-      // if($_POST["ajout_livre"]){
+      
         //faire if != pour blindage
-         $sql ="INSERT INTO obj_panier (ref_panier,pseudo, categorie, id, quantite) VALUES ('9','gege2020','2', '$A', '$Q')";
+         $sql ="INSERT INTO obj_panier (ref_panier,pseudo, categorie, id, quantite) VALUES ('25','gege2020','2', '$N', '$Q')";
          
           $result = mysqli_query($db_handle, $sql);
        }

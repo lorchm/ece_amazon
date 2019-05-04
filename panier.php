@@ -190,7 +190,6 @@
                 <!-- 2. DETAIL ARTICLE -->
                 <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
                     <div class="en-tete-prod"><b><?php echo $data4['nom']?> </b></div>
-                    <div class="en-tete-prod-deux"> <p><?php echo $data4['marque']?></p> </div>
                     <div class="prix-prod"><?php echo $data4['prix']?> &euro;</div>
                     <div class="reference-prod">Référence <?php echo $data4['ref']?></div>
                 </div>
@@ -232,12 +231,17 @@
             <div class= "row">
                 <div class= "col-md-9 col-sm-12">
                     <b style="color:#ffa630;">Nombre d'articles total : <?php echo $quantite_panier[0];?></b>
-                    <b style="color:#ffa630; margin-left: 10px;">PRIX TOTAL : <?php echo $payer?> &euro;</b>
+                    <b style="color:#ffa630; margin-left: 10px;">PRIX TOTAL : <?php echo $payer; $_SESSION['payer'] = $payer;?> &euro;</b>
                 </div>
                 <div class="col-md-3 col-sm-12">
                     <div style="position: absolute; bottom: 0px;">
-                        <a href="homepage.php"><button class="btt"> Retourner à mes achats </button></a>
+                        <form method=POST action=payer.php>
+                                                    <a href="homepage.php"><button class="btt"> Retourner à mes achats </button></a>
                         <a href="payer.php"><button class="btt"> Payer </button></a>
+                           <input type="hidden" name="var1" value="<?php echo "".$payer."" ?>"></input>
+                        </form>
+
+
                     </div>
                 </div>
             </div>

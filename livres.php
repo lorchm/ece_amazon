@@ -1,5 +1,6 @@
 <?php
 session_start();
+    $P=$_SESSION['login'];
     define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASS', '');
@@ -60,7 +61,7 @@ session_start();
 
             //début boucle
             while ($data = mysqli_fetch_assoc($result)) {
-                
+                 $N=$data['ref'];
             
                 
     ?>
@@ -97,7 +98,7 @@ session_start();
                         <!-- AJOUTER PANIER -->
 
                         <tr>
-                            <td><input type="submit" id="ajout-panier" name="ajout_article" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "/></td>
+                            <td><input type="submit" id="ajout_panier" name="<?php echo "ID: " .$data['ref']. '<br>';?>" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "/></td>
                         </tr>
                         <?php
 

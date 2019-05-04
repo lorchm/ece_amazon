@@ -45,7 +45,6 @@ session_start();
 
                   else
                     {
-                    //echo "<script>alert("Erreur de connexion")</script>";
                     header('Location: connexion.php');
                     
                     }
