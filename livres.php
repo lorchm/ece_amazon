@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
     $P=$_SESSION['login'];
     define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
@@ -11,6 +11,8 @@ session_start();
     //connecter l'utilisateur dans BDD
     $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
     $db_found = mysqli_select_db($db_handle, $database);
+
+
 
 ?>
 
@@ -27,6 +29,8 @@ session_start();
 
     <script type="text/javascript" src="program.js"></script>
     <script type="text/javascript" src="ajout_article.js"></script>
+
+    <script type="text/javascript"> function valide(){ alert("Le produit a bien été ajouté") } </script>
 
 
     <link href="styles.css" rel="stylesheet" type="text/css" />
@@ -87,39 +91,24 @@ session_start();
             <!-- 3. REMPLIR INFOS -->
             <div class="col-md-4  col-sm-12">
                 <div class="remplir-infos-prod">
-                    <form  method="post">
+                    <form  action="ajout_livre.php" method="post">
                         <!-- QUANTITE -->
                         <tr>
                             <td>
-
                                 <label style="color:grey; margin-left: 70px;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
                             </td>
                         </tr>
                         <!-- AJOUTER PANIER -->
 
+                        <?php $bjr = 'ID'.$data['ref'] ;?>
+
+                        <input type="hidden" name="recup" value="<?php echo $data['ref']?> ">
+                        
                         <tr>
-                            <td><input type="submit" id="ajout_panier" name="<?php echo "ID: " .$data['ref']. '<br>';?>" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "/></td>
+                            <td><input type="submit" onclick="valide()" name="<?php echo $bjr?>" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "/></td> 
+                            
                         </tr>
-                        <?php
-
-                            if(isset($_POST["ajout_article"])==1)
-                            {
-                                echo"Bonjour";
-                                $N=$data["ref"];
-                                echo"$N";
-
-                                $sql1 ="INSERT INTO obj_panier (ref_panier,pseudo, categorie, id,quantite) values ('11','gege2020','2', '$N','5')";
-         
-                                 $result1 = mysqli_query($db_handle, $sql1);
-                                 
-                                 echo"$N";
-
-                                $_POST["ajout_article"]=0;
-
-                            }
-
-                        ?>
-                                        </form> 
+                    </form> 
                 </div>
             </div>
         </div>

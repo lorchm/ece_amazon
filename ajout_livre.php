@@ -1,13 +1,13 @@
 <?php
 
     Session_start();
-   /*$N=$_SESSION["livre"];*/
-    echo "$_livre";
-    $Q= isset($_POST["quantite"])?$_POST["quantite"]:"";
-    $nb_vendu = 0;
+    $L = $_SESSION["login"];
+    $I = isset($_POST["recup"])?$_POST["recup"]:"";
+    $Q = isset($_POST["quantite"])?$_POST["quantite"]:"";
+
+
 
     // INSERTION LIVRE
- 
     define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASS', '');
@@ -22,23 +22,27 @@
                       
 
     if($db_found){
-   
-               echo "$Q";
 
-      
-        //faire if != pour blindage
-         $sql ="INSERT INTO obj_panier (ref_panier,pseudo, categorie, id, quantite) VALUES ('25','gege2020','2', '$N', '$Q')";
-         
-          $result = mysqli_query($db_handle, $sql);
+        //determination de la ref_panier
+        $sql = "SELECT MAX(ref_panier) FROM obj_panier";
+        $result = mysqli_query($db_handle, $sql);
+        $refs = mysqli_fetch_row($result);
+        $N = $refs[0] + 1;
+
+        //Ajout
+        $sql1 ="INSERT INTO obj_panier (ref_panier,pseudo, categorie, id, quantite) VALUES ('$N','$L','0', '$I', '$Q')";
+        $result1 = mysqli_query($db_handle, $sql1);
        }
    
     
     //si la BDD n'existe pas
     else {
         echo "Database not found";
-    }//end else
+    }//end else*/
 
     mysqli_close($db_handle);
+
+    header('Location: livres.php');
 
   
 
