@@ -26,6 +26,8 @@
     <script type="text/javascript" src="program.js"></script>
     <link href="styles.css" rel="stylesheet" type="text/css" />
 
+    <script type="text/javascript"> function valide(){ alert("Le produit a bien été ajouté") } </script>
+
 </head>
 <body class="page-vetement">
 
@@ -65,7 +67,7 @@
             <!-- 3. REMPLIR INFOS -->
             <div class="col-md-4 col-sm-12">
                 <div class="remplir-infos-vet">
-                    <form>
+                    <form action="ajout_vetement.php" method="post">
                         <table>
                             <!-- QUANTITE -->
                             <tr>
@@ -115,7 +117,8 @@
                             </tr>
                             <!-- AJOUTER AU PANIER -->
                             <tr>
-                                <td><input type="button" id="ajout-panier" name="ajout-panier" value="Ajouter au panier" class="ajout-panier-btn"></td>
+                                <input type="hidden" name="recup" value="<?php echo $data['ref']?> ">
+                                <td><input type="submit" id="ajout-panier" onclick="valide()" name="ajout-panier" value="Ajouter au panier" class="ajout-panier-btn"></td>
                             </tr>
                         </table>
                     </form>
