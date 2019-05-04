@@ -50,17 +50,17 @@ function deconnexion()
 
 
     <!-- milieu de la page -->
-    <div id="galerie">
+    <div id="galerie" class="container">
         <ul>
-            <li><img src="img/aya.jpg" width="500" height="400" /></li>
-            <li><img src="img/sport.jpg" width="500" height="400" /></li>
-            <li><img src="img/livre.jpg" width="500" height="400" /></li>
-            <li><img src="img/shoes.jpg" width="500" height="400" /></li>
-            <li><img src="img/therapie_taxi.jpg" width="500" height="400" /></li>
+            <li><img src="img/articles/m1.jpg" width="500" height="400" /></li>
+            <li><img src="img/articles/v2.jpg" width="500" height="400" /></li>
+            <li><img src="img/articles/sl4.jpg" width="500" height="400" /></li>
+            <li><img src="img/articles/v6.jpg" width="500" height="400" /></li>
+            <li><img src="img/articles/l1.jpg" width="500" height="400" /></li>
         </ul>
     </div>
-    <div>
-        <input type="button" value="Précédent" class="prev btn-galerie">
+    <div class="container">
+        <input  type="button" value="Précédent" class="prev btn-galerie">
         <input type="button" value="Suivant" class="next btn-galerie">
     </div> 
 

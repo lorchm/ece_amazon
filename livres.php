@@ -97,7 +97,7 @@ session_start();
                         <!-- AJOUTER PANIER -->
 
                         <tr>
-                            <td><button type="submit" id="ajout-panier" name="ajout_article" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "></button></td>
+                            <td><button type="submit" id="ajout-panier" name="ajout_article" class="ajout-panier-btn" style="margin-top:20px; ">Ajouter au panier</button></td>
                         </tr> 
                     </form> 
                 </div>
