@@ -101,11 +101,9 @@ session_start();
                         <tr>
                             <td><input type="submit" id="ajout_panier" name="<?php echo "ID: " .$data['ref']. '<br>';?>" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "/></td>
                         </tr>
-
-                     
- -->
-                    </form> 
+            </form> 
                       
+
                 </div>
             </div>
         </div>
