@@ -51,10 +51,10 @@ a.bouton-relief:hover {
 .center_div{
     
     /*float: right;*/
-    float :left;
+    float :center;
     text-align:center;
-    width:100%; /* value of your choice which suits your alignment */
-    border:solid;
+    width:40%; /* value of your choice which suits your alignment */
+   
     font-size: 15px;
     
 }

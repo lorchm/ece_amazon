@@ -23,7 +23,7 @@ session_start();
     		if($N=="")
     		{	
     			/*echo"CACAAAAAA";*/
-    			header('Location: vendre.php');
+    			header('Location: connexion.php');
     		}
     		else
     		{

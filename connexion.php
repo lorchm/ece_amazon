@@ -102,8 +102,8 @@
                         <br>
                         <br>
                     </div>
-                </form>
-            </div>
+            </form>
+        </div>
     
     <div class="center-block">
 

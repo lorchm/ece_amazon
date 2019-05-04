@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 <?php
 //ajouter un livre
     Session_start();
@@ -16,6 +13,61 @@
     //connecter l'utilisateur dans BDD
     $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
     $db_found = mysqli_select_db($db_handle, $database); 
+
+    if($db_found) {
+  
+            $error=1;
+                if($_SESSION["login"]=="")
+                {
+                    header('Location: connexion.php');
+                }
+                else
+                {
+                    $N=$_SESSION["login"];
+                    
+ /* <!-- Test de connexion -->*/
+            
+
+                    $sql0="SELECT pseudo FROM vendeur ";
+                    $result0=mysqli_query($db_handle, $sql0);
+                    while ($data0= mysqli_fetch_assoc($result0)){
+                    
+                        if($data0['pseudo']==$N)
+                        {
+
+                                $sql = "SELECT admins FROM vendeur WHERE pseudo LIKE '".$N."'";
+                                $result=mysqli_query($db_handle, $sql);
+                        
+                                while ($data = mysqli_fetch_assoc($result)){
+
+                                       if($data['admins']==0)
+                                       {
+                                         $_SESSION["login"]="";
+                                        header('Location: connexion.php');
+                                        $error=1;
+                                       }
+                                       else
+                                       {
+                                        $error=0;
+                                       }
+
+                                } 
+                        }
+                        else if($data0['pseudo']!=$ && $error!=0)
+                        {
+                            
+                              $_SESSION["login"]="";
+                            header('Location:connexion.php');
+                        }
+                    }
+               
+                    if($error==0)
+                    {
+                       
+                    }
+                }
+                
+     }
 
     if($db_found) {
 
@@ -71,7 +123,6 @@
         }//fin if click
 
 ?>
->>>>>>> fbf07dd20ba865d042eb6a2aa6b7553a18d42ef8
 <!DOCTYPE html>
 <html>
 <head>
@@ -102,74 +153,7 @@
 </head>
 <body>
     <!-- Barre de navigation -->
-    <?php include('header.php') ?>
-
-    <!-- Test de connexion -->
-    <?php 
-    session_start();
-    $N=$_SESSION["login"];
-    $error=0;
-        if($_SESSION["login"]=="")
-        {
-            header('Location: connexion.php');
-        }
-        else
-        {
-            $N=$_SESSION["login"];
-            
-            define('DB_SERVER', 'localhost');
-            define('DB_USER', 'root');
-            define('DB_PASS', '');
-
-            //identifier le nom de base de données
-            $database = "ECEamazon";
-
-            //connecter l'utilisateur dans BDD
-            $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
-            $db_found = mysqli_select_db($db_handle, $database);
-
-            if($db_found) {
-
-                $sql0="SELECT pseudo FROM vendeur ";
-                 $result0=mysqli_query($db_handle, $sql0);
-                  while ($data0= mysqli_fetch_assoc($result0)){
-                    
-                        if($data0['pseudo']==$N)
-                        {
-
-                                $sql = "SELECT admins FROM vendeur WHERE pseudo LIKE '".$N."'";
-                                $result=mysqli_query($db_handle, $sql);
-                        
-                                while ($data = mysqli_fetch_assoc($result)){
-
-                                       if($data['admins']==0)
-                                       {
-                                        echo"bonjou";
-                                         $_SESSION["login"]="";
-                                        header('Location: connexion.php');
-                                        $error=1;
-                                       }
-
-                                } 
-                        }
-                        else
-                        {
-                            echo"hello";
-                             /* $_SESSION["login"]="";
-                            header('Location:connexion.php');*/
-                        }
-                    }
-               
-                    if($error==0)
-                    {
-                       
-                    }
-                }
-                
-                 }
-            
-        
-    ?>
+      <?php include('header.php') ?>
 <!-- Page Admin -->
         <div class="description page-header header container-fluid"> 
             <h1>Admin</h1> 
@@ -193,7 +177,7 @@
                             <form action="admin.php" method="post">
                                 <table>
                                     <tr>
-                                        <td><label style="color:grey;">Référence de l'article : </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="ref"/></td>
+                                        <td><label style="color:grey;">Référence de l'article : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="ref"/></td>
                                    </tr>
                                    <tr>
                                         <td><label style="color:grey; margin-top: 10px;">Type de l'article : </label><br><select name="type_prod" style="width: 300px;"><OPTION><OPTION>Livre <OPTION>Musique <OPTION>Vetement <OPTION>Sport et Loisir</select></td>
@@ -220,22 +204,22 @@
                                     <form action="admin.php" method="post">
                                         <table>
                                             <tr>
-                                                <td><label style="color:grey;">Nom : </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="nom"/></td>
+                                                <td><label style="color:grey;">Nom : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="nom"/></td>
                                            </tr>
                                            <tr>
-                                                <td><label style="color:grey;">Pseudo : </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="pseudoV"/></td>
+                                                <td><label style="color:grey;">Pseudo : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="pseudoV"/></td>
                                            </tr>
                                            <tr>
-                                                <td><label style="color:grey;">Email : </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="email" placeholder="votre.email@exemple.com" /></td>
+                                                <td><label style="color:grey;">Email : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="email" placeholder="votre.email@exemple.com" /></td>
                                            </tr>
                                            <tr>
-                                                <td><label style="color:grey;">Mot de Passe : </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="password" name="mdp"/></td>
+                                                <td><label style="color:grey;">Mot de Passe : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="password" name="mdp"/></td>
                                            </tr>
                                            <tr>
-                                                <td><label style="color:grey;">Photo de Profil: </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 45px;" type="file" name="photo_profil"/></td>
+                                                <td><label style="color:grey;">Photo de Profil: </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 45px;" type="file" name="photo_profil"/></td>
                                            </tr>
                                            <tr>
-                                                <td><label style="color:grey;">Photo de Couverture: </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 45px;" type="file" name="photo_couv"/></td>
+                                                <td><label style="color:grey;">Photo de Couverture: </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 45px;" type="file" name="photo_couv"/></td>
                                            </tr>
                                            <tr>
                                                 <td><input name="ajouter_vendeur" onclick="ajoutV()" class="btt" type="submit" value="Ajouter" style="margin-top: 10px;"></td>
@@ -250,7 +234,7 @@
                                     <form action="admin.php" method="post">
                                         <table>
                                             <tr>
-                                                <td><label style="color:grey;">Pseudo du vendeur : </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="pseudo"/></td>
+                                                <td><label style="color:grey;">Pseudo du vendeur : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="pseudo"/></td>
                                            </tr>
                                             <tr>
                                                 <td><input name="supprimer_vendeur" class="btt" type="submit" value="Supprimer" onclick="supprV()"style="margin-top: 10px;"></td>
