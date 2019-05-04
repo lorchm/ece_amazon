@@ -3,6 +3,7 @@
 
 session_start();
 
+
 	$N= isset($_POST["login"])?$_POST["login"]:"";
 	$P= isset($_POST["mdp"])?$_POST["mdp"]:"";
 	$error=0;

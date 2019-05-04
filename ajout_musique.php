@@ -2,9 +2,9 @@
 //ajouter une musique
 
    session_start();
-    $N=$_SESSION("livre");
+   $N=$_SESSION("login");
 
-   echo "COucou";
+   echo "coucou";
           
     
 ?>

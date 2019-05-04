@@ -108,7 +108,7 @@ function deconnexion()
        </table>
 
         <tr>
-          <td><input id="ajout_vetement" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
+          <td><input id="ajout_vetement" name="ajout_vetement" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
         </tr>
 
      </div>
@@ -160,7 +160,7 @@ function deconnexion()
         </tr>
 
         <tr>
-          <td><input id="ajout_musique" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
+          <td><input id="ajout_musique" name="ajout_musique" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
         </tr>
 
       </table>
@@ -211,7 +211,7 @@ function deconnexion()
        </tr>
 
        <tr>
-          <td><input id="ajout_livre" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
+          <td><input id="ajout_livre" name="ajout_livre" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
         </tr>
 
       </table>
@@ -257,7 +257,7 @@ function deconnexion()
        </tr>
 
         <tr>
-          <td><input id="ajout_sportloisirs" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
+          <td><input id="ajout_sportloisirs" name="ajout_sportloisirs" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
         </tr>
 
       </table>
