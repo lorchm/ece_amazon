@@ -38,6 +38,25 @@
     <?php include('header.php') ?>
 <!-- *********************************** PAGE VENDRE ***************************************************************** -->
     <!-- ***** boutons + profil ***** -->
+     <?php 
+   
+    $error=0;
+
+       $sql0 = "SELECT pseudo FROM vendeur ";
+        $result0 = mysqli_query($db_handle, $sql0);
+        while($data0 = mysqli_fetch_assoc($result0)) {
+
+            echo "ID: " .$data0['pseudo']. '<br>';
+               if($N==$data0['pseudo'])
+                {
+                    
+                    $error=1;
+                }
+        
+         }
+         
+        
+    ?>
 
     <div class="description page-header header container-fluid"> 
         <h1> MES PRODUITS EN VENTE</h1> 

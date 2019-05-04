@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +19,51 @@
     <!-- Barre de navigation -->
     <?php include('header.php') ?>
 
+    <!-- Test de connexion -->
+    <?php 
+    session_start();
+    $error=0;
+        if($_SESSION["login"]=="")
+        {
+            header('Location: connexion.php');
+        }
+        else
+        {
+            $N=$_SESSION["login"];
+            
+            define('DB_SERVER', 'localhost');
+            define('DB_USER', 'root');
+            define('DB_PASS', '');
+
+            //identifier le nom de base de données
+            $database = "ECEamazon";
+
+            //connecter l'utilisateur dans BDD
+            $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
+            $db_found = mysqli_select_db($db_handle, $database);
+
+            if($db_found) {
+                    
+                $sql = "SELECT * FROM vendeur ";
+                $result=mysqli_query($db_handle, $sql);
+        
+                while ($data = mysqli_fetch_assoc($result)){
+
+                   if($data['pseudo']=="$N")
+                   {
+                    echo"Bonjour";
+                        $error=1;
+                   }
+                }
+                if($error==0)
+                {
+                    $_SESSION["login"]="";
+                    header('Location: connexion.php');
+                }   
+            }
+        }
+        
+    ?>
 <!-- Page Admin -->
         <div class="description page-header header container-fluid"> 
             <h1>Admin</h1> 

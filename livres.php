@@ -99,8 +99,26 @@ session_start();
                         <!-- AJOUTER PANIER -->
 
                         <tr>
-                            <td><input type="submit" id="ajout_panier" name="<?php echo "ID: " .$data['ref']. '<br>';?>" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "/></td>
+                            <td><input type="submit" id="ajout_panier" name="ajout_article"   value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "/></td>
                         </tr>
+                         <?php
+
+                            if(isset($_POST["ajout_article"])==1)
+                            {
+                                $N=$data['ref'];
+                              echo"$N";
+
+                                $sql1 ="INSERT INTO obj_panier (ref_panier,pseudo, categorie, id,quantite) values ('15','$P','2','$N','5')";
+         
+                                 $result1 = mysqli_query($db_handle, $sql1);
+                                 
+                                 echo"$N";
+
+                               exit(1);
+                         }
+                         ?>
+
+                        
             </form> 
                       
 
