@@ -1,4 +1,5 @@
-,<?php
+<?php
+
 
     define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
@@ -8,6 +9,7 @@
 
     //identifier le nom de base de données
     $database = "ECEAmazon";
+    
 
     //connecter l'utilisateur dans BDD
     $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
@@ -17,7 +19,8 @@
     if($db_found) {
         
         //Création des tables de la BDD
-        $sql = "CREATE TABLE Vetement (ref INT(6) PRIMARY KEY, type_vet ENUM('0','1'),nom VARCHAR(50) NOT NULL,descri TEXT(200) NOT NULL,prix INT(6),sexe ENUM('0','1'),pointure INT(2),taille INT(3),marque VARCHAR(30), nb_vendu INT(5), id_vendeur VARCHAR(20),url_img VARCHAR(50),FOREIGN KEY (id_vendeur) REFERENCES Vendeur(pseudo))";
+        
+        $sql = "CREATE TABLE Vetement (ref INT(6) PRIMARY KEY, type_vet ENUM('0','1'),nom VARCHAR(50) NOT NULL,descri TEXT(200) NOT NULL,prix INT(6),sexe ENUM('0','1'),pointure INT(2),taille INT(3), nb_vendu INT(5), id_vendeur VARCHAR(20),url_img VARCHAR(50),FOREIGN KEY (id_vendeur) REFERENCES Vendeur(pseudo))";
         $result = mysqli_query($db_handle, $sql);
 
         $sql1 = "CREATE TABLE Musique (ref INT(6) PRIMARY KEY,titre VARCHAR(50) NOT NULL,artiste VARCHAR(30) NOT NULL,album VARCHAR(30),annee INT(4),prix INT(6), nb_vendu INT(5), id_vendeur VARCHAR(20),url_img VARCHAR(50),FOREIGN KEY (id_vendeur) REFERENCES Vendeur(pseudo))";
@@ -26,16 +29,17 @@
         $sql2 = "CREATE TABLE Livre (ref INT(6) PRIMARY KEY,titre VARCHAR(50) NOT NULL,auteur VARCHAR(30) NOT NULL,annee INT(4),prix INT(6),editeur VARCHAR(40),descri TEXT, nb_vendu INT(5), id_vendeur VARCHAR(20),url_img VARCHAR(50),FOREIGN KEY (id_vendeur) REFERENCES Vendeur(pseudo))";
         $result2 = mysqli_query($db_handle, $sql2);
 
+       
         $sql3 = "CREATE TABLE SportLoisir (ref INT(6) PRIMARY KEY,nom VARCHAR(50) NOT NULL,prix INT(6),descri TEXT, nb_vendu INT(5), id_vendeur VARCHAR(20),url_img VARCHAR(50),FOREIGN KEY (id_vendeur) REFERENCES Vendeur(pseudo))";
         $result3 = mysqli_query($db_handle, $sql3);
 
         $sql4 = "CREATE TABLE Vendeur (pseudo VARCHAR(20) PRIMARY KEY,admins ENUM('0','1'),mdp VARCHAR(20),email VARCHAR(50),nom VARCHAR(40), url_pdp VARCHAR(50), url_pdc VARCHAR(50))";
         $result4 = mysqli_query($db_handle, $sql4);
-
+        
         $sql5 = "CREATE TABLE Acheteur (pseudo VARCHAR(20) PRIMARY KEY,mdp VARCHAR(20),email VARCHAR(50),nom VARCHAR(20),prenom VARCHAR(20),adresse1 VARCHAR(50),adresse2 VARCHAR(50),
             code_bp INT(5),ville VARCHAR(40),pays VARCHAR(20),tel INT(10),card_type VARCHAR(15),card_number INT(16),card_name VARCHAR(50),exp_date DATE,sec_code INT(3))";
         $result5 = mysqli_query($db_handle, $sql5);
-
+        
         $sql32 = "CREATE TABLE obj_panier (ref_panier INT(6) PRIMARY KEY,pseudo VARCHAR(20) NOT NULL, categorie int(1) NOT NULL,id int(6), quantite INT(3), FOREIGN KEY (pseudo) REFERENCES acheteur(pseudo))";
         $result32 = mysqli_query($db_handle, $sql32);
 
@@ -49,22 +53,22 @@
 
         //Insertion des articles
         //Vetements
-        $sql8 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('1','0','Chaussettes pour chien','Protegez les petits petons de vos toutous preferes','6',NULL,NULL,NULL,NULL,'0',NULL,'img/articles/v1.jpg')";
+        $sql8 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('1','0','Chaussettes pour chien','Protegez les petits petons de vos toutous preferes','6',NULL,NULL,NULL,'0',NULL,'img/articles/v1.jpg')";
         $result8 = mysqli_query($db_handle, $sql8);
 
-        $sql9 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('2','1','Bandana rafraichissant','Gardez un bon style pour votre chien tout en le protegeant de la chaleur','7',NULL,NULL,NULL,NULL,'7','admin','img/articles/v2.jpg')";
+        $sql9 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('2','1','Bandana rafraichissant','Gardez un bon style pour votre chien tout en le protegeant de la chaleur','7',NULL,NULL,NULL,'7','admin','img/articles/v2.jpg')";
         $result9 = mysqli_query($db_handle, $sql9);
 
-        $sql10 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('3','0','Bottes confort','Favorise la cicatrisation des blessures','12',NULL,NULL,NULL,NULL,'5',NULL,'img/articles/v3.jpg')";
+        $sql10 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('3','0','Bottes confort','Favorise la cicatrisation des blessures','12',NULL,NULL,NULL,'5',NULL,'img/articles/v3.jpg')";
         $result10 = mysqli_query($db_handle, $sql10);
 
-        $sql11 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('4','1','Noeud papillon','Accessorisez votre chien pour une classe legendaire','5',NULL,NULL,NULL,NULL,'0',NULL,'img/articles/v4.jpg')";
+        $sql11 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('4','1','Noeud papillon','Accessorisez votre chien pour une classe legendaire','5',NULL,NULL,NULL,'0',NULL,'img/articles/v4.jpg')";
         $result11 = mysqli_query($db_handle, $sql11);
 
-        $sql12 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('5','1','Deguisement Captain America','A la sortie du dernier Avenger, soyez surs que votre animal reste a la mode','7',NULL,NULL,NULL,NULL,'3',NULL,'img/articles/v5.jpg')";
+        $sql12 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('5','1','Deguisement Captain America','A la sortie du dernier Avenger, soyez surs que votre animal reste a la mode','7',NULL,NULL,NULL,'3',NULL,'img/articles/v5.jpg')";
         $result12 = mysqli_query($db_handle, $sql12);
 
-        $sql13 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `marque`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('6','1','Pull Over Langley','Pour vos longues soirees d hiver, couvrez vos animaux d un bon pull en laine','17',NULL,NULL,NULL,NULL,'6',NULL,'img/articles/v6.jpg')";
+        $sql13 = "INSERT INTO `vetement` (`ref`, `type_vet`, `nom`, `descri`, `prix`, `sexe`, `pointure`, `taille`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('6','1','Pull Over Langley','Pour vos longues soirees d hiver, couvrez vos animaux d un bon pull en laine','17',NULL,NULL,NULL,'6',NULL,'img/articles/v6.jpg')";
         $result13 = mysqli_query($db_handle, $sql13);
 
         //Mus

@@ -1,7 +1,7 @@
 <?php
 //ajouter un livre
     Session_start();
-   $N=$_SESSION["livre"];
+    $N=$_SESSION["livre"];
     
      $A= isset($_POST["test"])?$_POST["test"]:"";
      echo "$A";

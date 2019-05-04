@@ -3,7 +3,6 @@
 
 session_start();
 
-
 	$N= isset($_POST["login"])?$_POST["login"]:"";
 	$P= isset($_POST["mdp"])?$_POST["mdp"]:"";
 	$error=0;
@@ -46,14 +45,12 @@ session_start();
 
                   else
                     {
-                      // echo "<script>alert("Erreur de connexion")</script>";
+                    //echo "<script>alert("Erreur de connexion")</script>";
                     header('Location: connexion.php');
                     
                     }
 
-                }   
-
-              
+                }                 
           	 }
 
       }
