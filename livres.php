@@ -27,6 +27,7 @@ session_start();
     <script type="text/javascript" src="program.js"></script>
     <script type="text/javascript" src="ajout_article.js"></script>
 
+
     <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="page-livres">
@@ -40,20 +41,15 @@ session_start();
         <p> ECE Amazon vous propose pleins de livres sympas.</p> 
     </div>
 
- <!--    <script >
+  <!--   <script >
         function ajout_article(test,cat)
             {
-                $(document).ready(function(){
-                    document.load('venteflash.php');
-                          /*$.post('ajout_article_bdd.php',{test,cat}){
-
-                    };*/
-              
+                window.open()
     
                 };
             }
-    </script>
- -->
+    </script> -->
+
     <?php 
         //si le BDD existe, faire le traitement
         
@@ -64,7 +60,7 @@ session_start();
 
             //début boucle
             while ($data = mysqli_fetch_assoc($result)) {
-                   $_SESSION['livre']=$data['ref'];
+                
             
                 
     ?>
@@ -82,12 +78,17 @@ session_start();
                 <div class="prix-prod"><?php echo $data['prix']?> &euro;</div>
                 <div class="reference-prod">Référence <?php echo $data['ref']?></div>
                 <div class="description-prod"><?php echo $data['descri']?></div>
+
+                
+               
+               <!-- $_SESSION["livre"]=$data['ref']; -->
             </div>
             <!-- 3. REMPLIR INFOS -->
             <div class="col-md-4  col-sm-12">
                 <div class="remplir-infos-prod">
                     <form action ="ajout_livre.php" method="post">
                         <!-- QUANTITE -->
+                           <input type="submit" id="ajout-panier" name="test" value="<?php echo $data['ref']?>" class="ajout-panier-btn" style="width: 0%; "/></td>
                         <tr>
                             <td>
 
@@ -97,13 +98,14 @@ session_start();
                         <!-- AJOUTER PANIER -->
 
                         <tr>
-                            <td><button type="submit" id="ajout-panier" name="ajout_article" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "></button></td>
-                        </tr> 
-                    </form> 
+                            <td><input type="submit" id="ajout-panier" name="ajout_article" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "/></td>
+                        </tr>
+                                        </form> 
                 </div>
             </div>
         </div>
     </div>
+
 
     
     <?php 

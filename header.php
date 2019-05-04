@@ -47,10 +47,10 @@
             </ul> 
 
              <div class="navbar-nav" >
-
-                    <button class="btn btn-primary" style="width:150px;"  onClick="connexion()">Se connecter</button>
-
-                     <td><a class="btn btn-primary" style="width:150px; margin-left: 50px;" onclick="deconnexion()" >Se déconnecter</a></td>
+                <table>
+                    <tr><td><button class="btn btn-primary" style="width:150px;"  onClick="connexion()">Se connecter</button></td></tr>
+                    <tr><td><a class="btn btn-primary" style="width:150px;" onclick="deconnexion()" >Se déconnecter</a></td></tr>
+                </table>
             </div>
             
         </div> 

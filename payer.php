@@ -22,7 +22,7 @@
     <div class="page-venteflash">
         <!-- Titre -->
         <div class="description page-header header container-fluid"> 
-            <h1>Finalisation de la commande <img src="img/aya.jpg" style="width: 50px; height: 50px;"></h1> 
+            <h1>Finalisation de la commande <img src="img/bags.png" style="width: 50px; height: 50px;"></h1> 
         </div>
 
  

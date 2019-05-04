@@ -22,7 +22,8 @@
 
     <?php 
     session_start();
-    $_SESSION["login"]="";
+        $_SESSION["login"]="";    
+
         if($_SESSION["login"]!="")
         {
             header('Location: info_compte.php');
@@ -41,11 +42,11 @@
 
                     <table>
                         <tr>
-                         <label>Login</label> <input class="form-control center-con"  style="width: 250px; " type="text" name="login" size="10" /><br> <br>
+                         <label>Login</label> <input class="form-control center-con container"  style="width: 250px; " type="text" name="login" size="10" /><br> <br>
                         </tr>
 
                         <tr>
-                           <label>Mot de passe</label><input class="form-control center-con"  style="width: 250px;" type="password" name="mdp" size ="25"/><br><br>
+                           <label>Mot de passe</label><input class="form-control center-con container"  style="width: 250px;" type="password" name="mdp" size ="25"/><br><br>
                        </tr>
                     </table>
 
