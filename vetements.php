@@ -58,7 +58,6 @@
             <!-- 2. DETAIL ARTICLE -->
             <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
                 <div class="en-tete-prod"> <b><?php echo $data['nom']?> </b></div>
-                <div class="en-tete-prod-deux"> <p><?php echo $data['marque']?></p> </div>
                 <div class="prix-prod"><?php echo $data['prix']?> &euro;</div>
                 <div class="reference-prod">Référence <?php echo $data['ref']?></div>
                 <div class="description-prod"><?php echo $data['descri']?></div>

@@ -86,9 +86,8 @@ session_start();
             <!-- 3. REMPLIR INFOS -->
             <div class="col-md-4  col-sm-12">
                 <div class="remplir-infos-prod">
-                    <form action ="ajout_livre.php" method="post">
+                    <form method="post">
                         <!-- QUANTITE -->
-                           <input type="submit" id="ajout-panier" name="test" value="<?php echo $data['ref']?>" class="ajout-panier-btn" style="width: 0%; "/></td>
                         <tr>
                             <td>
 
@@ -100,7 +99,26 @@ session_start();
                         <tr>
                             <td><input type="submit" id="ajout-panier" name="ajout_article" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "/></td>
                         </tr>
-                                        </form> 
+                        <?php
+
+                            if(isset($_POST["ajout_article"]))
+                            {
+                                echo"Bonjour";
+                                $N=$data["ref"];
+                                echo"$N";
+
+                                $sql1 ="INSERT INTO obj_panier (ref_panier,pseudo, categorie, id,quantite) values ('50','gege2020','2','echo $N','5')";
+         
+                                $result1 = mysqli_query($db_handle, $sql1);
+                                 
+                                 echo"$N";
+
+                                $_POST["ajout_article"]=0;
+
+                            }
+
+                        ?>
+                    </form> 
                 </div>
             </div>
         </div>

@@ -34,8 +34,8 @@
 
         //variable qui contient le pseudo de la personne à qui faut changer
 
-        $sql = "INSERT INTO acheteur (pseudo, mdp,email,nom,prenom,adresse1,adresse2,code_bp,ville,pays,tel,card_type,card_number,card_name,exp_date,sec_code) VALUES ('$Ps', '$M',
-        '$Mail','$Nom','$Prenom','$Adresse1','$Adresse2','$CP','$Ville','$Pays','$Tel','$Carte','$Carte_num','$Carte_name','$Date_exp','$Code')";
+        $sql = "INSERT INTO acheteur (pseudo, mdp,email,nom,prenom,adresse1,adresse2,code_bp,ville,pays,tel,card_type,card_number,card_name,exp_date,sec_code) VALUES ('$Ps', '$M','$Mail','$Nom','$Prenom','$Adresse1','$Adresse2','$CP','$Ville','$Pays','$Tel','$Carte','$Carte_num','$Carte_name','$Date_exp',
+        '$Code')";
         $result = mysqli_query($db_handle, $sql);
 
         /*"INSERT INTO acheteur (pseudo,mdp) values ('$Ps','$M')"; */
