@@ -65,7 +65,7 @@ function deconnexion()
 
   <div class="col-md-3">
 
-    <form action ="ajout_vetement.php" method="post">
+    <form action ="vendre_vetement.php" method="post">
 
       <div class="container fluid center_block" >
         <h2>Vêtements</h2>
@@ -91,7 +91,7 @@ function deconnexion()
             </tr>
 
             <tr>
-             <label>Pointures (si chaussures) : </label><input class="form-control" style="width: 300px;" ype="text" name="Pointuer"/><br><br>
+             <label>Pointures (si chaussures) : </label><input class="form-control" style="width: 300px;" ype="text" name="pointure"/><br><br>
             </tr>
 
             <tr>
@@ -99,7 +99,7 @@ function deconnexion()
             </tr>
 
             <tr>
-             <label>Description : </label><textarea class="form-control" style="width: 300px; display: block;" type="text" nom="descri"/></textarea><br><br>
+             <label>Description : </label><textarea class="form-control" style="width: 300px; display: block;" type="text" name="descri"></textarea><br><br>
             </tr>
 
 
@@ -108,13 +108,13 @@ function deconnexion()
            </tr>
 
             <tr>
-             <label>Photo :</label><input class="form-control" style="width: 300px;" type="text" name="photo"/><br><br>
+             <label>Photo :</label><input class="form-control" style="width: 300px;" type="file" name="photo"/><br><br>
             </tr>
 
        </table>
 
         <tr>
-          <td><button name="ajout_vetement" class="btn btn-primary" style="width:80px;" type="submit">Ajouter</button></td>
+          <td><input id="vendre_vetement" name="vendre_vetement" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></td>
         </tr>
 
      </div>
@@ -126,45 +126,41 @@ function deconnexion()
 <!-- AJOUT MUSIQUE -->
 <div class="col-md-3">
 
-  <form action ="ajout_musique.php" method="post">
+  <form action ="vendre_musique.php" method="post">
 
     <div class="container fluid center_block" >
 
       <h2>Musique</h2>
         <table>
         <tr>
-         <label>Référence: </label><input class="form-control" style="width: 300px;" type="text" nom="ref"/> <br> <br>
+         <label>Référence: </label><input class="form-control" style="width: 300px;" type="text" name="ref"/> <br> <br>
         </tr>
         <tr>
-           <label>Titre :</label><input class="form-control" style="width: 300px;" type="text" nom="titre"/><br><br>
-        </tr>
-
-        <tr>
-           <label>Artiste : </label><input class="form-control" style="width: 300px;" type="text" nom="artiste"/><br><br>
+           <label>Titre :</label><input class="form-control" style="width: 300px;" type="text" name="titre"/><br><br>
         </tr>
 
         <tr>
-           <label>Album :</label><input class="form-control" style="width: 300px;" type="text" nom="album"/><br><br>
+           <label>Artiste : </label><input class="form-control" style="width: 300px;" type="text" name="artiste"/><br><br>
         </tr>
 
         <tr>
-           <label>Année :</label><input class="form-control" style="width: 300px;" type="text" nom="annee"/><br><br>
+           <label>Album :</label><input class="form-control" style="width: 300px;" type="text" name="album"/><br><br>
         </tr>
 
         <tr>
-          <label>Description :</label><textarea class="form-control" style="width: 300px;" type="text" nom="descri"/></textarea><br><br>
+           <label>Année :</label><input class="form-control" style="width: 300px;" type="text" name="annee"/><br><br>
         </tr>
 
         <tr>
-           <label>Prix :</label><input  class="form-control" style="width: 300px;" type="text" nom="prix"/><br><br>
+           <label>Prix :</label><input  class="form-control" style="width: 300px;" type="text" name="prix"/><br><br>
         </tr>
 
         <tr>
-           <label>Photo :</label><input  class="form-control" style="width: 300px;" type="text" nom="photo"/><br><br>
+          <label>Photo :</label><input class="form-control" style="width: 300px;" type="file" name="photo"/><br><br>
         </tr>
 
         <tr>
-          <td><button name="ajout_musique" class="btn btn-primary" style="width:80px;" type="submit">Ajouter</button></td>
+          <td><input id="vendre_musique" name="vendre_musique" class="btn btn-primary" style="width:80px;height:45px;" type="submit" value="Ajouter"></td>
         </tr>
 
       </table>
@@ -175,7 +171,7 @@ function deconnexion()
 <!-- AJOUT LIVRES -->
 <div class="col-md-3">
 
-  <form action ="ajout_livre.php" method="post">
+  <form action ="vendre_livre.php" method="post">
 
     <div class="container fluid center_block" >
 
@@ -183,39 +179,39 @@ function deconnexion()
       <table>
 
         <tr>
-          <label>Référence :</label><input class="form-control" style="width: 300px;" type="text" nom="ref"/><br><br>
+          <label>Référence :</label><input class="form-control" style="width: 300px;" type="text" name="ref"/><br><br>
         </tr>
 
         <tr>
-         <label>Titre :</label><input class="form-control" style="width: 300px;" type="text" nom="titre"/><br><br>
+         <label>Titre :</label><input class="form-control" style="width: 300px;" type="text" name="titre"/><br><br>
         </tr>
 
         <tr>
-          <label>Auteur :</label><input class="form-control" style="width: 300px;" type="text" nom="auteur" /><br><br>
+          <label>Auteur :</label><input class="form-control" style="width: 300px;" type="text" name="auteur" /><br><br>
         </tr>
 
         <tr>
-         <label>Maison d'édition :</label><input class="form-control" style="width: 300px;" type="text" nom="editeur" /><br><br>
+         <label>Maison d'édition :</label><input class="form-control" style="width: 300px;" type="text" name="editeur" /><br><br>
         </tr>
 
        <tr>
-         <label>Année :</label><input class="form-control" style="width: 300px;" type="text" nom="annee"/><br><br>
+         <label>Année :</label><input class="form-control" style="width: 300px;" type="text" name="annee"/><br><br>
        </tr>
 
         <tr>
-         <label>Description :</label><textarea class="form-control" style="width: 300px;" type="text" nom="descri"/></textarea><br><br>
+         <label>Description :</label><textarea class="form-control" style="width: 300px;" type="text" name="descri"></textarea><br><br>
        </tr>
 
        <tr>
-         <label>Prix :</label><input class="form-control" style="width: 300px;" type="text" nom="prix" /><br><br>
+         <label>Prix :</label><input class="form-control" style="width: 300px;" type="text" name="prix" /><br><br>
        </tr>
 
        <tr>
-         <label>Photo :</label><input class="form-control" style="width: 300px;" type="text" nom="photo" /><br><br>
+        <label>Photo :</label><input class="form-control" style="width: 300px;" type="file" name="photo"/><br><br>
        </tr>
 
        <tr>
-          <td><input name="ajout_livre" onclick="ajout_livre()" class="btn btn-primary" style="width:80px;" type="submit" value=" Ajouter"/></td>
+          <td><input id="vendre_livre" name="vendre_livre" class="btn btn-primary" style="width:80px;height:45px;" type="submit" value="Ajouter"></td>
         </tr>
 
       </table>
@@ -229,7 +225,7 @@ function deconnexion()
 <!-- AJOUT SPORT LOISIRS -->
 <div class="col-md-3">
 
-  <form action ="ajout_sportloisirs.php" method="post">
+  <form action ="vendre_sp_lo.php" method="post">
 
     <div class="container fluid center_block" >
 
@@ -237,31 +233,31 @@ function deconnexion()
       <table>
 
         <tr>
-          <label>Référence :</label><input class="form-control" style="width: 300px;" type="text" nom="ref"/><br><br>
+          <label>Référence :</label><input class="form-control" style="width: 300px;" type="text" name="ref"/><br><br>
         </tr>
 
         <tr>
-         <label>Nom :</label><input class="form-control" style="width: 300px;" type="text" nom="nom"/><br><br>
+         <label>Nom :</label><input class="form-control" style="width: 300px;" type="text" name="nom"/><br><br>
        </tr>
 
        <tr>
-         <label>Description :</label><textarea class="form-control" style="width: 300px;" type="text" nom="descri"/></textarea><br><br>
+         <label>Description :</label><textarea class="form-control" style="width: 300px;" type="text" name="descri"></textarea><br><br>
        </tr>
 
        <tr>
-         <label>Prix :</label><input class="form-control" style="width: 300px;" type="text" nom="prix"/><br><br>
+         <label>Prix :</label><input class="form-control" style="width: 300px;" type="text" name="prix"/><br><br>
        </tr>
 
        <tr>
-         <label>Photo :</label><input class="form-control" style="width: 300px;" type="text" nom="photos"/><br><br>
+        <label>Photo :</label><input class="form-control" style="width: 300px;" type="file" name="photo"/><br><br>
        </tr>
 
        <tr>
-         <label>Vidéos :</label><input class="form-control" style="width: 300px;" type="text" nom="videos"/><br><br>
+         <label>Vidéos :</label><input class="form-control" style="width: 300px;" type="text" name="videos"/><br><br>
        </tr>
 
         <tr>
-          <td><button name="ajout_sportloisirs" class="btn btn-primary" style="width:80px;" type="submit" value="Ajouter"></button></td>
+          <td><input id="vendre_sp_lo" name="vendre_sp_lo" class="btn btn-primary" style="width:80px; height:45px;" type="submit" value="Ajouter"></td>
         </tr>
 
       </table>

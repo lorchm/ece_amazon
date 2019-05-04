@@ -15,7 +15,8 @@
     $db_found = mysqli_select_db($db_handle, $database); 
 
     if($db_found) {
-
+        $prix= isset($_POST["prix"])?$_POST["prix"]:"";
+        echo $prix;
 ?>
 
 <!DOCTYPE html>
@@ -47,6 +48,13 @@
 
 
         <div class="container fluid center_div" >
+                <!-- MESSAGE POUR DIRE COMMANDE VALILDER -->
+                <?php
+                    if (isset($_POST['Valider']) AND $_POST['Valider']=='valider') {
+                ?>
+                <p style="color:grey;">Votre commmande a bien été validé. Vous serez livrez dans à peu près 10 minutes. Merci de faire confance à ECE AMAZON ! <img src="img/checked.png" style="width:30px; height: 30PX."></p>
+
+                <?php }//fin if click ?>
 
                 <form action ="payer.php" method="post">
                     <table>
@@ -74,45 +82,14 @@
                     <div class="center-block">
                         <div class="but">
                             <tr>
-                                <td><input class="btn btn-primary" style="width:150px;" type="submit" value="Valider" required></td>
+                                <td><input class="btn btn-primary" style="width:150px;" type="submit" name="Valider" value="valider" ></td>
                             </tr>
                         </div>
                         <br>
                         <br>
                     </div>
                 </form>
-
-                <?php
-                    $type= isset($_POST["card_type"])?$_POST["card_type"]:"";
-                    $number= isset($_POST["card_number"])?$_POST["card_number"]:"";
-                    $card_name= isset($_POST["card_name"])?$_POST["card_name"]:"";
-                    $expdate= isset($_POST["exp_date"])?$_POST["exp_date"]:"";
-                    $sec_code= isset($_POST["sec_code"])?$_POST["sec_code"]:"";
-
-                    echo $type;echo $number;echo $card_name;echo $expdate;
-                    echo $sec_code;
-
-                    $sql= "SELECT * FROM acheteur WHERE pseudo LIKE '".$N."'";
-                    $result = mysqli_query($db_handle, $sql);
-
-                    //si les infos saisies correspondent pas à celle du compte on réinitialise la page
-                    while ($data = mysqli_fetch_assoc($result)){
-                        if ($type!=$data['card_type'] && $number!=$data['card_number'] && $card_name!=$data['card_name'] && $expdate!=$data['exp_date'] && $sec_code!=$data['sec_code']) {
-                            
-                            header('location:payer.php');
-
-                ?>
-
-                <p class="text-warning">Les informations saisies ne correspondent pas à celle renseignées dans votre compte ! Veuillez ressaisir s'il vous plait.</p>
-
-
-                <?php
-                        }//fin if
-                    }//fin while
-
-                ?>
             </div>
-
     </div>
 
     <?php

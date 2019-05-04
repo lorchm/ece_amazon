@@ -1,4 +1,77 @@
+<<<<<<< HEAD
 
+=======
+<?php
+//ajouter un livre
+    Session_start();
+    $N=$_SESSION["login"];
+
+    define('DB_SERVER', 'localhost');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+   
+    //identifier le nom de base de données
+    $database = "ECEAmazon";
+
+    //connecter l'utilisateur dans BDD
+    $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
+    $db_found = mysqli_select_db($db_handle, $database); 
+
+    if($db_found) {
+
+        //SUPPRIMER UN PRODUIT
+        if (isset($_POST['supprimer_produit']) AND $_POST['supprimer_produit']=='Supprimer') {
+            $type= isset($_POST["type_prod"])?$_POST["type_prod"]:"";
+            $ref= isset($_POST["ref"])?$_POST["ref"]:"";
+
+            //livre
+            if ($type == "Livre") {
+                $sql= "DELETE FROM livre WHERE ref LIKE '".$ref."'";
+                $result = mysqli_query($db_handle, $sql);
+            }
+            
+            if ($type == "Musique") {
+                $sql= "DELETE FROM musique WHERE ref LIKE '".$ref."'";
+                $result = mysqli_query($db_handle, $sql);
+            }
+
+            if ($type == "Vetement") {
+                $sql= "DELETE FROM sportloisir WHERE ref LIKE '".$ref."'";
+                $result = mysqli_query($db_handle, $sql);
+            }
+            if ($type == "Sport et Loisir") {
+                $sql= "DELETE FROM livre WHERE ref LIKE '".$ref."'";
+                $result = mysqli_query($db_handle, $sql);
+            }
+        }
+        
+        //SUPPRIMER UN VENDEUR
+        if (isset($_POST['supprimer_vendeur']) AND $_POST['supprimer_vendeur']=='Supprimer') {
+            $pseudo= isset($_POST["pseudo"])?$_POST["pseudo"]:"";
+
+            echo $pseudo;
+            $sql= "DELETE FROM vendeur WHERE pseudo LIKE '".$pseudo."'";
+            $result = mysqli_query($db_handle, $sql);
+        }//fin if click
+
+        //AJOUTER UN VENDEUR
+        if (isset($_POST['ajouter_vendeur']) AND $_POST['ajouter_vendeur']=='Ajouter') {
+            $pseudo= isset($_POST["pseudoV"])?$_POST["pseudoV"]:"";
+            $nom= isset($_POST["nom"])?$_POST["nom"]:"";
+            $email= isset($_POST["email"])?$_POST["email"]:"";
+            $mdp= isset($_POST["mdp"])?$_POST["mdp"]:"";
+            $photo_profil= isset($_POST["photo_profil"])?$_POST["photo_profil"]:"";
+            $photo_couv= isset($_POST["photo_couv"])?$_POST["photo_couv"]:"";
+
+            $pp= "img/pp/".$photo_profil;
+            $pc= "img/pc/".$photo_couv;
+
+            $sql= "INSERT INTO `vendeur` (`pseudo`, `admins`, `mdp`, `email`, `nom`, `url_pdp`, `url_pdc`) VALUES ('$pseudo', '0', '$mdp', '$email', '$nom', '$pp', '$pc' )";
+            $result = mysqli_query($db_handle, $sql);
+        }//fin if click
+
+?>
+>>>>>>> fbf07dd20ba865d042eb6a2aa6b7553a18d42ef8
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +86,18 @@
 
     <script type="text/javascript" src="program.js"></script>
     <link href="styles.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+        function supprV(){
+            alert("Vendeur bien supprimé !");
+        }
+        function supprP(){
+            alert("Article bien supprimé !");
+        }
+        function ajoutV(){
+            alert("Un vendeur a bien été ajouté !");
+        }
+    </script>
 
 </head>
 <body>
@@ -105,16 +190,16 @@
                             <!-- Supprimer un produit -->
                             <h3 style="color:#DF912A; margin-top: 20px;  margin-left: 20px;">Supprimer un Article</h3>
                             
-                            <form action="supprimer_prod" method="post">
+                            <form action="admin.php" method="post">
                                 <table>
                                     <tr>
-                                        <td><label style="color:grey;">Référence de l'article : </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="reference"/></td>
+                                        <td><label style="color:grey;">Référence de l'article : </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="ref"/></td>
                                    </tr>
                                    <tr>
-                                        <td><label style="color:grey; margin-top: 10px;">Type de l'article : </label><br><select style="width: 300px;"><OPTION><OPTION>Livre <OPTION>Musique <OPTION>Vetement <OPTION>Sport et Loisir</select></td>
+                                        <td><label style="color:grey; margin-top: 10px;">Type de l'article : </label><br><select name="type_prod" style="width: 300px;"><OPTION><OPTION>Livre <OPTION>Musique <OPTION>Vetement <OPTION>Sport et Loisir</select></td>
                                    </tr>
                                     <tr>
-                                        <td><input id="supprimer_produit" class="btt" type="submit" value="Supprimer" style="margin-top: 10px;"></td>
+                                        <td><input name="supprimer_produit" onclick="supprP()"class="btt" type="submit" value="Supprimer" style="margin-top: 10px;"></td>
                                     </tr>
                                  </table>
                             </form>
@@ -132,19 +217,19 @@
                                     <!-- Ajouter vendeur -->
                                     <h3 style="color:#DF912A;">Ajouter un vendeur</h3>
                                     
-                                    <form action="ajouter_prod" method="post">
+                                    <form action="admin.php" method="post">
                                         <table>
                                             <tr>
                                                 <td><label style="color:grey;">Nom : </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="nom"/></td>
                                            </tr>
                                            <tr>
-                                                <td><label style="color:grey;">Pseudo : </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="pseudo"/></td>
+                                                <td><label style="color:grey;">Pseudo : </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="pseudoV"/></td>
                                            </tr>
                                            <tr>
                                                 <td><label style="color:grey;">Email : </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="email" placeholder="votre.email@exemple.com" /></td>
                                            </tr>
                                            <tr>
-                                                <td><label style="color:grey;">Mot de Passe : </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="password" name="password"/></td>
+                                                <td><label style="color:grey;">Mot de Passe : </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="password" name="mdp"/></td>
                                            </tr>
                                            <tr>
                                                 <td><label style="color:grey;">Photo de Profil: </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 45px;" type="file" name="photo_profil"/></td>
@@ -153,7 +238,7 @@
                                                 <td><label style="color:grey;">Photo de Couverture: </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 45px;" type="file" name="photo_couv"/></td>
                                            </tr>
                                            <tr>
-                                                <td><input id="ajouter_vendeur" class="btt" type="submit" value="Ajouter" style="margin-top: 10px;"></td>
+                                                <td><input name="ajouter_vendeur" onclick="ajoutV()" class="btt" type="submit" value="Ajouter" style="margin-top: 10px;"></td>
                                             </tr>
                                          </table>
                                     </form>
@@ -162,13 +247,13 @@
                                 <div class="col-sm-6">
                                     <!-- Ajouter un produit -->
                                     <h3 style="color:#DF912A;">Supprimer un Vendeur</h3>
-                                    <form action="supprimer_vendeur" method="post">
+                                    <form action="admin.php" method="post">
                                         <table>
                                             <tr>
                                                 <td><label style="color:grey;">Pseudo du vendeur : </label><input class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="pseudo"/></td>
                                            </tr>
                                             <tr>
-                                                <td><input id="supprimer_vendeur" class="btt" type="submit" value="Supprimer" style="margin-top: 10px;"></td>
+                                                <td><input name="supprimer_vendeur" class="btt" type="submit" value="Supprimer" onclick="supprV()"style="margin-top: 10px;"></td>
                                             </tr>
                                          </table>
                                     </form>
@@ -180,7 +265,15 @@
                 </div>
             </div>
         </div>
+<?php
+    } //fin du if database found
+    //si la BDD n'existe pas
+    else {
+        echo "Database not found";
+    }//end else
 
+    mysqli_close($db_handle);
+?>
         
 
     <!-- PIED DE PAGE -->
