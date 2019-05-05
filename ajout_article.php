@@ -160,6 +160,12 @@ function deconnexion()
         </tr>
 
         <tr>
+          <label>Lien embed de la vidéo (width:315 / height:170) :</label><input class="form-control" style="width: 300px;" type="text" name="video"/><br><br>
+        </tr>
+
+
+
+        <tr>
           <td><input id="vendre_musique" name="vendre_musique" class="btn btn-primary" style="width:80px;height:45px;" type="submit" value="Ajouter"></td>
         </tr>
 
@@ -255,6 +261,10 @@ function deconnexion()
        <tr>
          <label>Vidéos :</label><input class="form-control" style="width: 300px;" type="text" name="videos"/><br><br>
        </tr>
+
+       <tr>
+          <label>Lien embed de la vidéo (width:315 / height:170) :</label><input class="form-control" style="width: 300px;" type="text" name="video"/><br><br>
+        </tr>
 
         <tr>
           <td><input id="vendre_sp_lo" name="vendre_sp_lo" class="btn btn-primary" style="width:80px; height:45px;" type="submit" value="Ajouter"></td>
