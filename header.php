@@ -48,8 +48,14 @@
 
              <div class="navbar-nav" >
                 <table>
-                    <tr><td><button class="btn btn-primary" style="width:150px;"  onClick="connexion()">Se connecter</button></td></tr>
-                    <tr><td><a class="btn btn-primary" style="width:150px;" onclick="deconnexion()" >Se déconnecter</a></td></tr>
+                   
+                    <tr><td><a class="btn btn-primary" style="width:150px;"  href="connexion.php">Se connecter</a></td></tr>
+
+                 <form action="deconnexion.php" method="POST">
+
+                    <tr><td><input class="btn btn-primary" style="width:150px;" type="submit" value="Se déconnecter" /></td></tr>
+
+                </form>
                 </table>
             </div>
             

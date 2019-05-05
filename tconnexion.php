@@ -39,7 +39,7 @@ session_start();
                   if($N==$data['pseudo'] && $P==$data['mdp'])
                   {
                        $_SESSION["login"]=$N;
-                       header('Location: info_compte.php'); 
+                       header('Location: info_vendeur.php'); 
 
                   }
 

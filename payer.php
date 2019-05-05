@@ -15,6 +15,22 @@
     $db_found = mysqli_select_db($db_handle, $database); 
 
     if($db_found) {
+        $prix= isset($_POST["prix"])?$_POST["prix"]:"";
+        //pas connecté
+        if ($_SESSION['login'] == "") {
+            header('Location: connexion.php');
+        }  
+        //else connecté
+        else{
+
+            $card_name= isset($_POST["card_name"])?$_POST["card_name"]:"";
+            $card_type= isset($_POST["card_type"])?$_POST["card_type"]:"";
+            $card_number= isset($_POST["card_number"])?$_POST["card_number"]:"";
+            $exp_date= isset($_POST["exp_date"])?$_POST["exp_date"]:"";
+            $sec_code= isset($_POST["sec_code"])?$_POST["sec_code"]:"";
+
+            $sql= "SELECT * FROM acheteur WHERE pseudo LIKE '".$N."'";
+            $result = mysqli_query($db_handle, $sql);
 
 ?>
 
@@ -41,12 +57,35 @@
  
     <div class="page-venteflash">
         <!-- Titre -->
+
         <div class="description page-header header container-fluid"> 
-            <h1>Finalisation de la commande <img src="img/bags.png" style="width: 50px; height: 50px;"></h1> 
+            <h1>Finalisation de la commande <img src="img/bags.png" style="width: 50px; height: 50px;"></h1>
+            <h1>Total : <?php echo $prix;?> &euro;</h1>
         </div>
 
 
         <div class="container fluid center_div" >
+                <!-- MESSAGE POUR DIRE COMMANDE VALILDER -->
+                <?php
+                    if (isset($_POST['Valider']) AND $_POST['Valider']=='valider') {
+                        //on parcours tout les articles du clients
+                        while ($data = mysqli_fetch_assoc($result)){
+                            if ($card_name==$data['card_name'] && $card_type==$data['card_type'] && $card_number==$data['card_number'] && $exp_date==$data['exp_date'] && $sec_code==$data['sec_code']) {
+                ?>
+                <p style="color:grey;">Votre commmande a bien été validé. Vous serez livrez dans à peu près 10 minutes. Merci de faire confance à ECE AMAZON ! <img src="img/checked.png" style="width:30px; height: 30px;"></p>
+
+                <!-- **************************RAJOUTER CODE POUR ENVOYER UN MAIL A LA PERSONNE APRES VALIDATION******************************************** -->
+                <!-- *************************************************************************************************************************************** -->
+                <?php 
+                             }//fin if condition ok
+                            else{ ?>
+                <p style="color:grey;">Les informations saisies ne correspondent pas à celles enregistrées dans votre compte /!\ Veuillez ressaisir ou vérifier votre compte. <img src="img/wrong.png" style="width:30px; height: 30px;"></p>
+
+                <?php
+                            }//fin else condition pas bon
+                        }//fin while
+                    }//fin if click 
+                ?>
 
                 <form action ="payer.php" method="post">
                     <table>
@@ -55,11 +94,11 @@
                         </tr>
 
                         <tr>
-                            <label>Type de carte (visa, master card, american express)</label> <input class="form-control center-con container"  style="width: 250px; " type="text" name="card_type" size="10" required /><br> <br>
+                            <label>Type de carte (visa, master card, american express)</label> <input class="form-control center-con container"  style="width: 250px; " type="text" name="card_type" size="10" required/><br> <br>
                         </tr>
 
                         <tr>
-                           <label>Numero de carte</label><input class="form-control center-con container"  style="width: 250px;" type="number" name="card_number" size ="25" required  maxlength="16" /><br><br>
+                           <label>Numero de carte</label><input class="form-control center-con container" style="width: 250px;" type="number" name="card_number" size ="25" maxlength="3" required/><br><br>
                        </tr>
 
                         <tr>
@@ -67,55 +106,25 @@
                         </tr>
 
                         <tr>
-                             <label>Code Secret</label><input class="form-control center-con container"  style="width: 250px;" type="password" name="sec_code" size ="25" maxlength="3" required /><br><br>
+                             <label>Code Secret</label><input class="form-control center-con container"  style="width: 250px;" type="password" name="sec_code" size ="25" maxlength="3" required/><br><br>
                         </tr>
                     </table>
 
                     <div class="center-block">
                         <div class="but">
                             <tr>
-                                <td><input class="btn btn-primary" style="width:150px;" type="submit" value="Valider" required></td>
+                                <td><input class="btn btn-primary" style="width:150px;" type="submit" name="Valider" value="valider" ></td>
                             </tr>
                         </div>
                         <br>
                         <br>
                     </div>
                 </form>
-
-                <?php
-                    $type= isset($_POST["card_type"])?$_POST["card_type"]:"";
-                    $number= isset($_POST["card_number"])?$_POST["card_number"]:"";
-                    $card_name= isset($_POST["card_name"])?$_POST["card_name"]:"";
-                    $expdate= isset($_POST["exp_date"])?$_POST["exp_date"]:"";
-                    $sec_code= isset($_POST["sec_code"])?$_POST["sec_code"]:"";
-
-                    echo $type;echo $number;echo $card_name;echo $expdate;
-                    echo $sec_code;
-
-                    $sql= "SELECT * FROM acheteur WHERE pseudo LIKE '".$N."'";
-                    $result = mysqli_query($db_handle, $sql);
-
-                    //si les infos saisies correspondent pas à celle du compte on réinitialise la page
-                    while ($data = mysqli_fetch_assoc($result)){
-                        if ($type!=$data['card_type'] && $number!=$data['card_number'] && $card_name!=$data['card_name'] && $expdate!=$data['exp_date'] && $sec_code!=$data['sec_code']) {
-                            
-                            header('location:payer.php');
-
-                ?>
-
-                <p class="text-warning">Les informations saisies ne correspondent pas à celle renseignées dans votre compte ! Veuillez ressaisir s'il vous plait.</p>
-
-
-                <?php
-                        }//fin if
-                    }//fin while
-
-                ?>
             </div>
-
     </div>
 
-    <?php
+    <?php 
+        }//fin else connecet 
     } //fin du if database found
     //si la BDD n'existe pas
     else {

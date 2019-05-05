@@ -77,7 +77,7 @@
                         <!-- QUANTITE -->
                         <tr>
                             <td>
-                                <label style="color:grey; margin-left: 70px;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
+                                <label style="color:grey; margin-left: 70px;">Quantité  </label><input required type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
                             </td>
                         </tr>
                         <!-- AJOUTER PANIER -->
