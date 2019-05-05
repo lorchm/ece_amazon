@@ -18,7 +18,7 @@
 </head>
 <body>
 	<!-- Barre de navigation -->
-    <nav class="navbar navbar-expand-md" style="padding : 0px 12px;">
+    <nav class="navbar navbar-expand-md" style="padding : 0px 0px 0px 0px;">
 
         <a class="navbar-brand" href="homepage.php"> <img src="img/logo.png"> </a>         
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">      
@@ -30,7 +30,7 @@
 
 
             <ul class="navbar-nav">             
-                <li class="nav-cat"><a class="nav-link" href="#">Catégories</a>   
+                <li class="nav-cat" ><a class="nav-link" href="#" style="padding: 20px;">Catégories</a>   
                     <ul class="submenu">
                         <li><a href="livres.php">Livres</a></li>
                         <li><a href="musique.php">Musiques</a></li>
@@ -39,21 +39,21 @@
                     </ul>
                 </li>
 
-                <li class="nav-item"><a class="nav-link" href="venteflash.php">Ventes Flash</a></li>             
-                <li class="nav-item"><a class="nav-link" href="tvendeur.php">Vendre</a></li> 
-                <li class="nav-item"><a class="nav-link" href="connexion.php">Votre Compte</a></li>
-                <li class="nav-item"><a class="nav-link" href="admin.php">Admin</a></li>     
-                <li class="nav-item"><a class="nav-link" href="panier.php">Panier</a></li> 
+                <li class="nav-item"><a style="padding: 20px;" class="nav-link" href="venteflash.php">Ventes Flash</a></li>             
+                <li class="nav-item"><a style="padding: 20px;"  class="nav-link" href="tvendeur.php">Vendre</a></li> 
+                <li class="nav-item"><a style="padding: 20px;"  class="nav-link" href="connexion.php">Votre Compte</a></li>
+                <li class="nav-item"><a style="padding: 20px;"  class="nav-link" href="admin.php">Admin</a></li>     
+                <li class="nav-item"><a style="padding: 20px;" class="nav-link" href="panier.php">Panier</a></li> 
             </ul> 
 
              <div class="navbar-nav" >
                 <table>
                    
-                    <tr><td><a class="btn btn-primary" style="width:150px;"  href="connexion.php">Se connecter</a></td></tr>
+                    <tr><td><a class="btn btn-primary" style="width:150px; padding: 5px;"  href="connexion.php">Se connecter</a></td></tr>
 
                  <form action="deconnexion.php" method="POST">
 
-                    <tr><td><input class="btn btn-primary" style="width:150px;" type="submit" value="Se déconnecter" /></td></tr>
+                    <tr><td><input class="btn btn-primary" style="width:150px; padding: 5px;" type="submit" value="Se déconnecter" /></td></tr>
 
                 </form>
                 </table>
