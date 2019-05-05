@@ -53,7 +53,7 @@
 
                                 } 
                         }
-                        else if($data0['pseudo']!=$ && $error!=0)
+                        else if($data0['pseudo']!=$N && $error!=0)
                         {
                             
                               $_SESSION["login"]="";
@@ -155,56 +155,55 @@
     <!-- Barre de navigation -->
       <?php include('header.php') ?>
 <!-- Page Admin -->
-        <div class="description page-header header container-fluid"> 
+        <div class="description page-header header"> 
             <h1>Admin</h1> 
         </div>
-
-        <div style="margin:40px;">
+<!-- ***************************************************************************************************************************************************** -->
+        <div class="container-fluid">
             <div class="row">
-                <!-- GESTION DES ARTICLES -->
-                <div class="col-lg-4">
+<!--************************************************************ GESTION DES ARTICLES **********************************************************************-->
+                <div class="col-md-4 col-sm-12">
                     <div class="col1-admin">
                         <h2 style="color:#04263F; text-align: center; margin-top: 20px">Gestion des articles</h2>
-                        
-                        <div style="margin-left: 70px;">
+                        <div >
                             <!-- Ajouter un produit -->
-                            <h3 style="color:#DF912A; margin-top: 20px; margin-left: 30px;">Ajouter un Article</h3>
-                            <a href="ajout_article.php"><button  id="ajouter_produit" class="btt" style="margin-top: 10px; width: 300px; height: 30px;">Ajouter</button></a>
+                            <h3 style="color:#DF912A; margin-top: 20px; text-align: center; ">Ajouter un Article</h3>
+                            <a href="ajout_article.php"><button  id="ajouter_produit" class="btt container-fluid" style="margin-top: 10px; text-align: center; width: 30%; height: 30px;">Ajouter</button></a>
 
                             <!-- Supprimer un produit -->
-                            <h3 style="color:#DF912A; margin-top: 20px;  margin-left: 20px;">Supprimer un Article</h3>
+                            <h3 style="color:#DF912A; margin-top: 20px; text-align: center; ">Supprimer un Article</h3>
                             
                             <form action="admin.php" method="post">
                                 <table>
                                     <tr>
-                                        <td><label style="color:grey;">Référence de l'article : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="ref"/></td>
+                                        <td><label style="color:grey;">Référence de l'article : </label><input required class="form-control center-con container" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="ref"/></td>
                                    </tr>
                                    <tr>
-                                        <td><label style="color:grey; margin-top: 10px;">Type de l'article : </label><br><select name="type_prod" style="width: 300px;"><OPTION><OPTION>Livre <OPTION>Musique <OPTION>Vetement <OPTION>Sport et Loisir</select></td>
+                                        <td><label style="color:grey; margin-top: 10px;">Type de l'article : </label><br><select name="type_prod" style="width: 300px; background-color: #f7f7f7;"><OPTION><OPTION>Livre <OPTION>Musique <OPTION>Vetement <OPTION>Sport et Loisir</select></td>
                                    </tr>
                                     <tr>
-                                        <td><input name="supprimer_produit" onclick="supprP()"class="btt" type="submit" value="Supprimer" style="margin-top: 10px;"></td>
+                                        <td><input name="supprimer_produit" onclick="supprP()"class="btt" type="submit" value="Supprimer" style=" width: 30%;margin-top: 10px;"></td>
                                     </tr>
                                  </table>
                             </form>
                         </div>
                     </div>
                 </div>
-                <!-- GESTION DES VENDEURS -->
-                <div class="col-lg-8">
-
+<!--****************************************************** GESTION DES VENDEURS *****************************************************************************-->
+                <div class="col-md-8 col-sm-12">
                     <div class="col1-admin">
                         <h2 style="color:#04263F; text-align: center; margin-top: 20px;">Gestion des vendeurs</h2>
-                        <div style="margin-left: 100px;  margin-top: 20px; ">
+                        <!-- ******************************************************************************************************** -->
+                        <div style="margin-top: 20px;">
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-md-6 col-sm-12">
                                     <!-- Ajouter vendeur -->
                                     <h3 style="color:#DF912A;">Ajouter un vendeur</h3>
                                     
                                     <form action="admin.php" method="post">
                                         <table>
                                             <tr>
-                                                <td><label style="color:grey;">Nom : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="nom"/></td>
+                                                <td><label style="color:grey;">Nom : </label><input required class="form-control " style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="nom"/></td>
                                            </tr>
                                            <tr>
                                                 <td><label style="color:grey;">Pseudo : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="pseudoV"/></td>
@@ -222,13 +221,13 @@
                                                 <td><label style="color:grey;">Photo de Couverture: </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 45px;" type="file" name="photo_couv"/></td>
                                            </tr>
                                            <tr>
-                                                <td><input name="ajouter_vendeur" onclick="ajoutV()" class="btt" type="submit" value="Ajouter" style="margin-top: 10px;"></td>
+                                                <td><input name="ajouter_vendeur" onclick="ajoutV()" class="btt" type="submit" value="Ajouter" style=" width: 30%;margin-top: 10px;"></td>
                                             </tr>
                                          </table>
                                     </form>
                                 </div>
 
-                                <div class="col-sm-6">
+                                <div class="col-md-6 col-sm-12">
                                     <!-- Ajouter un produit -->
                                     <h3 style="color:#DF912A;">Supprimer un Vendeur</h3>
                                     <form action="admin.php" method="post">
@@ -237,7 +236,7 @@
                                                 <td><label style="color:grey;">Pseudo du vendeur : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="pseudo"/></td>
                                            </tr>
                                             <tr>
-                                                <td><input name="supprimer_vendeur" class="btt" type="submit" value="Supprimer" onclick="supprV()"style="margin-top: 10px;"></td>
+                                                <td><input name="supprimer_vendeur" class="btt" type="submit" value="Supprimer" onclick="supprV()"style="margin-top: 10px;  width: 30%;"></td>
                                             </tr>
                                          </table>
                                     </form>

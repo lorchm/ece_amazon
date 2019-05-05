@@ -24,40 +24,40 @@
     <body>
         <!-- titre -->
         <div class="description page-header header container-fluid"> 
-            <h1>Informations de votre compte</h1> 
+            <h1>Votre compte</h1> 
         </div>
 
-           <div class="container fluid center_div" >
-
-               <table>
-                      <tr>
-                            <label style="font-size: 15px;">Pseudo :  <?php echo $Ps; ?> </label> <br> <br>
-                       </tr>
-
-                       
-
-                       <tr>
-                         <label style="text-align: center" >Mot de passe : <?php echo $M; ?></label><br><br>
-                       </tr>
-
-                       <tr>
-                         <label>Email :<?php echo $Mail; ?></label><br><br>
-                       </tr>
-
-                       <tr>
-                         <label>Nom : <?php echo $Nom; ?></label><br><br>
-                       </tr>
-
-                      <tr>
-                          <label> Photo de profil : </label><a href="<?php echo $Pdp ?>" target="_blank"><img class="img-fluid" src="<?php echo $Pdp ?>" style="width: auto; height: 185px;"></a><br><br>
-                       </tr>
-
-                        <tr>
-                          <label> Photo de couverture :</label><a href="<?php echo $Pdc ?>" target="_blank"><img class="img-fluid" src="<?php echo $Pdc ?>" style="width: auto; height: 185px;"></a><br><br>
-                       </tr>
-
-                </table>
+        <div  class="container" style="background-image: url('<?php echo $Pdc ?>');">
+        <!-- ***** PARTIE DU PROFIL ET DES BOUTONS ***** -->
+        <div class="row">
+            <div class="col-md-9 col-sm-12"> 
+              <div class="cadre-prod" style="width: 400px;">
+                <h3 style="color:#04263f">Informations personnelles</h3>
+                <table>
+                    <tr>
+                      <td><label style="color:grey">Nom : <?php echo $Nom; ?></label></td>
+                    </tr>
+                    <tr>
+                      <td><label style="color:grey;">Pseudo : <?php echo $Ps; ?> </label></td>
+                     </tr>
+                     <tr>
+                      <td><label style="color:grey" >Mot de passe : <?php echo $M; ?></label></td>
+                     </tr>
+                     <tr>
+                       <td><label style="color:grey">Email :<?php echo $Mail; ?></label></td>
+                     </tr>
+                  </table>
+                </div>
             </div>
+
+            <div class="col-md-3 col-sm-12"> 
+                <div class = "profil"> 
+                  <img src="<?php echo $Pdp ?>" class="roundedImage" style="width : 100px;height : 100px;"> <br>
+                        <b class="pseud"> <?php echo $Ps; ?> </b>
+                </div>
+            </div>
+        </div>
+      </div>
 
 
     <!-- PIED DE PAGE -->
