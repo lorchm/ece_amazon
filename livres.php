@@ -46,14 +46,6 @@
         <p> ECE Amazon vous propose pleins de livres sympas.</p> 
     </div>
 
-  <!--   <script >
-        function ajout_article(test,cat)
-            {
-                window.open()
-    
-                };
-            }
-    </script> -->
 
     <?php 
         //si le BDD existe, faire le traitement
@@ -108,53 +100,7 @@
 
                             <td><input type="submit" id="ajout_panier" name="ajout_article"   value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "/></td>
                         </tr>
-
-                         <?php
-
-                            if(isset($_POST["ajout_article"])==1)
-                            {
-                                $N=$data['ref'];
-                              echo"$N";
-
-                                $sql1 ="INSERT INTO obj_panier (ref_panier,pseudo, categorie, id,quantite) values ('15','$P','2','$N','5')";
-         
-                                 $result1 = mysqli_query($db_handle, $sql1);
-                                 
-                                 echo"$N";
-
-                               exit(1);
-                         }
-                         ?>
-
-                        
-            </form> 
-                      
-
-                        <?php
-
-
-                            if(isset($_POST["ajout_article"]))
-                            {
-                                echo"Bonjour";
-                                $N=$data["ref"];
-                                echo"$N";
-
-                                $sql1 ="INSERT INTO obj_panier (ref_panier,pseudo, categorie, id,quantite) values ('50','gege2020','2','echo $N','5')";
-         
-                                $result1 = mysqli_query($db_handle, $sql1);
-                                 
-                                 echo"$N";
-
-                                $_POST["ajout_article"]=0;
-
-                            }
-
-                        ?>
-                            <td><input type="submit" onclick="valide()" name="<?php echo $bjr?>" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "/></td> 
-                            
-                        </tr>
-
-                    </form> 
+                    </form>
                 </div>
             </div>
         </div>
