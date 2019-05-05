@@ -206,18 +206,20 @@
                 <div class="col-md-4 col-sm-12">
                     <div class="remplir-infos-vet">
                         <p style="color:grey;">Quantité : <?php echo $data['quantite']?></p>
-                        <p style="color:grey;">Couleur : ...</p>
-                        <p style="color:grey;">Sexe : ...</p>
+                        <p style="color:grey;">Couleur : <?php echo $data['couleur']?></p>
+                        <p style="color:grey;">Sexe : <?php echo $data['sexe']?></p>
+
+                        
                         <!-- TAILLE -->
-                        <?php 
-                            if($data4['type_vet'] == 1){
+                        <?php
+                        if($data4['type_vet'] == 1){
                         ?>
-                        <p style="color:grey;">Taille : ...</p>
+                        <p style="color:grey;">Taille : <?php echo $data['taille']?></p>
                         <?php
                             }//fin if pour typ_vet = vetements                    
                                 else if ($data4['type_vet'] == 0) {    
                         ?>
-                        <p style="color:grey;">Pointure : ...</p>
+                        <p style="color:grey;">Pointure : <?php echo $data['pointure']?></p>
                         <?php
                             }//fin else if type_vet = chaussures
                         ?>
@@ -243,14 +245,14 @@
             <div class= "row">
                 <div class= "col-md-9 col-sm-12">
                     <b style="color:#ffa630;">Nombre d'articles total : <?php echo $quantite_panier[0];?></b>
-                    <b style="color:#ffa630; margin-left: 10px;">PRIX TOTAL : <?php echo $payer; $_SESSION['payer'] = $payer;?> &euro;</b>
+                    <b style="color:#ffa630; margin-left: 10px;">PRIX TOTAL : <?php echo $payer ?> &euro;</b>
                 </div>
                 <div class="col-md-3 col-sm-12">
                     <div style="position: absolute; bottom: 0px;">
                         <form method=POST action=payer.php>
                             <a href="homepage.php"><button class="btt"> Retourner à mes achats </button></a>
-                            <a href="payer.php"><button type="submit?>" class="btt"> Payer </button></a>
-                            <input type="hidden" name="prix" value="<?php echo $payer?>"></input>
+                            <a href="payer.php"><button type="submit" class="btt"> Payer </button></a>
+                            <input type="hidden" name="prix" value="<?php echo $payer?>"/>
                         </form>
 
 

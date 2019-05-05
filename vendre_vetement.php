@@ -27,12 +27,14 @@
 
     if($db_found) {
 
+        $var = "img/articles/".$a9;
+
         if($a4 == 0){
-            $sql = "INSERT INTO vetement (ref,type_vet,nom,descri,prix,sexe,pointure,taille,nb_vendu,id_vendeur, url_img) VALUES ('$a0','$a4','$a1','$a7','$a8','$a2','$a5',NULL,'0','$N', '$a9')";
+            $sql = "INSERT INTO vetement (ref,type_vet,nom,descri,prix,sexe,pointure,taille,nb_vendu,id_vendeur, url_img) VALUES ('$a0','$a4','$a1','$a7','$a8','$a2','$a5',NULL,'0','$N', '$var')";
             $result = mysqli_query($db_handle, $sql);
         }
         else{
-            $sql = "INSERT INTO vetement (ref,type_vet,nom,descri,prix,sexe,pointure,taille,nb_vendu,id_vendeur, url_img) VALUES ('$a0','$a4','$a1','$a7','$a8','$a2',NULL,'$a6','0','$N', '$a9')";
+            $sql = "INSERT INTO vetement (ref,type_vet,nom,descri,prix,sexe,pointure,taille,nb_vendu,id_vendeur, url_img) VALUES ('$a0','$a4','$a1','$a7','$a8','$a2',NULL,'$a6','0','$N', '$var')";
             $result = mysqli_query($db_handle, $sql);
         }
     }

@@ -12,9 +12,6 @@
     $a6= isset($_POST["prix"])?$_POST["prix"]:"";
     $a7= isset($_POST["photo"])?$_POST["photo"]:"";
 
-
-
-
     define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASS', '');
@@ -28,8 +25,10 @@
 
     if($db_found) {
 
+        $var = "img/articles/".$a7; 
+
         //variable qui contient le pseudo de la personne à qui faut changer
-        $sql = "INSERT INTO livre (ref, titre,auteur,annee,prix,editeur,descri,nb_vendu,id_vendeur, url_img) VALUES ('$a0','$a1','$a2','$a4','$a6','$a3','$a5','0','$N', '$a7')";
+        $sql = "INSERT INTO livre (ref, titre,auteur,annee,prix,editeur,descri,nb_vendu,id_vendeur, url_img) VALUES ('$a0','$a1','$a2','$a4','$a6','$a3','$a5','0','$N', '$var')";
         $result = mysqli_query($db_handle, $sql);
     }
     else {

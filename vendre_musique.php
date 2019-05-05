@@ -25,8 +25,10 @@
 
     if($db_found) {
 
+        $var = "img/articles/".$a6;
+
         //variable qui contient le pseudo de la personne à qui faut changer
-        $sql = "INSERT INTO musique (ref, titre,artiste,album,annee,prix,nb_vendu,id_vendeur, url_img, lien_video) VALUES ('$a0', '$a1','$a2','$a3','$a4','$a5','0','$N', NULL, '$a7')";
+        $sql = "INSERT INTO musique (ref, titre,artiste,album,annee,prix,nb_vendu,id_vendeur, url_img, lien_video) VALUES ('$a0', '$a1','$a2','$a3','$a4','$a5','0','$N', '$var', '$a7')";
         $result = mysqli_query($db_handle, $sql);
     }
     else {

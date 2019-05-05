@@ -28,10 +28,7 @@ session_start();
             $Mail=$data['email'];
             $Nom=$data['nom'];
             $Pdp=$data['url_pdp'];
-            $Pdc=$data['url_pdc'];
-            
-
-           
+            $Pdc=$data['url_pdc'];         
         
        }
    }

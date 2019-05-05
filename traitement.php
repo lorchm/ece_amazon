@@ -130,10 +130,10 @@
         $result31 = mysqli_query($db_handle, $sql31);
 
         //Panier déjà existant
-        $sql33 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('1','gege2020', '0', '1', '1','JAUNE',NULL,'40','0')";
+        $sql33 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('1','gege2020', '0', '1', '1',NULL,NULL,NULL,NULL)";
         $result33 = mysqli_query($db_handle, $sql33);
 
-        $sql34 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('2','gege2020', '0', '2', '2','ROUGE','L',NULL,'1')";
+        $sql34 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('2','gege2020', '0', '2', '2',NULL,NULL,NULL,NULL)";
         $result34 = mysqli_query($db_handle, $sql34);
 
         $sql35 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('3','gege2020', '1', '1', '1',NULL,NULL,NULL,NULL)";
@@ -142,7 +142,7 @@
         $sql36 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('4','gege2020', '2', '1', '3',NULL,NULL,NULL,NULL)";
         $result36 = mysqli_query($db_handle, $sql36);
 
-        $sql37 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('5','gege2020', '3', '1', '2',NULL,NULL,NULL,NULL)";
+        $sql37 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('5','gege2020', '3', '1', '1','JAUNE',NULL,'40','0')";
         $result37 = mysqli_query($db_handle, $sql37);
     }
     //si la BDD n'existe pas

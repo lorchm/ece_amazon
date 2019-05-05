@@ -74,9 +74,92 @@
                 ?>
                 <p style="color:grey;">Votre commmande a bien été validé. Vous serez livrez dans à peu près 10 minutes. Merci de faire confiance à ECE AMAZON ! <img src="img/checked.png" style="width:30px; height: 30px;"></p>
 
+                <!-- *********** AJOUTER AUX ARTICLES VENDU LA NOUVELLE QUANTITE ********* -->
+                <?php 
+
+                $sql2 = "SELECT * FROM obj_panier WHERE pseudo LIKE '".$N."'";
+                $result2 = mysqli_query($db_handle,$sql2);
+
+                //$quantite_panier = mysqli_fetch_row($q);
+
+                while($data2 = mysqli_fetch_assoc($result2))
+                {
+                    $new_quantite = $data2['quantite'];
+                    $type = $data2['categorie'];
+                    $reference = $data2['id'];
+
+                    if($type == 0)
+                    {
+                        $sql4 = "SELECT * FROM livre WHERE ref =" .$reference ;
+                        $result4 = mysqli_query($db_handle, $sql4);
+                        while($data4 = mysqli_fetch_assoc($result4))
+                        {
+                            $old_quantite = $data4['nb_vendu'];
+                            $new_quantite += $old_quantite ;
+                            $sql5 = "UPDATE livre SET nb_vendu =".$new_quantite." WHERE ref =" .$reference ;
+                            $result5 = mysqli_query($db_handle, $sql5);
+                        }
+
+                    }
+                    if($type == 1)
+                    {
+                        $sql4 = "SELECT * FROM musique WHERE ref =" .$reference ;
+                        $result4 = mysqli_query($db_handle, $sql4);
+                        while($data4 = mysqli_fetch_assoc($result4))
+                        {
+                            $old_quantite = $data4['nb_vendu'];
+                            $new_quantite += $old_quantite ;
+                            $sql5 = "UPDATE musique SET nb_vendu =".$new_quantite." WHERE ref =" .$reference ;
+                            $result5 = mysqli_query($db_handle, $sql5);
+                        }
+                    }
+                    if($type == 2)
+                    {
+                        $sql4 = "SELECT * FROM sportloisir WHERE ref =" .$reference ;
+                        $result4 = mysqli_query($db_handle, $sql4);
+                        while($data4 = mysqli_fetch_assoc($result4))
+                        {
+                            $old_quantite = $data4['nb_vendu'];
+                            $new_quantite += $old_quantite ;
+                            $sql5 = "UPDATE sportloisir SET nb_vendu =".$new_quantite." WHERE ref =" .$reference ;
+                            $result5 = mysqli_query($db_handle, $sql5);
+                        }
+                    }
+                    else
+                    {
+                        $sql4 = "SELECT * FROM vetement WHERE ref =" .$reference ;
+                        $result4 = mysqli_query($db_handle, $sql4);
+                        while($data4 = mysqli_fetch_assoc($result4))
+                        {
+                            $old_quantite = $data4['nb_vendu'];
+                            $new_quantite += $old_quantite ;
+                            $sql5 = "UPDATE vetement SET nb_vendu =".$new_quantite." WHERE ref =" .$reference ;
+                            $result5 = mysqli_query($db_handle, $sql5);
+                        } 
+                    }
+                    
+
+
+
+                }
+            
+                ?>
+                <!-- ***************** VIDER LE PANIER UNE FOIS L ACHAT FAIT *************** -->
+                <?php
+                
+                $sql6 = "SELECT * FROM obj_panier WHERE pseudo LIKE '".$N."'";
+                $result6 = mysqli_query($db_handle,$sql6);
+                while($data6 = mysqli_fetch_assoc($result6))
+                {
+                    $sql7 = "DELETE FROM obj_panier WHERE ref_panier =".$data6['ref_panier'] ; 
+                    $result7 = mysqli_query($db_handle,$sql7);
+                }
+
+                ?>
+
                 <!-- **************************RAJOUTER CODE POUR ENVOYER UN MAIL A LA PERSONNE APRES VALIDATION******************************************** -->
 
-                <?php
+                <?php /*
 
                 ini_set("SMTP", "smtp.orange.fr");
                 ini_set("smpt_port", 25);// sachant que le port ressemblera sûrement à quelquechose comme 8025
@@ -127,7 +210,7 @@
                     //=====Envoi de l'e-mail.
                     mail($mail,$sujet,$message,$header);
  
-
+                */
                 ?>
                 <!-- *************************************************************************************************************************************** -->
                 <?php 
