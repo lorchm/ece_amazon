@@ -28,7 +28,7 @@
             <div class="overlay"></div> 
             <div class="description">
 
-               <h1 >Votre compte</h1>
+               <h1 >Votre compte <img src="img/user.png" style="width: 50px; height: 50px;"></h1>
 
         </header> 
 

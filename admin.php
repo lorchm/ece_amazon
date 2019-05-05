@@ -156,22 +156,22 @@
       <?php include('header.php') ?>
 <!-- Page Admin -->
         <div class="description page-header header"> 
-            <h1>Admin</h1> 
+            <h1>Admin <img src="img/admin.png" style="width: 50px; height: 50px;"></h1> 
         </div>
 <!-- ***************************************************************************************************************************************************** -->
         <div class="container-fluid">
             <div class="row">
 <!--************************************************************ GESTION DES ARTICLES **********************************************************************-->
-                <div class="col-md-4 col-sm-12">
+                <div class="col-lg-4 col-sm-12">
                     <div class="col1-admin">
                         <h2 style="color:#04263F; text-align: center; margin-top: 20px">Gestion des articles</h2>
                         <div >
                             <!-- Ajouter un produit -->
-                            <h3 style="color:#DF912A; margin-top: 20px; text-align: center; ">Ajouter un Article</h3>
-                            <a href="ajout_article.php"><button  id="ajouter_produit" class="btt container-fluid" style="margin-top: 10px; text-align: center; width: 30%; height: 30px;">Ajouter</button></a>
+                            <h3 style="color:#DF912A; margin-top: 20px;">Ajouter un Article</h3>
+                            <a href="ajout_article.php"><button  id="ajouter_produit" class="btt container-fluid" style="margin-top: 10px; width: 30%; height: 30px;">Ajouter</button></a>
 
                             <!-- Supprimer un produit -->
-                            <h3 style="color:#DF912A; margin-top: 20px; text-align: center; ">Supprimer un Article</h3>
+                            <h3 style="color:#DF912A; margin-top: 20px; ">Supprimer un Article</h3>
                             
                             <form action="admin.php" method="post">
                                 <table>
@@ -190,41 +190,43 @@
                     </div>
                 </div>
 <!--****************************************************** GESTION DES VENDEURS *****************************************************************************-->
-                <div class="col-md-8 col-sm-12">
-                    <div class="col1-admin">
+                <div class="col-lg-8 col-sm-12">
+                    <div class="col1-admin container">
                         <h2 style="color:#04263F; text-align: center; margin-top: 20px;">Gestion des vendeurs</h2>
                         <!-- ******************************************************************************************************** -->
                         <div style="margin-top: 20px;">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
                                     <!-- Ajouter vendeur -->
-                                    <h3 style="color:#DF912A;">Ajouter un vendeur</h3>
-                                    
-                                    <form action="admin.php" method="post">
-                                        <table>
-                                            <tr>
-                                                <td><label style="color:grey;">Nom : </label><input required class="form-control " style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="nom"/></td>
-                                           </tr>
-                                           <tr>
-                                                <td><label style="color:grey;">Pseudo : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="pseudoV"/></td>
-                                           </tr>
-                                           <tr>
-                                                <td><label style="color:grey;">Email : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="email" placeholder="votre.email@exemple.com" /></td>
-                                           </tr>
-                                           <tr>
-                                                <td><label style="color:grey;">Mot de Passe : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="password" name="mdp"/></td>
-                                           </tr>
-                                           <tr>
-                                                <td><label style="color:grey;">Photo de Profil: </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 45px;" type="file" name="photo_profil"/></td>
-                                           </tr>
-                                           <tr>
-                                                <td><label style="color:grey;">Photo de Couverture: </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 45px;" type="file" name="photo_couv"/></td>
-                                           </tr>
-                                           <tr>
-                                                <td><input name="ajouter_vendeur" onclick="ajoutV()" class="btt" type="submit" value="Ajouter" style=" width: 30%;margin-top: 10px;"></td>
-                                            </tr>
-                                         </table>
-                                    </form>
+                                    <div class="container-fluid">
+                                        <h3 style="color:#DF912A;">Ajouter un vendeur</h3>
+                                        
+                                        <form action="admin.php" method="post">
+                                            <table>
+                                                <tr>
+                                                    <td><label style="color:grey;">Nom : </label><input required class="form-control " style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="nom"/></td>
+                                               </tr>
+                                               <tr>
+                                                    <td><label style="color:grey;">Pseudo : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="pseudoV"/></td>
+                                               </tr>
+                                               <tr>
+                                                    <td><label style="color:grey;">Email : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="text" name="email" placeholder="votre.email@exemple.com" /></td>
+                                               </tr>
+                                               <tr>
+                                                    <td><label style="color:grey;">Mot de Passe : </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 30px;" type="password" name="mdp"/></td>
+                                               </tr>
+                                               <tr>
+                                                    <td><label style="color:grey;">Photo de Profil: </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 45px;" type="file" name="photo_profil"/></td>
+                                               </tr>
+                                               <tr>
+                                                    <td><label style="color:grey;">Photo de Couverture: </label><input required class="form-control" style="background-color:#f7f7f7;width: 300px; height: 45px;" type="file" name="photo_couv"/></td>
+                                               </tr>
+                                               <tr>
+                                                    <td><input name="ajouter_vendeur" onclick="ajoutV()" class="btt" type="submit" value="Ajouter" style=" width: 30%;margin-top: 10px;"></td>
+                                                </tr>
+                                             </table>
+                                        </form>
+                                    </div>
                                 </div>
 
                                 <div class="col-md-6 col-sm-12">
