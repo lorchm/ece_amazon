@@ -39,6 +39,7 @@
 <!-- *********************************** PAGE VENDRE ***************************************************************** -->
     <!-- ***** boutons + profil ***** -->
 
+
     <div class="description page-header header container-fluid"> 
         <h1> MES PRODUITS EN VENTE</h1> 
     </div>
