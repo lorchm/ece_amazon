@@ -3,6 +3,6 @@
 
 	$N=$_SESSION("login");
 
-	echo "$N";
+
 
 	?>
