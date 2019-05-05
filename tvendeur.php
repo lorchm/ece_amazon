@@ -22,7 +22,7 @@ session_start();
 
     		if($N=="")
     		{	
-    			/*echo"CACAAAAAA";*/
+    			
     			header('Location: connexion.php');
     		}
     		else
@@ -30,12 +30,12 @@ session_start();
        
     			 $sql = "SELECT pseudo FROM vendeur ";
 			     $result = mysqli_query($db_handle, $sql);
-           /*header('Location: vendre.php');*/
+           
 			     while($data = mysqli_fetch_assoc($result)) {
 
           			if($data['pseudo']==$N)
           				{
-                    echo"Hello";
+                    
                     $error=1;
                      header('Location: vendre.php'); 
 
@@ -44,7 +44,7 @@ session_start();
             } 
             if($error==0)
             {
-              echo"It's me";
+              
                     $_SESSION["login"]="";
                     header('Location: connexion.php');
             }

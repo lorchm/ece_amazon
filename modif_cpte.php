@@ -9,7 +9,6 @@ session_start();
     define('DB_USER', 'root');
     define('DB_PASS', '');
     
-    echo "$N";
     //identifier le nom de base de données
     $database = "ECEamazon";
 
