@@ -59,26 +59,32 @@
                 <a href="<?php echo $data['url_img']?>" target="_blank"><img class="img-fluid" src="<?php echo $data['url_img']?>" style="width: auto; height: 185px;"></a>
             </div>
             <!-- 2. DETAILS ARTICLE -->
-            <div class="col-md-5 col-sm-12" style="margin-top: 10px;">
+            <div class="col-md-2 col-sm-12" style="margin-top: 10px;">
                 <div class="en-tete-prod"> <b><?php echo $data['titre']?> </b></div>
                 <div class="en-tete-prod-deux"> <p><?php echo $data['artiste']." - ".$data['annee']?></p> </div>
                 <div class="prix-prod"><?php echo $data['prix']?> &euro;</div>
                 <div class="reference-prod">Référence <?php echo $data['ref']?></div>
             </div>
-            <!-- 3. REMPLIR INFOS -->
+
+            <!-- 3. AFFICHER LA VIDEO -->
+            <div class="col-md-3 col-sm-12 container"  style="margin-top: 10px;">
+                <div style="position : relative;"><?php echo $data['lien_video'] ?></div>
+            </div>
+
+            <!-- 4. REMPLIR INFOS -->
             <div class="col-md-4 col-sm-12">
-                <div class="remplir-infos-prod">
+                <div class="remplir-infos-prod" >
                     <form action="ajout_musique.php" method="post">
                         <!-- QUANTITE -->
                         <tr>
                             <td>
-                                <label style="color:grey; margin-left: 70px;">Quantité  </label><input type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
+                                <label style="color:grey; margin-left: 70px;">Quantité  </label><input class="container" type="number" name="quantite" id="quantite" style="width: 50px; margin-left: 10px; font-size: 12px;">
                             </td>
                         </tr>
                         <!-- AJOUTER PANIER -->
                         <tr>
                             <input type="hidden" name="recup" value="<?php echo $data['ref']?> ">
-                            <td><input type="submit" id="ajout-panier" onclick="valide()" name="ajout-panier" value="Ajouter au panier" class="ajout-panier-btn" style="margin-top:20px; "></td>
+                            <td><input type="submit" id="ajout-panier" onclick="valide()" name="ajout-panier" value="Ajouter au panier" class="ajout-panier-btn container" style="margin-top:20px; "></td>
                         </tr>
                     </form> 
                 </div> 

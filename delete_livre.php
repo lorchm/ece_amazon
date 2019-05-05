@@ -3,7 +3,6 @@
     Session_start();
     $L = $_SESSION["login"];
     $I = isset($_POST["recup"])?$_POST["recup"]:"";
-    $Q = isset($_POST["quantite"])?$_POST["quantite"]:"";
 
     // INSERTION LIVRE
     define('DB_SERVER', 'localhost');
@@ -20,17 +19,9 @@
                       
 
     if($db_found){
-
-        //determination de la ref_panier
-        $sql = "SELECT MAX(ref_panier) FROM obj_panier";
+        $sql = "DELETE FROM obj_panier WHERE ref_panier = ".$I;
         $result = mysqli_query($db_handle, $sql);
-        $refs = mysqli_fetch_row($result);
-        $N = $refs[0] + 1;
-
-        //Ajout
-        $sql1 ="INSERT INTO obj_panier (ref_panier,pseudo, categorie, id, quantite) VALUES ('$N','$L','3', '$I', '$Q')";
-        $result1 = mysqli_query($db_handle, $sql1);
-       }
+    }
    
     
     //si la BDD n'existe pas
@@ -40,6 +31,8 @@
 
     mysqli_close($db_handle);
 
-    header('Location: vetements.php');
+    header('Location: panier.php');
+
+  
 
 ?>
