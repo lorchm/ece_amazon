@@ -40,7 +40,7 @@
                         
                                 while ($data = mysqli_fetch_assoc($result)){
 
-                                       if($data['admins']==0)
+                                       if($data['admins']==0 && $error!=0)
                                        {
                                          $_SESSION["login"]="";
                                         header('Location: connexion.php');
@@ -53,7 +53,7 @@
 
                                 } 
                         }
-                        else if($data0['pseudo']!=$ && $error!=0)
+                        else if($data0['pseudo']!=$N && $error!=0)
                         {
                             
                               $_SESSION["login"]="";
