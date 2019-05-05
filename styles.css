@@ -62,7 +62,7 @@ a.bouton-relief:hover {
 
 .navbar {
   background : #04263F;
-  padding : 0px 0px;
+  padding : 0px 0px 0px 0px;
 }
 
 .nav-link, .navbar-brand {
