@@ -237,9 +237,9 @@
                 <div class="col-md-3 col-sm-12">
                     <div style="position: absolute; bottom: 0px;">
                         <form method=POST action=payer.php>
-                                                    <a href="homepage.php"><button class="btt"> Retourner à mes achats </button></a>
-                        <a href="payer.php"><button class="btt"> Payer </button></a>
-                           <input type="hidden" name="var1" value="<?php echo "".$payer."" ?>"></input>
+                            <a href="homepage.php"><button class="btt"> Retourner à mes achats </button></a>
+                            <a href="payer.php"><button type="submit?>" class="btt"> Payer </button></a>
+                            <input type="hidden" name="prix" value="<?php echo $payer?>"></input>
                         </form>
 
 
