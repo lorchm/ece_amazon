@@ -4,6 +4,8 @@
     $L = $_SESSION["login"];
     $I = isset($_POST["recup"])?$_POST["recup"]:"";
     $Q = isset($_POST["quantite"])?$_POST["quantite"]:"";
+    $T = isset($_POST["type_vet"])?$_POST["type_vet"]:"";
+    $C = isset($_POST["couleur"])?$_POST["couleur"]:"";
 
     // INSERTION LIVRE
     define('DB_SERVER', 'localhost');
@@ -27,10 +29,41 @@
         $refs = mysqli_fetch_row($result);
         $N = $refs[0] + 1;
 
-        //Ajout
-        $sql1 ="INSERT INTO obj_panier (ref_panier,pseudo, categorie, id, quantite) VALUES ('$N','$L','3', '$I', '$Q')";
-        $result1 = mysqli_query($db_handle, $sql1);
-       }
+        if ($T == 1)
+        {
+            $taille = isset($_POST["taille"])?$_POST["taille"]:"";
+            ///VETEMENT
+            if (isset($_POST['Femelle']))
+            {
+                $sql1 ="INSERT INTO obj_panier (ref_panier,pseudo, categorie, id, quantite, couleur, taille, pointure, sexe) VALUES ('$N','$L','3', '$I', '$Q', '$C', '$taille',NULL,'Femelle')";
+                $result1 = mysqli_query($db_handle, $sql1);
+            }
+            else
+            {
+                $sql1 ="INSERT INTO obj_panier (ref_panier,pseudo, categorie, id, quantite, couleur, taille, pointure, sexe) VALUES ('$N','$L','3', '$I', '$Q', '$C', '$taille',NULL,'Male')";
+                $result1 = mysqli_query($db_handle, $sql1);
+            }
+            
+        }
+        else
+        {
+            $pointure = isset($_POST["pointure"])?$_POST["pointure"]:"";
+            ///CHAUSSURES
+
+            if(isset($_POST['Femelle']))
+            {
+                $sql1 ="INSERT INTO obj_panier (ref_panier,pseudo, categorie, id, quantite, couleur, taille, pointure, sexe) VALUES ('$N','$L','3', '$I', '$Q', '$C', NULL,'$pointure','Femelle')";
+                $result1 = mysqli_query($db_handle, $sql1);
+            }
+            else
+            {
+                $sql1 ="INSERT INTO obj_panier (ref_panier,pseudo, categorie, id, quantite, couleur, taille, pointure, sexe) VALUES ('$N','$L','3', '$I', '$Q', '$C', NULL,'$pointure','Male')";
+                $result1 = mysqli_query($db_handle, $sql1);
+            }
+            
+        }
+        
+    }
    
     
     //si la BDD n'existe pas

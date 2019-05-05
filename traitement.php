@@ -20,7 +20,7 @@
         
         //Création des tables de la BDD
         
-        $sql = "CREATE TABLE Vetement (ref INT(6) PRIMARY KEY, type_vet ENUM('0','1'),nom VARCHAR(50) NOT NULL,descri TEXT(200) NOT NULL,prix INT(6),sexe ENUM('0','1'),pointure INT(2),taille INT(3), nb_vendu INT(5), id_vendeur VARCHAR(20),url_img VARCHAR(50),FOREIGN KEY (id_vendeur) REFERENCES Vendeur(pseudo))";
+        $sql = "CREATE TABLE Vetement (ref INT(6) PRIMARY KEY, type_vet ENUM('0','1'),nom VARCHAR(50) NOT NULL,descri TEXT(200) NOT NULL,prix INT(6),sexe VARCHAR(10),pointure INT(2),taille VARCHAR(3), nb_vendu INT(5), id_vendeur VARCHAR(20),url_img VARCHAR(50),FOREIGN KEY (id_vendeur) REFERENCES Vendeur(pseudo))";
         $result = mysqli_query($db_handle, $sql);
 
         $sql1 = "CREATE TABLE Musique (ref INT(6) PRIMARY KEY,titre VARCHAR(50) NOT NULL,artiste VARCHAR(30) NOT NULL,album VARCHAR(30),annee INT(4),prix INT(6), nb_vendu INT(5), id_vendeur VARCHAR(20),url_img VARCHAR(50),lien_video TEXT, FOREIGN KEY (id_vendeur) REFERENCES Vendeur(pseudo))";
@@ -40,7 +40,7 @@
             code_bp INT(5),ville VARCHAR(40),pays VARCHAR(20),tel INT(10),card_type VARCHAR(15),card_number BIGINT(16),card_name VARCHAR(50),exp_date DATE,sec_code INT(3))";
         $result5 = mysqli_query($db_handle, $sql5);
         
-        $sql32 = "CREATE TABLE obj_panier (ref_panier INT(6) PRIMARY KEY,pseudo VARCHAR(20) NOT NULL, categorie int(1) NOT NULL,id int(6), quantite INT(3),couleur VARCHAR(20), taille VARCHAR(5), pointure INT(5), sexe ENUM('0','1'), FOREIGN KEY (pseudo) REFERENCES acheteur(pseudo))";
+        $sql32 = "CREATE TABLE obj_panier (ref_panier INT(6) PRIMARY KEY,pseudo VARCHAR(20) NOT NULL, categorie int(1) NOT NULL,id int(6), quantite INT(3),couleur VARCHAR(20), taille VARCHAR(5), pointure INT(5),sexe VARCHAR(10), FOREIGN KEY (pseudo) REFERENCES acheteur(pseudo))";
         $result32 = mysqli_query($db_handle, $sql32);
 
         //Insertion d'acheteurs
@@ -142,7 +142,7 @@
         $sql36 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('4','gege2020', '2', '1', '3',NULL,NULL,NULL,NULL)";
         $result36 = mysqli_query($db_handle, $sql36);
 
-        $sql37 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('5','gege2020', '3', '1', '1','JAUNE',NULL,'40','0')";
+        $sql37 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('5','gege2020', '3', '1', '1','JAUNE',NULL,'40','Femelle')";
         $result37 = mysqli_query($db_handle, $sql37);
     }
     //si la BDD n'existe pas

@@ -159,10 +159,7 @@
 
                 <!-- **************************RAJOUTER CODE POUR ENVOYER UN MAIL A LA PERSONNE APRES VALIDATION******************************************** -->
 
-                <?php /*
-
-             /*   ini_set("SMTP", "smtp.orange.fr");
-                ini_set("smpt_port", 25);// sachant que le port ressemblera sûrement à quelquechose comme 8025*/
+                <?php 
 
                 $sql1="SELECT email FROM acheteur WHERE pseudo LIKE '".$N."'";
                 $result1 = mysqli_query($db_handle, $sql1);
@@ -171,21 +168,6 @@
                         $mail=$data1['email'];//'adresse de destination
                     }
                     echo"$mail";
-
-            
-                  /*  if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) // On filtre les serveurs (nécessaire au bon fonctionnement de l'envoi)
-                    {
-                        $passage_ligne = "\r\n";
-                    }
-                    else
-                    {
-                        $passage_ligne = "\n";
-                    }*/
-                    //=====Déclaration des messages au format texte et au format HTML.
-                    //=====Création de la boundary
-                   /* $boundary = "-----=".md5(rand());*/
-                    //==========
-                     
 
                     //=====Définition du sujet.
                     $sujet = "Confirmation de votre commande ECE Amazon";
@@ -208,14 +190,7 @@
                         </body>
                     </html>
                     ';
-                   /* //=====Création du message.
-                    $message = $passage_ligne."--".$boundary.$passage_ligne;
-                    //=====Ajout du message au format texte.
-                   
-                    
-                    $message.= $passage_ligne.$message_txt.$passage_ligne;
-                    //==========
-                    $message.= $passage_ligne."--".$boundary.$passage_ligne;*/
+
                     //=====Ajout du message au format HTML
                     //=====Envoi de l'e-mail.
                     mail($mail,$sujet,$message,$header);

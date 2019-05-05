@@ -68,6 +68,7 @@
             <div class="col-md-4 col-sm-12">
                 <div class="remplir-infos-vet">
                     <form action="ajout_vetement.php" method="post">
+                    <input type="hidden" name="type_vet" value="<?php echo $data['type_vet']?>"/>
                         <table>
                             <!-- QUANTITE -->
                             <tr>
@@ -79,14 +80,14 @@
                             <tr>
                                 <td>
                                     <label style="color:grey;">Couleur</label>
-                                    <select style="width: 50px; margin-left:12px;"><OPTION><OPTION>Bleu <OPTION>Rouge <OPTION>Vert <OPTION>Blanc <OPTION>Noir <OPTION>Jaune<OPTION>Rose</select>
+                                    <select name="couleur" style="width: 50px; margin-left:12px;"><OPTION><OPTION>Bleu <OPTION>Rouge <OPTION>Vert <OPTION>Blanc <OPTION>Noir <OPTION>Jaune<OPTION>Rose</select>
                                 </td>
                             </tr>
                             <!-- SEXE -->
                             <tr>
                                 <td>
-                                    <input required type="radio" id="femme" name="sexe" ><label style="color:grey; margin-left: 10px;" for="femme">Femelle</label>
-                                    <input  required type="radio" id="homme" name="sexe" style="margin-left: 10px;"><label style="color:grey; margin-left: 10px;" for="homme">Male</label></td>
+                                    <input required type="radio" id="Femelle" name="Femelle" ><label style="color:grey; margin-left: 10px;" value="Femelle">Femelle</label>
+                                    <input required type="radio" id="Male" name="Male" style="margin-left: 10px;"><label style="color:grey; margin-left: 10px;" value="Male">Male</label></td>
                                 </td>
                             </tr>
                             <!-- TAILLE -->
@@ -96,8 +97,9 @@
                             ?>
                             <tr>
                                 <td>
+                                    
                                     <label style="color:grey;">Sélectionnez une taille</label>
-                                    <select style=" width: 50px;" ><OPTION><OPTION>XS <OPTION>S <OPTION>M <OPTION>L <OPTION>XL</select>
+                                    <select name="taille" style=" width: 50px;" ><OPTION><OPTION>XS <OPTION>S <OPTION>M <OPTION>L <OPTION>XL</select>
                                 </td>
                                 <?php
                                     }//fin if pour typ_vet = vetements
@@ -116,7 +118,7 @@
 
                             </tr>
                             <!-- AJOUTER AU PANIER -->
-                            <tr>
+                            <tr>   
                                 <input type="hidden" name="recup" value="<?php echo $data['ref']?> ">
                                 <td><input type="submit" id="ajout-panier" onclick="valide()" name="ajout-panier" value="Ajouter au panier" class="ajout-panier-btn"></td>
                             </tr>

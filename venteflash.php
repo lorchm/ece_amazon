@@ -199,8 +199,8 @@
                                     <!-- SEXE -->
                                     <tr>
                                         <td>
-                                            <input required type="radio" id="femme" name="sexe" ><label style="color:grey; margin-left: 10px;" for="femme">Femelle</label>
-                                            <input required type="radio" id="homme" name="sexe" style="margin-left: 10px;"><label style="color:grey; margin-left: 10px;" for="homme">Male</label></td>
+                                            <input required type="radio" id="Femelle" name="sexe" ><label style="color:grey; margin-left: 10px;" value="Femelle">Femelle</label>
+                                            <input required type="radio" id="Male" name="sexe" style="margin-left: 10px;"><label style="color:grey; margin-left: 10px;" value="Male">Male</label></td>
                                         </td>
                                     </tr>
                                     <!-- TAILLE -->
@@ -211,7 +211,7 @@
                                     <tr>
                                         <td>
                                             <label style="color:grey;">Sélectionnez une taille</label>
-                                            <select style=" width: 50px;" ><OPTION><OPTION>XS <OPTION>S <OPTION>M <OPTION>L <OPTION>XL</select>
+                                            <select name="taille" style=" width: 50px;" ><OPTION><OPTION>XS <OPTION>S <OPTION>M <OPTION>L <OPTION>XL</select>
                                         </td>
                                         <?php
                                             }//fin if pour typ_vet = vetements
@@ -231,6 +231,7 @@
                                     </tr>
                                     <!-- AJOUTER AU PANIER -->
                                     <tr>
+                                        <input type="hidden" name="type_vet" value="<?php echo $data['type_vet']?>"/>
                                         <td><input type="button" id="ajout-panier" name="ajout-panier" value="Ajouter au panier" class="ajout-panier-btn"></td>
                                     </tr>
                                 </table>
