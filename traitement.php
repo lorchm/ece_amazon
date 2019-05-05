@@ -23,14 +23,14 @@
         $sql = "CREATE TABLE Vetement (ref INT(6) PRIMARY KEY, type_vet ENUM('0','1'),nom VARCHAR(50) NOT NULL,descri TEXT(200) NOT NULL,prix INT(6),sexe ENUM('0','1'),pointure INT(2),taille INT(3), nb_vendu INT(5), id_vendeur VARCHAR(20),url_img VARCHAR(50),FOREIGN KEY (id_vendeur) REFERENCES Vendeur(pseudo))";
         $result = mysqli_query($db_handle, $sql);
 
-        $sql1 = "CREATE TABLE Musique (ref INT(6) PRIMARY KEY,titre VARCHAR(50) NOT NULL,artiste VARCHAR(30) NOT NULL,album VARCHAR(30),annee INT(4),prix INT(6), nb_vendu INT(5), id_vendeur VARCHAR(20),url_img VARCHAR(50),FOREIGN KEY (id_vendeur) REFERENCES Vendeur(pseudo))";
+        $sql1 = "CREATE TABLE Musique (ref INT(6) PRIMARY KEY,titre VARCHAR(50) NOT NULL,artiste VARCHAR(30) NOT NULL,album VARCHAR(30),annee INT(4),prix INT(6), nb_vendu INT(5), id_vendeur VARCHAR(20),url_img VARCHAR(50),lien_video TEXT, FOREIGN KEY (id_vendeur) REFERENCES Vendeur(pseudo))";
         $result1 = mysqli_query($db_handle, $sql1);
 
         $sql2 = "CREATE TABLE Livre (ref INT(6) PRIMARY KEY,titre VARCHAR(50) NOT NULL,auteur VARCHAR(30) NOT NULL,annee INT(4),prix INT(6),editeur VARCHAR(40),descri TEXT, nb_vendu INT(5), id_vendeur VARCHAR(20),url_img VARCHAR(50),FOREIGN KEY (id_vendeur) REFERENCES Vendeur(pseudo))";
         $result2 = mysqli_query($db_handle, $sql2);
 
        
-        $sql3 = "CREATE TABLE SportLoisir (ref INT(6) PRIMARY KEY,nom VARCHAR(50) NOT NULL,prix INT(6),descri TEXT, nb_vendu INT(5), id_vendeur VARCHAR(20),url_img VARCHAR(50),FOREIGN KEY (id_vendeur) REFERENCES Vendeur(pseudo))";
+        $sql3 = "CREATE TABLE SportLoisir (ref INT(6) PRIMARY KEY,nom VARCHAR(50) NOT NULL,prix INT(6),descri TEXT, nb_vendu INT(5), id_vendeur VARCHAR(20),url_img VARCHAR(50), lien_video TEXT,FOREIGN KEY (id_vendeur) REFERENCES Vendeur(pseudo))";
         $result3 = mysqli_query($db_handle, $sql3);
 
         $sql4 = "CREATE TABLE Vendeur (pseudo VARCHAR(20) PRIMARY KEY,admins ENUM('0','1'),mdp VARCHAR(20),email VARCHAR(50),nom VARCHAR(40), url_pdp VARCHAR(50), url_pdc VARCHAR(50))";
@@ -40,7 +40,7 @@
             code_bp INT(5),ville VARCHAR(40),pays VARCHAR(20),tel INT(10),card_type VARCHAR(15),card_number BIGINT(16),card_name VARCHAR(50),exp_date DATE,sec_code INT(3))";
         $result5 = mysqli_query($db_handle, $sql5);
         
-        $sql32 = "CREATE TABLE obj_panier (ref_panier INT(6) PRIMARY KEY,pseudo VARCHAR(20) NOT NULL, categorie int(1) NOT NULL,id int(6), quantite INT(3), FOREIGN KEY (pseudo) REFERENCES acheteur(pseudo))";
+        $sql32 = "CREATE TABLE obj_panier (ref_panier INT(6) PRIMARY KEY,pseudo VARCHAR(20) NOT NULL, categorie int(1) NOT NULL,id int(6), quantite INT(3),couleur VARCHAR(20), taille VARCHAR(5), pointure INT(5), sexe ENUM('0','1'), FOREIGN KEY (pseudo) REFERENCES acheteur(pseudo))";
         $result32 = mysqli_query($db_handle, $sql32);
 
         //Insertion d'acheteurs
@@ -72,42 +72,42 @@
         $result13 = mysqli_query($db_handle, $sql13);
 
         //Mus
-        $sql14 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('1', 'Black Dog', 'Led Zeppelin', 'Led Zeppelin IV', '1971', '3','4','admin','img/articles/m1.jpg')";
+        $sql14 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`, `url_img`, `lien_video`) VALUES ('1', 'Black Dog', 'Led Zeppelin', 'Led Zeppelin IV', '1971', '3','4','admin','img/articles/m1.jpg', '<iframe width=\"315\" height=\"170\" src=\"https://www.youtube.com/embed/fl6s1x9j4QQ\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>')";
         $result14 = mysqli_query($db_handle, $sql14);
 
-        $sql15 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('2', 'Who Let the Dogs Out?', 'Baha Men', 'Who Let the Dogs Out', '2000', '3','8',NULL,'img/articles/m2.jpg')";
+        $sql15 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`, `url_img`, `lien_video`) VALUES ('2', 'Who Let the Dogs Out?', 'Baha Men', 'Who Let the Dogs Out', '2000', '3','8',NULL,'img/articles/m2.jpg', '<iframe width=\"315\" height=\"170\" src=\"https://www.youtube.com/embed/Qkuu0Lwb5EM\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>')";
         $result15 = mysqli_query($db_handle, $sql15);
 
-        $sql16 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('3', 'The Dogs Of War', 'Pink Floyd', 'A Momentary Lapse of Reason', '1988', '3','2',NULL,'img/articles/m3.jpg')";
+        $sql16 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`, `url_img`, `lien_video`) VALUES ('3', 'The Dogs Of War', 'Pink Floyd', 'A Momentary Lapse of Reason', '1988', '3','2',NULL,'img/articles/m3.jpg', '<iframe width=\"315\" height=\"170\" src=\"https://www.youtube.com/embed/Ukhc6NxolQU\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>')";
         $result16 = mysqli_query($db_handle, $sql16);
 
-        $sql17 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('4', 'Hey Bulldog', 'The Beatles', 'Yellow Submarine', '1969', '3','0',NULL,'img/articles/m4.jpg')";
+        $sql17 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`, `url_img`, `lien_video`) VALUES ('4', 'Hey Bulldog', 'The Beatles', 'Yellow Submarine', '1969', '3','0',NULL,'img/articles/m4.jpg', '<iframe width=\"315\" height=\"170\" src=\"https://www.youtube.com/embed/M4vbJQ-MrKo\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>')";
         $result17 = mysqli_query($db_handle, $sql17);
 
-        $sql18 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('5', 'Given The Dog A Bone', 'AC/DC', 'Back in Black', '1980', '3','0',NULL,'img/articles/m5.jpg')";
+        $sql18 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`, `url_img`, `lien_video`) VALUES ('5', 'Given The Dog A Bone', 'AC/DC', 'Back in Black', '1980', '3','0',NULL,'img/articles/m5.jpg', '<iframe width=\"315\" height=\"170\" src=\"https://www.youtube.com/embed/b3LW6P-p4Dw\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>')";
         $result18 = mysqli_query($db_handle, $sql18);
 
-        $sql19 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('6', 'Hound Dog', 'Elvis Presley', 'Dont Be Cruel', '1956', '3','7',NULL,'img/articles/m6.jpg')";
+        $sql19 = "INSERT INTO `musique` (`ref`, `titre`, `artiste`, `album`, `annee`, `prix`, `nb_vendu`, `id_vendeur`, `url_img`, `lien_video`) VALUES ('6', 'Hound Dog', 'Elvis Presley', 'Dont Be Cruel', '1956', '3','7',NULL,'img/articles/m6.jpg', '<iframe width=\"315\" height=\"170\" src=\"https://www.youtube.com/embed/lzQ8GDBA8Is\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>')";
         $result19 = mysqli_query($db_handle, $sql19);
 
 
         //Sp&L
-        $sql20 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('1', 'Agility', '45', 'L agility (signifiant tout simplement  agilite  en anglais), ou agilite, est un sport canin, dans lequel le chien evolue sur un parcours d obstacles sous la conduite de son maitre.','2',NULL,'img/articles/sl1.jpg')";
+        $sql20 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`, `url_img`, `lien_video`) VALUES ('1', 'Agility', '45', 'L agility (signifiant tout simplement  agilite  en anglais), ou agilite, est un sport canin, dans lequel le chien evolue sur un parcours d obstacles sous la conduite de son maitre.','2',NULL,'img/articles/sl1.jpg','<iframe width=\"315\" height=\"170\" src=\"https://www.youtube.com/embed/A4N7G29GWQI\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>')";
         $result20 = mysqli_query($db_handle, $sql20);
 
-        $sql21 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('2', 'Freesbee', '5', 'Disque en plastique, legerement bombe, que les joueurs se lancent et qui plane en tournant sur lui-meme.','4',NULL,'img/articles/sl2.jpg')";
+        $sql21 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`, `url_img`, `lien_video`) VALUES ('2', 'Freesbee', '5', 'Disque en plastique, legerement bombe, que les joueurs se lancent et qui plane en tournant sur lui-meme.','4',NULL,'img/articles/sl2.jpg','<iframe width=\"315\" height=\"170\" src=\"https://www.youtube.com/embed/n2MoImTMR5A\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>')";
         $result21 = mysqli_query($db_handle, $sql21);
 
-        $sql22 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('3', 'Lance le baton', '2', 'Long morceau de bois rond que l on peut tenir a la main.','0',NULL,'img/articles/sl3.jpg')";
+        $sql22 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`, `url_img`, `lien_video`) VALUES ('3', 'Lance le baton', '2', 'Long morceau de bois rond que l on peut tenir a la main.','0',NULL,'img/articles/sl3.jpg','<iframe width=\"315\" height=\"170\" src=\"https://www.youtube.com/embed/m_CrIu01SnM\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>')";
         $result22 = mysqli_query($db_handle, $sql22);
 
-        $sql23 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('4', 'Lancer la balle', '3', 'Petite sphere, boule elastique dont on se sert pour divers jeux.','9',NULL,'img/articles/sl4.jpg')";
+        $sql23 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`, `url_img`, `lien_video`) VALUES ('4', 'Lancer la balle', '3', 'Petite sphere, boule elastique dont on se sert pour divers jeux.','9',NULL,'img/articles/sl4.jpg','<iframe width=\"315\" height=\"170\" src=\"https://www.youtube.com/embed/csC8-RJpPMM\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>')";
         $result23 = mysqli_query($db_handle, $sql23);
 
-        $sql24 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('5', 'Promenade', '1', 'Action de se promener ; trajet fait en se promenant.','0','admin','img/articles/sl5.jpg')";
+        $sql24 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`, `url_img`, `lien_video`) VALUES ('5', 'Promenade', '1', 'Action de se promener ; trajet fait en se promenant.','0','admin','img/articles/sl5.jpg','<iframe width=\"315\" height=\"170\" src=\"https://www.youtube.com/embed/q7adpEYMfPk\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>')";
         $result24 = mysqli_query($db_handle, $sql24);
 
-        $sql25 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`, `url_img`) VALUES ('6', 'Manger le canape', '300', 'Action de manger un long siege a dossier ou plusieurs personnes peuvent s asseoir ensemble.','7',NULL,'img/articles/sl6.jpg')";
+        $sql25 = "INSERT INTO `sportloisir` (`ref`, `nom`, `prix`, `descri`, `nb_vendu`, `id_vendeur`, `url_img`, `lien_video`) VALUES ('6', 'Manger le canape', '300', 'Action de manger un long siege a dossier ou plusieurs personnes peuvent s asseoir ensemble.','7',NULL,'img/articles/sl6.jpg','<iframe width=\"315\" height=\"170\" src=\"https://www.youtube.com/embed/3JL9SmhFXRE\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>')";
         $result25 = mysqli_query($db_handle, $sql25);
 
         //Livres
@@ -130,19 +130,19 @@
         $result31 = mysqli_query($db_handle, $sql31);
 
         //Panier déjà existant
-        $sql33 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`) VALUES ('1','gege2020', '0', '1', '1')";
+        $sql33 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('1','gege2020', '0', '1', '1','JAUNE',NULL,'40','0')";
         $result33 = mysqli_query($db_handle, $sql33);
 
-        $sql34 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`) VALUES ('2','gege2020', '0', '2', '2')";
+        $sql34 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('2','gege2020', '0', '2', '2','ROUGE','L',NULL,'1')";
         $result34 = mysqli_query($db_handle, $sql34);
 
-        $sql35 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`) VALUES ('3','gege2020', '1', '1', '1')";
+        $sql35 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('3','gege2020', '1', '1', '1',NULL,NULL,NULL,NULL)";
         $result35 = mysqli_query($db_handle, $sql35);
 
-        $sql36 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`) VALUES ('4','gege2020', '2', '1', '3')";
+        $sql36 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('4','gege2020', '2', '1', '3',NULL,NULL,NULL,NULL)";
         $result36 = mysqli_query($db_handle, $sql36);
 
-        $sql37 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`) VALUES ('5','gege2020', '3', '1', '2')";
+        $sql37 = "INSERT INTO `obj_panier` (`ref_panier`,`pseudo`, `categorie`, `id`, `quantite`, `couleur`,`taille`,`pointure`,`sexe`) VALUES ('5','gege2020', '3', '1', '2',NULL,NULL,NULL,NULL)";
         $result37 = mysqli_query($db_handle, $sql37);
     }
     //si la BDD n'existe pas

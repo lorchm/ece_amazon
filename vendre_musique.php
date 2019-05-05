@@ -10,6 +10,7 @@
     $a4= isset($_POST["annee"])?$_POST["annee"]:"";
     $a5= isset($_POST["prix"])?$_POST["prix"]:"";
     $a6= isset($_POST["photo"])?$_POST["photo"]:"";
+    $a7= isset($_POST["video"])?$_POST["video"]:"";
 
     define('DB_SERVER', 'localhost');
     define('DB_USER', 'root');
@@ -25,7 +26,7 @@
     if($db_found) {
 
         //variable qui contient le pseudo de la personne à qui faut changer
-        $sql = "INSERT INTO musique (ref, titre,artiste,album,annee,prix,nb_vendu,id_vendeur, url_img) VALUES ('$a0', '$a1','$a2','$a3','$a4','$a5','0','$N', NULL)";
+        $sql = "INSERT INTO musique (ref, titre,artiste,album,annee,prix,nb_vendu,id_vendeur, url_img, lien_video) VALUES ('$a0', '$a1','$a2','$a3','$a4','$a5','0','$N', NULL, '$a7')";
         $result = mysqli_query($db_handle, $sql);
     }
     else {

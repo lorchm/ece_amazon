@@ -72,9 +72,63 @@
                         while ($data = mysqli_fetch_assoc($result)){
                             if ($card_name==$data['card_name'] && $card_type==$data['card_type'] && $card_number==$data['card_number'] && $exp_date==$data['exp_date'] && $sec_code==$data['sec_code']) {
                 ?>
-                <p style="color:grey;">Votre commmande a bien été validé. Vous serez livrez dans à peu près 10 minutes. Merci de faire confance à ECE AMAZON ! <img src="img/checked.png" style="width:30px; height: 30px;"></p>
+                <p style="color:grey;">Votre commmande a bien été validé. Vous serez livrez dans à peu près 10 minutes. Merci de faire confiance à ECE AMAZON ! <img src="img/checked.png" style="width:30px; height: 30px;"></p>
 
                 <!-- **************************RAJOUTER CODE POUR ENVOYER UN MAIL A LA PERSONNE APRES VALIDATION******************************************** -->
+
+                <?php
+
+                ini_set("SMTP", "smtp.orange.fr");
+                ini_set("smpt_port", 25);// sachant que le port ressemblera sûrement à quelquechose comme 8025
+
+                $sql1="SELECT email FROM acheteur WHERE pseudo LIKE '".$N."'";
+                $result1 = mysqli_query($db_handle, $sql1);
+                while($data1= mysqli_fetch_assoc($result1))
+                    {
+                        $mail=$data1['email'];//'adresse de destination
+                    }
+
+            
+                    if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) // On filtre les serveurs (nécessaire au bon fonctionnement de l'envoi)
+                    {
+                        $passage_ligne = "\r\n";
+                    }
+                    else
+                    {
+                        $passage_ligne = "\n";
+                    }
+                    //=====Déclaration des messages au format texte et au format HTML.
+                    $message_txt = "Bonjour, nous vous informons que votre commande a bien été prise en compte, merci et à bientôt sur ECE Amazon";
+                     
+                    //=====Création de la boundary
+                    $boundary = "-----=".md5(rand());
+                    //==========
+                     
+                    //=====Définition du sujet.
+                    $sujet = "Confirmation de votre commande ECE Amazon";
+                    //=========
+                     
+                    //=====Création du header de l'e-mail.
+                    $header = "From: \"ECEAmazon\"<victor.labeyrie@edu.ece.fr>".$passage_ligne;
+                    $header.= "Reply-to: \"ECEAmazon\" <victor.labeyrie@edu.ece.fr>".$passage_ligne;
+                    $header.= "MIME-Version: 1.0".$passage_ligne;
+                    $header.= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;
+                    //==========
+                     
+                    //=====Création du message.
+                    $message = $passage_ligne."--".$boundary.$passage_ligne;
+                    //=====Ajout du message au format texte.
+                    $message.= "Content-Type: text/plain; charset=\"ISO-8859-1\"".$passage_ligne;
+                    $message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
+                    $message.= $passage_ligne.$message_txt.$passage_ligne;
+                    //==========
+                    $message.= $passage_ligne."--".$boundary.$passage_ligne;
+                    //=====Ajout du message au format HTML
+                    //=====Envoi de l'e-mail.
+                    mail($mail,$sujet,$message,$header);
+ 
+
+                ?>
                 <!-- *************************************************************************************************************************************** -->
                 <?php 
                              }//fin if condition ok
