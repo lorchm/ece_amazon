@@ -37,7 +37,7 @@
     <div class="page-venteflash container">
         <!-- Titre -->
         <div class="description page-header header container-fluid"> 
-            <h1>Ventes Flash</h1> 
+            <h1>Ventes Flash <img src="img/best-seller.png" style="width: 50px; height: 50px;"></h1> 
             <p>Retrouvez nos meilleures ventes</p> 
         </div>
 

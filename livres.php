@@ -42,7 +42,7 @@
 
 <!--************************************ Liste des Livres ******************************************************-->
     <div class="description page-header header container-fluid"> 
-        <h1>Livres</h1> 
+        <h1>Livres <img src="img/book.png" style="width: 50px; height: 50px;"></h1> 
         <p> ECE Amazon vous propose pleins de livres sympas.</p> 
     </div>
 
@@ -75,10 +75,6 @@
                 <div class="prix-prod"><?php echo $data['prix']?> &euro;</div>
                 <div class="reference-prod">Référence <?php echo $data['ref']?></div>
                 <div class="description-prod"><?php echo $data['descri']?></div>
-
-                
-               
-               <!-- $_SESSION["livre"]=$data['ref']; -->
             </div>
             <!-- 3. REMPLIR INFOS -->
             <div class="col-md-4  col-sm-12">

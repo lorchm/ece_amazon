@@ -36,7 +36,7 @@
 
 <!--************************************ Liste des sports ******************************************************-->
     <div class="description page-header header container-fluid"> 
-        <h1>Sport et Loisirs</h1> 
+        <h1>Sport et Loisirs <img src="img/ball.png" style="width: 50px; height: 50px;"></h1> 
         <p>Besoin d'idées pour des activités ?</p> 
     </div>
 

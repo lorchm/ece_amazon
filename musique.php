@@ -37,7 +37,7 @@
 
 <!--************************************ Liste des musiques ******************************************************-->
     <div class="description page-header header container-fluid"> 
-        <h1>Musique</h1> 
+        <h1>Musique <img src="img/music.png" style="width: 50px; height: 50px;"></h1> 
         <p> Découvrez les derniers hit du moment YEAAAH !!</p> 
     </div>
 

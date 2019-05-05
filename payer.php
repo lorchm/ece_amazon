@@ -78,7 +78,7 @@
 
                 <?php
 
-                ini_set("SMTP", "smtp.orange.fr");
+                ini_set("SMTP", "smtp.sfr.fr");
                 ini_set("smpt_port", 25);// sachant que le port ressemblera sûrement à quelquechose comme 8025
 
                 $sql1="SELECT email FROM acheteur WHERE pseudo LIKE '".$N."'";

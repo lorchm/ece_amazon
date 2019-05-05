@@ -166,10 +166,11 @@ nav li:hover .submenu{
 /**************Galerie d'objets de la page d'accueil****************/
 #galerie {
   position: relative;
-  width: 500px;
-  height: 400px;
-  margin: auto;
-}
+  width: 400px;
+  height: 300px;
+  margin:0 0 0 0;
+/*  margin: auto;
+*/}
 
 #galerie ul li {
   position: absolute;
@@ -192,8 +193,8 @@ h1 {
 }
 
 .prev{
-margin: 0px 0px 0px 515px;
-}
+/*margin: 0px 0px 0px 515px;
+*/}
 
 .btn-galerie{
   width: 100px;
@@ -339,7 +340,6 @@ h6{
 
 /**************************Pied de page******************************************/
 .page-footer {
-  margin-top: 40px;
   background-color: #04263F;
   color: #f7f7f7  ;
   padding: 20px 0 5px;
@@ -418,6 +418,7 @@ h6{
   border: solid;
   color: #D1DBE1;
   background-color: #c1e7ed;
+  padding: 20px;
 /*  height: 650px;
 */  /*effet d'ombre autour du cadre du produit*/
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
@@ -435,3 +436,30 @@ h6{
   margin : 5px;
 }
 
+/*************************************BOUTON HOMEPAGE*********************************************/
+.button1 {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1:hover {
+  background-color: #39833C;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

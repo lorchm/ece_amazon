@@ -36,7 +36,7 @@
 
 <!--************************************ Liste des Livres ******************************************************-->
     <div class="description page-header header container-fluid"> 
-        <h1>Vêtements et Chaussures</h1> 
+        <h1>Vêtements et Chaussures <img src="img/laundry.png" style="width: 50px; height: 50px;"></h1> 
         <p>Coucou les boyz and girlz , regardez les dernières tendances ;)</p> 
     </div>
 

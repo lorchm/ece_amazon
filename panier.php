@@ -42,7 +42,7 @@
 <!--     <div class="page-venteflash container">
  -->        <!-- Titre -->
         <div class="description page-header header container-fluid"> 
-            <h1>Mon Panier</h1> 
+            <h1>Mon Panier  <img src="img/cart.png" style="width: 50px; height: 50px;"></h1> 
         </div>
 
         <?php
